@@ -4,18 +4,21 @@ const User = require('../../models/Board');
 
 router.get("/test", (req, res) => res.json({ msg: "This is the boards route" }));
 
-router.post('/register', (req, res) => {
-  User.findOne({ email: req.body.email })
-    .then(user => {
-      if (user) {
-        return res.status(400).json({ email: "A user has already registered with this address" })
+router.post('/create', (req, res) => {
+  Board.findOne({ title: req.body.title })
+    .then(board => {
+      if (board) {
+        return res.status(400).json({ title: "board title already exists" })
       } else {
-        const newUser = new User({
-          username: req.body.username,
-          email: req.body.email,
-          password: req.body.password,
+        const newBoard = new Board({
+          owner: req.user.id,
+          title: req.body.title,
         })
       }
+      newBoard
+        .save()
+        .then(board => res.json(board))
+        .catch(err => res.json(err))
     })
 })
 
