@@ -10,7 +10,7 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => (
       !loggedIn ? (
         <Component {...props} />
       ) : (
-        <Redirect to={`/users/${state.user.id}`} />
+        <Redirect to={`/users/${this.state.user.id}`} />
       )
     }
   />
