@@ -5,7 +5,7 @@ const User = require('../../models/Board');
 router.get("/test", (req, res) => res.json({ msg: "This is the boards route" }));
 
 router.post('/create', (req, res) => {
-  User.findOne({ title: req.body.title })
+  Board.findOne({ title: req.body.title })
     .then(board => {
       if (board) {
         return res.status(400).json({ title: "board title already exists" })
