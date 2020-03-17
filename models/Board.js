@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const BoardSchema = new Schema({
-  user: {
+  owner: {
     type: Schema.Types.ObjectId,
     ref: 'users'
   },
-  text: {
+  title: {
     type: String,
     required: true
   },
@@ -16,6 +16,6 @@ const BoardSchema = new Schema({
   }
 })
 
-const Tweet = mongoose.model('tweet', TweetSchema);
+const Board = mongoose.model('board', BoardSchema);
 
-module.exports = Tweet;
+module.exports = Board;
