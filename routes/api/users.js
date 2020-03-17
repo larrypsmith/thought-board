@@ -25,10 +25,10 @@ router.post('/register', (req, res) => {
     return res.status(400).json(errors);
   }
 
-  User.findOne({ username: req.body.username })
+  User.findOne({ email: req.body.email })
     .then(user => {
       if (user) {
-        errors.username = 'User already exists';
+        errors.email = 'Email is already in use';
         return res.status(400).json(errors)
       } else {
         const newUser = new User({
@@ -43,7 +43,7 @@ router.post('/register', (req, res) => {
             newUser.password = hash;
             newUser.save()
               .then(user => {
-                const payload = { id: user.id, username: user.username };
+                const payload = { id: user.id, email: user.email };
 
                 jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
                   res.json({
@@ -59,27 +59,27 @@ router.post('/register', (req, res) => {
     })
 })
 
-router.post('/login'), (req, res) => {
+router.post('/login', (req, res) => {
   const { errors, isValid } = validateLoginInput(req.body);
 
   if (!isValid) {
     return res.status(400).json(errors);
   }
 
-  const username = req.body.username;
+  const email = req.body.email;
   const password = req.body.password;
 
-  User.findOne({username})
+  User.findOne({email})
     .then(user => {
       if (!user) {
-        errors.username = "This user does not exist";
+        errors.email = "This email does not exist";
         return res.status(404).json(errors);
       }
 
       bcrypt.compare(password, user.password)
         .then(isMatch => {
           if (isMatch) {
-            const payload = { id: user.id, username: user.username };
+            const payload = { id: user.id, email: user.email };
 
             jwt.sign(
               payload,
@@ -98,6 +98,6 @@ router.post('/login'), (req, res) => {
           }
         })
     });
-};
+});
 
 module.exports = router;
