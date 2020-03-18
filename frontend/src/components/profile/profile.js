@@ -22,7 +22,12 @@ class Profile extends React.Component {
 
     render() {
         if (this.state.boards.length === 0) {
-            return (<div>No boards yet</div>)
+            return (
+            <div>No boards yet</div>
+            < div >
+                <Link to={"/new_board"}>Build a Board</Link>
+            </div >
+            )
         } else {
             return (
                 <div>
