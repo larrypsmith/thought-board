@@ -9,7 +9,7 @@ import SignupFormContainer from "./session/signup_form_container";
 import ProfileContainer from "../components/profile/profile_container";
 import BoardsContainer from "../components/boards/boards_container";
 import BoardBuildContainer from '../components/boards/board_build_container';
-
+import NoteComposeContainer from '../components/notes/note_compose_container';
 const App = () => (
     <div>
         <NavBarContainer />
@@ -21,6 +21,7 @@ const App = () => (
             <ProtectedRoute exact path="/boards" component={BoardsContainer} />
             <ProtectedRoute exact path="/profile" component={ProfileContainer} />
             <ProtectedRoute exact path="/new_board" component={BoardBuildContainer} />
+            <ProtectedRoute exact path="/new_note" component={NoteComposeContainer} />
         </Switch>
     </div>
 );
