@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-export const getBoardNotes = (id) => {
-    return axios.get(`/api/board/${id}/notes`);
+export const getBoardNotes = (board) => {
+    return axios.get(`/api/notes/${board.id}`);
 };
 
 export const writeNote = data => {
