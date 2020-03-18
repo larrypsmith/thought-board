@@ -15,7 +15,14 @@ const Auth = ({ component: Component, path, loggedIn, exact, state }) => (
     }
   />
 );
-
+// const SpProtected = ({ component: Component, currentUser, ...rest }) => (
+//   <Route 
+//     {...rest}
+//     render={props =>
+//       currentUser.id === state.entities.boards.user_id
+//     }
+//   />
+// )
 const Protected = ({ component: Component, loggedIn, ...rest }) => (
   <Route
     {...rest}
@@ -31,8 +38,10 @@ const Protected = ({ component: Component, loggedIn, ...rest }) => (
 
 const mapStateToProps = state => ({ 
     loggedIn: state.session.isAuthenticated,
-    state
+    state,
+    currentUser: state.session.user
 });
 
 export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
 export const ProtectedRoute = withRouter(connect(mapStateToProps)(Protected));
+// export const SpProtectedRoute = withRouter(connect(mapStateToProps)(SpProtected));
