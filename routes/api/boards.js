@@ -36,4 +36,21 @@ router.post('/',
       })
 })
 
+router.get("/",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+
+    Board.find({ owner: req.user.id })
+      .then(boards => res.json(boards))
+      .catch(err => res.json(err))
+})
+
+router.get("/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Board.findById(req.params.id)
+      .then(board => res.json(board))
+      .catch(err => res.json(err))
+})
+
 module.exports = router;
