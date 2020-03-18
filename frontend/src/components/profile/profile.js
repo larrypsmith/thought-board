@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Board from './board/board';
 class Profile extends React.Component {
     constructor(props) {
         super(props);
@@ -26,10 +26,12 @@ class Profile extends React.Component {
                 <div>
                     <h2>Your boards</h2>
                     {this.state.boards.map(board => (
-                        //need to create board and boardbox containers/componenets
+                        <Board key={board._id} />
                     ))}
                 </div>
             );
         }
     }
 }
+
+export default Profile;
