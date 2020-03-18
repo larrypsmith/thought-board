@@ -1,0 +1,52 @@
+.signup-form-container {
+    display: flex;
+    background: url("splash_page_background.png");
+    height: auto;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    padding: 10px;
+    justify-content: space-around;
+}
+
+.signup-form {
+    padding-top: 80px;
+    display: flex;
+    flex-direction: row;
+}
+
+.signup-form input {
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: none;
+    margin: 10px;
+}
+
+.signup-form input:focus {
+    outline: none
+}
+
+.session-submit-btn {
+    cursor: pointer;
+}
+
+.session-submit-btn:focus {
+    opacity: 0.5;    
+}
+
+.session-errors {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    top: 210px;
+}
+
+.session-errors ul {
+    list-style: none;
+}

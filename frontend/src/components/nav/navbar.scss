@@ -1,0 +1,51 @@
+.nav-cont {
+    display: flex;
+    background-color: rgb(111, 113, 118);
+    opacity: .75;
+    height: 60px;
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    padding: 10px;
+}
+
+.nav-title {
+    color: white;
+    padding-left: 30px;
+}
+
+.nav-link {
+    margin: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+.nav-btn {
+    background-color: rgb(111, 113, 118);
+    color: white;
+    align-self: center;
+    width: 50px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+}
+
+.nav-btn:focus {
+    outline: none;
+}
+
+.nav-btn:hover {
+    background-color: blue;
+    cursor: pointer;
+}
