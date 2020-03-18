@@ -19,7 +19,7 @@ export const fetchUserBoards = id => dispatch => (
         .catch(err => console.log(err))
 );
 
-export const makeBoard = data => dispatch => (
+export const buildBoard = data => dispatch => (
     createBoard(data)
         .then(board => dispatch(receiveNewBoard(board)))
         .catch(err => console.log(err))

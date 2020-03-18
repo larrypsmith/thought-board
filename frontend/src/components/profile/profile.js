@@ -1,5 +1,7 @@
 import React from 'react';
 import Boards from '../boards/boards';
+import { Link } from 'react-router-dom';
+
 class Profile extends React.Component {
     constructor(props) {
         super(props);
@@ -24,10 +26,15 @@ class Profile extends React.Component {
         } else {
             return (
                 <div>
-                    <h2>Your boards</h2>
-                    {this.state.boards.map(board => (
-                        <Boards key={board._id} />
-                    ))}
+                    <div>
+                        <h2>Your boards</h2>
+                        {this.state.boards.map(board => (
+                            <Boards key={board._id} />
+                        ))}
+                    </div>
+                    <div>
+                        <Link to={"/new_board"}>Build a Board</Link>
+                    </div>
                 </div>
             );
         }
