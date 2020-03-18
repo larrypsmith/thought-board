@@ -1,4 +1,4 @@
-import { RECEIVE_USER_BOARDS, RECEIVE_NEW_BOARD } from '../actions/boards_actions';
+import { RECEIVE_USER_BOARDS, RECEIVE_NEW_BOARD } from '../actions/board_actions';
 
 const BoardsReducer = (state = { all: {}, user: {}, new: undefined }, action) => {
     Object.freeze(state);
