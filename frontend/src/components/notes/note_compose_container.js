@@ -5,7 +5,7 @@ import NoteCompose from './note_compose';
 const mapStateToProps = (state) => {
     return {
         currentUser: state.session.user,
-        newNote: state.notes.new
+        newNote: state.entities.notes.new
     };
 };
 
