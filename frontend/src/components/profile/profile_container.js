@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchUserBoards } from '../../actions/boards_actions';
+import { fetchUserBoards } from '../../actions/board_actions';
 import Profile from './profile';
 
 const mapStateToProps = state => {
