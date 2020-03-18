@@ -1,0 +1,40 @@
+import React from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import BoardBox from './board_box';
+
+class Boards extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            boards: []
+        };
+    }
+
+    componentWillMount() {
+        this.props.fetchUserBoards();
+    }
+
+    componentWillReceiveProps(newState) {
+        this.setState({ boards: newState.boards });
+    }
+
+    render() {
+        if (this.state.boards.length === 0) {
+            return (<div>There are no Boards</div>)
+        } else {
+            return (
+              <div>
+                <h2>Boards</h2>
+                {this.state.boards.map(board => (
+                //   <Link to={`/boards/${id}`}>
+                    <BoardBox key={board._id} title={board.title} />
+                //   </Link>
+                ))}
+              </div>
+            );
+        }
+    }
+}
+
+export default withRouter(Boards)

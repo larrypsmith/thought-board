@@ -6,6 +6,9 @@ import NavBarContainer from './nav/navbar_container';
 import MainPage from "./main/main_page";
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
+import ProfileContainer from "../components/profile/profile_container";
+import BoardsContainer from "../components/boards/boards_container";
+import BoardBuildContainer from '../components/boards/board_build_container';
 
 const App = () => (
     <div>
@@ -14,6 +17,10 @@ const App = () => (
             <AuthRoute exact path="/" component={MainPage} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
+
+            <ProtectedRoute exact path="/boards" component={BoardsContainer} />
+            <ProtectedRoute exact path="/profile" component={ProfileContainer} />
+            <ProtectedRoute exact path="/new_board" component={BoardBuildContainer} />
         </Switch>
     </div>
 );
