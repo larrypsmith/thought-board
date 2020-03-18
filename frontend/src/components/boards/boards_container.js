@@ -4,7 +4,7 @@ import Boards from './boards';
 
 const mapStateToProps = (state) => {
     return {
-        boards: Object.values(state.boards.all)
+        boards: Object.values(state.entities.boards.all)
     };
 };
 
