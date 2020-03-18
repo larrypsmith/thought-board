@@ -2,9 +2,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const NoteSchema = new Schema({
-    Board: {
+    boardId: {
         type: Schema.Types.ObjectId,
         ref: 'boards'
+    },
+    title: {
+        type: String
     },
     caption: {
         type: String,
@@ -12,7 +15,6 @@ const NoteSchema = new Schema({
     },
     url: {
         type: String,
-        required: true
     },
     date: {
         type: Date,
@@ -20,6 +22,6 @@ const NoteSchema = new Schema({
     }
 })
 
-const Board = mongoose.model('board', BoardSchema);
+const Note = mongoose.model('note', NoteSchema);
 
-module.exports = Board;
+module.exports = Note;
