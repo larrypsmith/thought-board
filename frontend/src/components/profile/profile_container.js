@@ -11,7 +11,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchUserBoards: id => dispatch(fetchUserboards(id))
+        fetchUserBoards: id => dispatch(fetchUserBoards(id))
     };
 };
 

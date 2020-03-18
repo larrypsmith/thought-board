@@ -1,5 +1,5 @@
 import React from 'react';
-import Board from './board/board';
+import Boards from '../boards/boards';
 class Profile extends React.Component {
     constructor(props) {
         super(props);
@@ -26,7 +26,7 @@ class Profile extends React.Component {
                 <div>
                     <h2>Your boards</h2>
                     {this.state.boards.map(board => (
-                        <Board key={board._id} />
+                        <Boards key={board._id} />
                     ))}
                 </div>
             );

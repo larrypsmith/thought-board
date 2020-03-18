@@ -1,10 +1,10 @@
 import { getUserBoards, createBoard } from '../util/board_api_util';
 
-export const RECEIVE_USER_BOARDs = "RECEIVE_USER_BOARD";
+export const RECEIVE_USER_BOARDS = "RECEIVE_USER_BOARDS";
 export const RECEIVE_NEW_BOARD = "RECEIVE_NEW_BOARD";
 
 export const receiveUserBoards = boards => ({
-    type: RECEIVE_USER_BOARDs,
+    type: RECEIVE_USER_BOARDS,
     boards
 });
 
@@ -15,7 +15,7 @@ export const receiveNewBoard = board => ({
 
 export const fetchUserBoards = id => dispatch => (
     getUserBoards(id)
-        .then(boards => dispatch(receiveUserBoards))
+        .then(boards => dispatch(receiveUserBoards(boards)))
         .catch(err => console.log(err))
 );
 
