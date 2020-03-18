@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import BoardBox from './board_box';
 
 class Boards extends React.Component {
@@ -24,12 +24,14 @@ class Boards extends React.Component {
             return (<div>There are no Boards</div>)
         } else {
             return (
-                <div>
-                    <h2>Boards</h2>
-                    {this.state.boards.map(board => (
-                        <BoardBox key={board._id} title={board.title} />
-                    ))}
-                </div>
+              <div>
+                <h2>Boards</h2>
+                {this.state.boards.map(board => (
+                //   <Link to={`/boards/${id}`}>
+                    <BoardBox key={board._id} title={board.title} />
+                //   </Link>
+                ))}
+              </div>
             );
         }
     }
