@@ -5,7 +5,7 @@ import BoardBuild from './board_build';
 const mapStateToProps = (state) => {
     return {
         currentUser: state.session.user,
-        newBoard: state.boards.new
+        newBoard: state.entities.boards.new
     };
 };
 
