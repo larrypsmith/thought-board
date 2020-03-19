@@ -45,7 +45,6 @@ class BoardBuild extends React.Component {
                         <input type='submit' value="Submit" />
                     </div>
                 </form>
-                <BoardBox title={this.state.newBoard} />
             </div>
         )
     }
