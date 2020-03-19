@@ -13,11 +13,11 @@ export const receiveNewNote = note => ({
     note
 });
 
-export const fetchBoardNotes = id => dispatch => (
-    getBoardNotes(id)
+export const fetchBoardNotes = id => dispatch => {
+    return getBoardNotes(id)
         .then(notes => dispatch(receiveBoardNotes(notes)))
         .then(err => console.log(err))
-);
+};
 
 export const makeNote = data => dispatch => (
     writeNote(data)

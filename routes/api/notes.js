@@ -34,13 +34,18 @@ router.post('/:board_id',
       })
 })
 
-router.get("/:board_id",
-  passport.authenticate("jwt", { session: false }),
+router.get("/board/:board_id",
+  // passport.authenticate("jwt", { session: false }),
   (req, res) => {
-
     Note.find({ boardId: req.params.board_id })
       .then(notes => res.json(notes))
       .catch(err => res.json(err))
 })
+
+router.patch("/:id/position",
+  (req, res) => {
+    Note.findById({ _id: req.params.id})
+      .then(note => )
+  })
 
 module.exports = router;
