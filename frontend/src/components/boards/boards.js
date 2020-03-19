@@ -12,7 +12,7 @@ class Boards extends React.Component {
     }
 
     componentWillMount() {
-        this.props.fetchUserBoards();
+        this.props.fetchUserBoards(this.props.currentUser.id);
     }
 
     componentWillReceiveProps(newState) {

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const getUserBoards = id => {
+export const getUserBoards = (id) => {
     return axios.get(`/api/boards/user/${id}`);
 };
 
