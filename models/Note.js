@@ -19,7 +19,13 @@ const NoteSchema = new Schema({
     date: {
         type: Date,
         default: Date.now
-    }
+    },
+    xcoord: {
+        type: Number,
+    },
+    ycoord: {
+        type: Number
+    }   
 })
 
 const Note = mongoose.model('note', NoteSchema);
