@@ -19,4 +19,3 @@ export const editNote = data => {
 export const deleteNote = noteId => {
     return axios.delete(`/api/notes/${noteId}`)
 }
-
