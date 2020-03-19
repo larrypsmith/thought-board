@@ -11,16 +11,13 @@ class Profile extends React.Component {
     }
 
     componentDidMount() {
-        console.log(this.props.currentUser.id);
-        this.props.fetchUserBoards(this.props.currentUser.id);
-    }
-
-    componentWillReceiveProps(newState) {
-        this.setState({ boards: newState.boards });
+        this.props.fetchUserBoards(this.props.currentUser.id)
     }
 
     render() {
-        if (this.state.boards.length === 0) {
+        if (!this.props.boards) {
+            return null
+        } else if (this.props.boards.length === 0) {
             return (
                 <div>
                     <div>No boards yet</div>
@@ -34,8 +31,10 @@ class Profile extends React.Component {
                 <div>
                     <div>
                         <h2>Your boards</h2>
-                        {this.state.boards.map(board => (
-                            <Link to={`/boards/${board.id}`}>{board.title}</Link>
+                        {this.props.boards.map(board => (
+                            <Link to={`/boards/${board._id}`} key={board._id}>
+                                {board.title}
+                            </Link>
                         ))}
                     </div>
                     <div>

@@ -5,6 +5,7 @@ const users = require('./routes/api/users');
 const notes = require('./routes/api/notes');
 const bodyParser = require('body-parser');
 const passport = require('passport');
+const boards = require('./routes/api/boards')
 
 app.use(passport.initialize());
 require('./config/passport')(passport);
@@ -15,6 +16,7 @@ app.use(bodyParser.json());
 app.get("/", (req, res) => res.send("Hello World"));
 app.use("/api/users", users);
 app.use("/api/notes", notes);
+app.use("/api/boards", boards);
 
 const db = require('./config/keys').mongoURI;
 mongoose
