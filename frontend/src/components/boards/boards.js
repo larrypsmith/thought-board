@@ -11,7 +11,9 @@ class Boards extends React.Component {
         };
     }
 
-    componentWillMount() {
+    componentDidMount() {
+        debugger
+        console.log(this.props.currentUser.id)
         this.props.fetchUserBoards(this.props.currentUser.id);
     }
 
@@ -20,6 +22,9 @@ class Boards extends React.Component {
     }
 
     render() {
+        if (this.state.currentUser === undefined) {
+            return null
+        }
         if (this.state.boards.length === 0) {
             return (<div>There are no Boards</div>)
         } else {

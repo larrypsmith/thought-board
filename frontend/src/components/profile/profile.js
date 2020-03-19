@@ -1,5 +1,4 @@
 import React from 'react';
-import Boards from '../boards/boards';
 import { Link } from 'react-router-dom';
 
 class Profile extends React.Component {
@@ -11,7 +10,7 @@ class Profile extends React.Component {
         };
     }
 
-    componentWillMount() {
+    componentDidMount() {
         console.log(this.props.currentUser.id);
         this.props.fetchUserBoards(this.props.currentUser.id);
     }
@@ -36,7 +35,7 @@ class Profile extends React.Component {
                     <div>
                         <h2>Your boards</h2>
                         {this.state.boards.map(board => (
-                            <Boards key={board._id} />
+                            <Link to={`/boards/${board.id}`}>{board.title}</Link>
                         ))}
                     </div>
                     <div>
