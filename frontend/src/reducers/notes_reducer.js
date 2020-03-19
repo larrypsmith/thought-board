@@ -6,8 +6,10 @@ const NotesReducer = (state = { all: {}, board: {}, new: undefined }, action) =>
     switch (action.type) {
         case RECEIVE_BOARD_NOTES:
             newState.board = action.notes.data;
+            return newState;
         case RECEIVE_NEW_NOTE:
             newState.new = action.note.data;
+            return newState;
         default:
             return state;
     }

@@ -1,5 +1,4 @@
 import React from 'react';
-import BoardBox from './board_box';
 
 class BoardBuild extends React.Component {
     constructor(props) {
