@@ -15,6 +15,7 @@ const Auth = ({ component: Component, path, loggedIn, exact, state }) => (
     }
   />
 );
+
 // const SpProtected = ({ component: Component, currentUser, ...rest }) => (
 //   <Route 
 //     {...rest}
@@ -23,6 +24,7 @@ const Auth = ({ component: Component, path, loggedIn, exact, state }) => (
 //     }
 //   />
 // )
+
 const Protected = ({ component: Component, loggedIn, ...rest }) => (
   <Route
     {...rest}
