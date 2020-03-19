@@ -36,11 +36,12 @@ router.post('/',
       })
 })
 
-router.get("/",
+router.get("/user/:user_id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
 
-    Board.find({ owner: req.user.id })
+    Board
+      .find({ owner: req.params.user_id })
       .then(boards => res.json(boards))
       .catch(err => res.json(err))
 })

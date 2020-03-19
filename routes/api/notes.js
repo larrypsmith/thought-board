@@ -34,4 +34,13 @@ router.post('/',
       })
 })
 
+router.get("/:board_id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+
+    Note.find({ boardId: req.params.board_id })
+      .then(notes => res.json(notes))
+      .catch(err => res.json(err))
+})
+
 module.exports = router;
