@@ -1,0 +1,59 @@
+.prof-div {
+    display: flex;
+    background: url("splash_page_background.png");
+    height: auto;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.new-board {
+    background-color: rgb(111, 113, 118);
+    opacity: 0.8;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.new-board:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+.prof-head {
+    color: white;
+    font-size: 25px;
+    padding: 20px;
+}
+
+.prof-board-links {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.prof-board-link {
+    background-color: rgb(111, 113, 118);
+    opacity: 0.8;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+    margin: 5px;
+}
+
+.prof-board-link:hover {
+    color: blue;
+    text-decoration: underline;
+}
