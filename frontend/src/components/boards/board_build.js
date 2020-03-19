@@ -20,13 +20,14 @@ class BoardBuild extends React.Component {
         e.preventDefault();
 
         let board = {
-
+            title: this.state.title
         };
 
         this.props.buildBoard(board)
-            // .then((board) => {
-            //     this.props.history.push(`/boards/${board.id}`)
-            // }
+            .then( res => 
+                this.props.history.push(`/boards/${res.board.data._id}`)
+            )
+
     }
 
     update() {
