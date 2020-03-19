@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const users = require('./routes/api/users');
-const boards = require('./routes/api/boards');
 const notes = require('./routes/api/notes');
 const bodyParser = require('body-parser');
 const passport = require('passport');
@@ -15,7 +14,6 @@ app.use(bodyParser.json());
 
 app.get("/", (req, res) => res.send("Hello World"));
 app.use("/api/users", users);
-app.use("/api/boards", boards);
 app.use("/api/notes", notes);
 
 const db = require('./config/keys').mongoURI;
