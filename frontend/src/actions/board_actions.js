@@ -13,7 +13,7 @@ export const receiveNewBoard = board => ({
     board
 });
 
-export const fetchUserBoards = id => dispatch => (
+export const fetchUserBoards = (id) => dispatch => (
     getUserBoards(id)
         .then(boards => dispatch(receiveUserBoards(boards)))
         .catch(err => console.log(err))
