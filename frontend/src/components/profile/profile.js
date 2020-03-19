@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './profile.scss'
 
 class Profile extends React.Component {
     constructor(props) {
@@ -19,26 +20,28 @@ class Profile extends React.Component {
             return null
         } else if (this.props.boards.length === 0) {
             return (
-                <div>
-                    <div>No boards yet</div>
+                <div className='prof-div'>
+                    <div className='prof-head'>No boards yet</div>
                     <div>
-                        <Link to={"/new_board"}>Build a Board</Link>
+                        <Link className='new-board' to={"/new_board"}>Build a Board</Link>
                     </div >
                 </div>
             )
         } else {
             return (
-                <div>
+                <div className='prof-div'>
                     <div>
-                        <h2>Your boards</h2>
-                        {this.props.boards.map(board => (
-                            <Link to={`/boards/${board._id}`} key={board._id}>
+                        <div className='prof-head'>Your boards</div>
+                        <div className='prof-board-links'>
+                            {this.props.boards.map(board => (
+                            <Link className='prof-board-link' to={`/boards/${board._id}`} key={board._id}>
                                 {board.title}
                             </Link>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                     <div>
-                        <Link to={"/new_board"}>Build a Board</Link>
+                        <Link className='new-board' to={"/new_board"}>Build a Board</Link>
                     </div>
                 </div>
             );
