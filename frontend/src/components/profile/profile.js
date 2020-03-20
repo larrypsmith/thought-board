@@ -12,6 +12,7 @@ class Profile extends React.Component {
     }
 
     componentDidMount() {
+        debugger
         this.props.fetchUserBoards(this.props.currentUser.id)
     }
 
@@ -28,6 +29,7 @@ class Profile extends React.Component {
                 </div>
             )
         } else {
+            debugger
             return (
                 <div className='prof-div'>
                     <div>
