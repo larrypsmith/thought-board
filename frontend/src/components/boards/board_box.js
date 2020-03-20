@@ -1,9 +1,10 @@
 import React from 'react';
+import './board.scss'
 
 class BoardBox extends React.Component {
     render() {
         return (
-            <div>
+            <div className='board-main'>
                 {this.props.title}
             </div>
         );
