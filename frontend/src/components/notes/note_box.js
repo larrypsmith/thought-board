@@ -1,7 +1,5 @@
 import React from 'react';
 import Draggable from 'react-draggable';
-import { updateNote } from '../../actions/note_actions';
-
 
 class NoteBox extends React.Component {
     constructor(props) {
@@ -28,7 +26,6 @@ class NoteBox extends React.Component {
                 bounds="parent"
                 defaultPosition={{ x: note.xcoord, y: note.ycoord }}
                 onStop={(e, ui) => this.updatePosition(note, e, ui)}
-                onDrag={(e, ui) => console.log(ui.x, ui.y)}
             >
                 <div className="note">
                     {note.title}

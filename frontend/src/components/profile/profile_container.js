@@ -1,10 +1,12 @@
 import { connect } from 'react-redux';
 import { fetchUserBoards } from '../../actions/board_actions';
+import { boardsByOwner } from '../../reducers/selectors';
 import Profile from './profile';
 
 const mapStateToProps = state => {
+    const boards = boardsByOwner(state.entities.boards, state.session.user)
     return {
-        boards: Object.values(state.entities.boards.user),
+        boards,
         currentUser: state.session.user
     };
 };

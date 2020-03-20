@@ -1,15 +1,13 @@
 import { RECEIVE_USER_BOARDS, RECEIVE_NEW_BOARD } from '../actions/board_actions';
+import { arrayToObject } from './selectors';
 
-const BoardsReducer = (state = { all: {}, user: {}, new: undefined }, action) => {
+const BoardsReducer = (state = {}, action) => {
     Object.freeze(state);
-    let newState = Object.assign({}, state);
     switch (action.type) {
         case RECEIVE_USER_BOARDS:
-            newState.user = action.boards.data;
-            return newState;
+            return Object.assign({}, state, arrayToObject(action.boards.data))
         case RECEIVE_NEW_BOARD:
-            newState.new = action.board.data;
-            return newState;
+            return Object.assign({}, state, { [action.board.data._id]: action.board.data });
         default:
             return state;
     }
