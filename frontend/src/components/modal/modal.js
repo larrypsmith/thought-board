@@ -14,6 +14,9 @@ function Modal({modal, closeModal}) {
         case 'create':
             component = <NoteComposeContainer />;
             break;
+        case 'show':
+            component = <NoteComposeContainer />;
+            break;
         default:
             return null;
     }
@@ -29,7 +32,7 @@ function Modal({modal, closeModal}) {
 
 const mSTP = state => {
     return (
-        {modal: state.us.modal}
+        {modal: state.ui.modal}
     )
 }
 

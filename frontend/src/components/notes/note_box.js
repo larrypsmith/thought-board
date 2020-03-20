@@ -29,6 +29,7 @@ class NoteBox extends React.Component {
             >
                 <div className="note">
                     {note.title}
+                    <button onClick={() => this.props.openModal('show')}>Show</button>
                 </div>
             </Draggable>
         );

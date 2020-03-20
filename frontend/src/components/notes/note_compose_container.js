@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { makeNote } from '../../actions/note_actions';
 import NoteCompose from './note_compose';
-import { closeModal } from '../../actions/modal_actions';
+import { closeModal, openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state) => {
     return {
