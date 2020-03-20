@@ -3,10 +3,11 @@ import { makeNote } from '../../actions/note_actions';
 import NoteCompose from './note_compose';
 import { closeModal, openModal } from '../../actions/modal_actions';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     return {
         currentUser: state.session.user,
-        newNote: state.entities.notes.new
+        newNote: state.entities.notes.new,
+        boardId: ownProps.match.params.id
     };
 };
 
