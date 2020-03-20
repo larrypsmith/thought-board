@@ -16,6 +16,9 @@ const NoteSchema = new Schema({
     url: {
         type: String,
     },
+    imageSrc: {
+        type: String,
+    },
     date: {
         type: Date,
         default: Date.now
