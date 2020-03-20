@@ -23,7 +23,7 @@ class NoteCompose extends React.Component {
 
         let note = {
             text: this.state.text,
-            board: this.props.boardId
+            boardId: this.props.boardId
         };
 
         this.props.makeNote(note);
