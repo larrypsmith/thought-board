@@ -56,10 +56,9 @@ router.patch("/:note_id",
     .catch(err => res.json(err))
 })
 
-router.get("/:board_id",
+router.get("/board/:board_id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-
     Note.find({ boardId: req.params.board_id })
       .then(notes => res.json(notes))
       .catch(err => res.json(err))
