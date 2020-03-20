@@ -1,8 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom'
 import NoteBox from '../notes/note_box'
-import './board_box.scss';
-
+import './board.scss'
 
 class BoardBox extends React.Component {
     constructor(props) {
@@ -18,7 +17,7 @@ class BoardBox extends React.Component {
         const { notes } = this.props;
         if (!notes || !notes.length) return null;
         return (
-            <div className="draggable-parent">
+            <div className="board-main">
                 {
                     notes.map((note, idx) => (
                         <NoteBox
