@@ -1,5 +1,6 @@
 import React from 'react';
 import Draggable from 'react-draggable';
+import { updateNote } from '../../actions/note_actions';
 
 
 class NoteBox extends React.Component {
@@ -8,8 +9,12 @@ class NoteBox extends React.Component {
         this.updatePosition = this.updatePosition.bind(this);
     }
 
-    updatePosition(e, { x, y }) {
-        this.props.updateNote({ 
+    updatePosition(note, e, { x, y }) {
+        this.props.updateNote({
+            id: note._id,
+            title: note.title,
+            caption: note.caption,
+            url: note.url,
             xcoord: x,
             ycoord: y
         })
@@ -22,14 +27,11 @@ class NoteBox extends React.Component {
             <Draggable
                 bounds="parent"
                 defaultPosition={{ x: note.xcoord, y: note.ycoord }}
-                onStop={this.updatePosition}
+                onStop={(e, ui) => this.updatePosition(note, e, ui)}
+                onDrag={(e, ui) => console.log(ui.x, ui.y)}
             >
                 <div className="note">
                     {note.title}
-                    <br/>
-                    x: {note.xcoord}
-                    <br/>
-                    y: {note.ycoord}
                 </div>
             </Draggable>
         );

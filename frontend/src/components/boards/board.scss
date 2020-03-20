@@ -1,3 +1,9 @@
 .board-main {
     background: url('corkboard.jpg');
 }
+
+.board-main > * {
+    background-color: white;
+    width: 100px;
+    height: 100px;
+}
