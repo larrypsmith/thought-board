@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { makeNote } from '../../actions/note_actions';
 import NoteCompose from './note_compose';
+import { closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state) => {
     return {
@@ -11,7 +12,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        makeNote: data => dispatch(makeNote(data))
+        makeNote: data => dispatch(makeNote(data)),
+        closeModal: () => dispatch(closeModal()),
+        openModal: () => dispatch(openModal())
     };
 };
 

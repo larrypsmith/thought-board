@@ -18,6 +18,7 @@ class BoardBox extends React.Component {
         if (!notes || !notes.length) return null;
         return (
             <div className="board-main">
+                <div><button onClick={() => this.props.openModal('create')}>New Note</button></div>
                 {
                     notes.map((note, idx) => (
                         <NoteBox
