@@ -34,18 +34,42 @@ router.post('/:board_id',
       })
 })
 
-router.get("/board/:board_id",
-  // passport.authenticate("jwt", { session: false }),
+router.get("/:note_id",
+  passport.authenticate("jwt", {session: false }),
+  (req, res) => {
+    Note.findById(req.params.note_id)
+      .then(note => res.json(note))
+      .catch(err => res.json(err))
+})
+
+router.patch("/:note_id",
+  passport.authenticate("jwt", {session: false }),
+  (req, res) => {
+    Note.findByIdAndUpdate(req.params.note_id, {
+      title: req.body.title,
+      caption: req.body.caption,
+      url: req.body.url,
+      xcoord: req.body.xcoord,
+      ycoord: req.body.ycoord
+    })
+    .then(note => res.json(note))
+    .catch(err => res.json(err))
+})
+
+router.get("/:board_id",
+  passport.authenticate("jwt", { session: false }),
   (req, res) => {
     Note.find({ boardId: req.params.board_id })
       .then(notes => res.json(notes))
       .catch(err => res.json(err))
 })
 
-router.patch("/:id/position",
+router.delete("/:note_id",
+  passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    Note.findById({ _id: req.params.id})
-      .then(note => )
-  })
+    Note.findOneAndDelete({ id: req.params.note_id })
+      .then(() => res.json("delete successful"))
+      .catch(err => res.json(err))
+})
 
 module.exports = router;
