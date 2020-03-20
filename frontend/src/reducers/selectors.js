@@ -5,8 +5,13 @@ export const arrayToObject = array => {
 }
 
 export const boardsByOwner = (boards = {}, owner) => {
-  debugger
   return (Object
     .values(boards)
     .filter(board => board.owner === owner.id))
+}
+
+export const notesByBoardId = (notes, boardId) => {
+  return Object
+    .values(notes)
+    .filter(note => note.boardId === boardId)
 }

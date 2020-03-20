@@ -5,7 +5,6 @@ import Profile from './profile';
 
 const mapStateToProps = state => {
     const boards = boardsByOwner(state.entities.boards, state.session.user)
-    debugger
     return {
         boards,
         currentUser: state.session.user
