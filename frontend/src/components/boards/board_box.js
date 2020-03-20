@@ -24,6 +24,7 @@ class BoardBox extends React.Component {
                         <NoteBox
                             note={note}
                             key={idx}
+                            updateNote={this.props.updateNote}
                         />    
                     ))
                 }

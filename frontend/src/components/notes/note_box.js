@@ -5,15 +5,11 @@ import Draggable from 'react-draggable';
 class NoteBox extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            xcoord: props.note.xcoord,
-            ycoord: props.note.ycoord
-        }
         this.updatePosition = this.updatePosition.bind(this);
     }
 
     updatePosition(e, { x, y }) {
-        this.setState({
+        this.props.updateNote({ 
             xcoord: x,
             ycoord: y
         })
