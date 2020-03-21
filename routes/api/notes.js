@@ -13,12 +13,12 @@ router.post('/:board_id',
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     const {isValid, errors} = validateNoteInput(req.body)
-    //upload code for image
+    
     singleUpload(req, res, function (err) {
       if (err) {
         return res.status(422).json({ errors: err.message });
       }
-      return res.json({ 'imageUrl': req.file.location, 'postId': req.body.postId, 'fileName': req.file.originalname });
+      return res.json({ 'imageUrl': req.file.location, 'fileName': req.file.originalname });
     })
 
     if(!isValid) {
@@ -59,6 +59,7 @@ router.patch("/:note_id",
       title: req.body.title,
       caption: req.body.caption,
       url: req.body.url,
+      fileName: req.body.fileName,
       xcoord: req.body.xcoord,
       ycoord: req.body.ycoord
     })
