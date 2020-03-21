@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom'
 import NoteBox from '../notes/note_box'
 import './board.scss'
 
+
 class BoardBox extends React.Component {
     constructor(props) {
         super(props);
