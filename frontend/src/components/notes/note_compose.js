@@ -37,6 +37,7 @@ class NoteCompose extends React.Component {
     render() {
         return (
           <div>
+            <button onClick={this.props.closeModal}>Close</button>
             <form onSubmit={this.handleSubmit}>
               <div>
                 <input

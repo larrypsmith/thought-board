@@ -17,16 +17,21 @@ class BoardBox extends React.Component {
         const { notes } = this.props;
         if (!notes || !notes.length) return null;
         return (
-            <div className="board-main">
-                {
-                    notes.map((note, idx) => (
-                        <NoteBox
-                            note={note}
-                            key={idx}
-                            updateNote={this.props.updateNote}
-                        />
-                    ))
-                }
+            <div>
+                <div><button onClick={() => this.props.openModal('create')}>New Note</button></div>
+                <div className="board-main">
+                    
+                    {
+                        notes.map((note, idx) => (
+                            <NoteBox
+                                note={note}
+                                key={idx}
+                                updateNote={this.props.updateNote}
+                                openModal={this.props.openModal}
+                            />    
+                        ))
+                    }
+                </div>
             </div>
         );
     }
