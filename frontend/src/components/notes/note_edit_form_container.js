@@ -3,9 +3,12 @@ import { closeModal, openModal } from '../../actions/modal_actions';
 import { updateNote, fetchNote, eraseNote } from '../../actions/note_actions';
 import NoteEditForm from './note_edit_form';
 
-const mapStateToProps = (state, ownProps) => ({
-    note: state.entities.cards[ownProps.match.params.noteId]
-});
+const mapStateToProps = (state, ownProps) => {
+    debugger
+    return {
+        note: state.entities.notes[ownProps.match.params.noteId]
+    }
+};
 
 const mapDispatchToProps = dispatch => ({
     fetchNote: noteId => dispatch(fetchNote(noteId)),

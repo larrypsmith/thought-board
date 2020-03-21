@@ -11,7 +11,6 @@ function Modal({modal, closeModal}) {
     }
     debugger
     let showComp = <div>
-        <p>THESE ARE TEST WORDS</p>
         <div>{modal.action.title}</div>
         <div>{modal.action.caption}</div>
         <div>{modal.action.url}</div>
@@ -26,8 +25,8 @@ function Modal({modal, closeModal}) {
             component = showComp;
             break;
         case 'edit':
-            component = <NoteComposeContainer />;
-            // component = <NoteEditFormContainer />;
+            component = <NoteEditFormContainer />;
+            break;
         default:
             return null;
     }
