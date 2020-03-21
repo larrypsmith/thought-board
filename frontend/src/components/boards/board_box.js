@@ -43,6 +43,8 @@ class BoardBox extends React.Component {
                 note={note}
                 key={idx}
                 updateNote={this.props.updateNote}
+                style={{ position: 'absolute'}}
+
             />)
         })
         return (
@@ -58,6 +60,8 @@ class BoardBox extends React.Component {
                 onPanMove={(x, y) => this.handlePanMove(x, y)}
             >
                 <div style={{ position: 'absolute', top: `${y * 100}%`, left: `${x * 100}%`, width: 10, height: 10, backgroundColor: 'black' }} />
+                <div style={{ position: 'absolute', top: `${y * 50}%`, left: `${x * 150}%`, width: 10, height: 10, backgroundColor: 'green' }} />
+                <div style={{ position: 'absolute', top: `${y * 75}%`, left: `${x * 125}%`, width: 10, height: 10, backgroundColor: 'black' }} />
                 {allNotes}
             </InteractiveDiv>
         )

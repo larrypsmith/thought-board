@@ -26,6 +26,7 @@ class NoteBox extends React.Component {
                 bounds="parent"
                 defaultPosition={{ x: note.xcoord, y: note.ycoord }}
                 onStop={(e, ui) => this.updatePosition(note, e, ui)}
+                onDrag={e => e.stopPropagation()}
             >
                 <div className="note">
                     {note.title}
