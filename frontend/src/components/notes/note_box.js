@@ -1,5 +1,6 @@
 import React from 'react';
 import Draggable from 'react-draggable';
+import './notes.scss'
 
 class NoteBox extends React.Component {
     constructor(props) {
