@@ -9,7 +9,7 @@ const ImageReducer = (state = {}, action) => {
         case RECEIVE_IMAGE:
             let newState = Object.assign({}, state);
             newState[action.image.data._id] = action.image.data;
-            return newSatate;            
+            return newState;            
         default:
             return state;
     };

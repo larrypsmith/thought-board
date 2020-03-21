@@ -7,7 +7,7 @@ import imageReducer from './image_reducer';
 const entitiesReducer = combineReducers({
     boards: boardsReducer,
     notes: notesReducer,
-    image: imageReducer
+    images: imageReducer
 });
 
 export default entitiesReducer;
