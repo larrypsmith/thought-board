@@ -35,6 +35,7 @@ class NoteCompose extends React.Component {
     }
 
     render() {
+      debugger
         return (
           <div>
             <button onClick={this.props.closeModal}>Close</button>

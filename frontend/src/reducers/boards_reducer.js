@@ -1,4 +1,4 @@
-import { RECEIVE_USER_BOARDS, RECEIVE_NEW_BOARD } from '../actions/board_actions';
+import { RECEIVE_USER_BOARDS, RECEIVE_NEW_BOARD, RECEIVE_BOARD } from '../actions/board_actions';
 import { arrayToObject } from './selectors';
 
 const BoardsReducer = (state = {}, action) => {
@@ -8,6 +8,8 @@ const BoardsReducer = (state = {}, action) => {
             return Object.assign({}, state, arrayToObject(action.boards.data))
         case RECEIVE_NEW_BOARD:
             return Object.assign({}, state, { [action.board.data._id]: action.board.data });
+        case RECEIVE_BOARD:
+            return Object.assign({}, state, { [action.board.data._id]: action.board.data })
         default:
             return state;
     }
