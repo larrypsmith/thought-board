@@ -35,7 +35,6 @@ router.post('/:board_id',
             title: req.body.title,
             caption: req.body.caption,
             url: req.body.url,
-            //imageSrc: req.body.data.imageUrl add to note schema
         })
           newNote
             .save()
