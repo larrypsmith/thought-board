@@ -17,5 +17,6 @@ export const editNote = data => {
 }
 
 export const deleteNote = noteId => {
+    debugger
     return axios.delete(`/api/notes/${noteId}`)
 }
