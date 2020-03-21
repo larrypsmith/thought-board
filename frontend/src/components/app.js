@@ -10,9 +10,11 @@ import ProfileContainer from "../components/profile/profile_container";
 import BoardBuildContainer from '../components/boards/board_build_container';
 import NoteComposeContainer from '../components/notes/note_compose_container';
 import BoardBoxContainer from '../components/boards/board_box_container';
+import ModalContainer from '../components/modal/modal';
 
 const App = () => (
     <div>
+        <ModalContainer />
         <NavBarContainer />
         <Switch>
             <AuthRoute exact path="/" component={MainPage} />

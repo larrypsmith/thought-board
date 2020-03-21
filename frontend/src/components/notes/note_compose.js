@@ -1,5 +1,6 @@
 import React from 'react';
 import NoteBox from './note_box';
+import { withRouter } from 'react-router-dom'
 
 class NoteCompose extends React.Component {
     constructor(props) {
@@ -21,9 +22,10 @@ class NoteCompose extends React.Component {
         e.preventDefault();
 
         let note = {
-            text: this.state.text
+            text: this.state.text,
+            boardId: this.props.boardId
         };
-
+        debugger
         this.props.makeNote(note);
         this.setState({text: ''});
     }
@@ -35,6 +37,7 @@ class NoteCompose extends React.Component {
     render() {
         return (
           <div>
+            <button onClick={this.props.closeModal}>Close</button>
             <form onSubmit={this.handleSubmit}>
               <div>
                 <input
@@ -53,4 +56,4 @@ class NoteCompose extends React.Component {
     }
 }
 
-export default NoteCompose;
+export default withRouter(NoteCompose);

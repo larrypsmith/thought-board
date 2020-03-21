@@ -1,7 +1,6 @@
 import React from 'react';
 import Draggable from 'react-draggable';
-import { updateNote } from '../../actions/note_actions';
-
+import './notes.scss'
 
 class NoteBox extends React.Component {
     constructor(props) {
@@ -28,10 +27,12 @@ class NoteBox extends React.Component {
                 bounds="parent"
                 defaultPosition={{ x: note.xcoord, y: note.ycoord }}
                 onStop={(e, ui) => this.updatePosition(note, e, ui)}
-                onDrag={(e, ui) => console.log(ui.x, ui.y)}
+                onDrag={e => e.stopPropagation()}
             >
                 <div className="note">
                     {note.title}
+                    <button onClick={() => this.props.openModal('show', note._id, note.title, note.caption, note.url)}>Show</button>
+                    <button onClick={() => this.props.openModal('edit', note._id, note.title, note.caption, note.url)}>Edit</button>
                 </div>
             </Draggable>
         );

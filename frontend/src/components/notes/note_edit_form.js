@@ -4,9 +4,7 @@ import { withRouter } from 'react-router-dom';
 class NoteEditForm extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = this.props.note;
-
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -24,6 +22,7 @@ class NoteEditForm extends React.Component {
     }
 
     render() {
+        console.log(this.props.note._id)
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
@@ -48,7 +47,8 @@ class NoteEditForm extends React.Component {
                         />
                     </label>
                     <br/>
-                    <button onClick={this.props.eraseNote(this.props.note.id)}>
+                    <input type='submit' value="Submit Edit"/>
+                    <button onClick={() => this.props.eraseNote(this.props.note._id)}>
                         Delete Note
                     </button>
                 </form>

@@ -66,11 +66,9 @@ router.get("/board/:board_id",
       .catch(err => res.json(err))
 })
 
-router.delete("/:note_id",
-  passport.authenticate("jwt", { session: false }),
-  (req, res) => {
-    Note.findOneAndDelete({ id: req.params.note_id })
-      .then(() => res.json("delete successful"))
+router.delete("/:note_id", (req, res) => {
+    Note.findOneAndDelete({ _id: req.params.note_id })
+      .then((note) => res.json(note))
       .catch(err => res.json(err))
 })
 

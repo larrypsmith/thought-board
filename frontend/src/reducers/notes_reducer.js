@@ -5,21 +5,18 @@ import {
     REMOVE_NOTE
 } from '../actions/note_actions';
 
-const NotesReducer = (state = { all: {}, board: {}, new: undefined }, action) => {
+import { arrayToObject } from './selectors'
+
+const NotesReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState = Object.assign({}, state);
     switch (action.type) {
         case RECEIVE_BOARD_NOTES:
-            newState.board = action.notes.data;
-            return newState;
+            return Object.assign(newState, arrayToObject(action.notes.data));
         case RECEIVE_NEW_NOTE:
-            newState.new = action.note.data;
-            return newState;
+            return Object.assign(newState, { [action.note.data._id]: action.note.data })
         case RECEIVE_NOTE:
-            const oldNote = newState.board.find(note => note._id === action.note.data._id)
-            const oldNoteIndex = newState.board.indexOf(oldNote);
-            newState.board[oldNoteIndex] = action.note.data;
-            return newState;
+            return Object.assign(newState, { [action.note.data._id]: action.note.data })
         case REMOVE_NOTE:
             delete newState[action.noteId];
             return newState;
