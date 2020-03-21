@@ -29,8 +29,8 @@ class NoteBox extends React.Component {
             >
                 <div className="note">
                     {note.title}
-                    <button onClick={() => this.props.openModal('show', note.id, note.title, note.caption, note.url)}>Show</button>
-                    <button onClick={() => this.props.openModal('edit', note.id, note.title, note.caption, note.url)}>Edit</button>
+                    <button onClick={() => this.props.openModal('show', note._id, note.title, note.caption, note.url)}>Show</button>
+                    <button onClick={() => this.props.openModal('edit', note._id, note.title, note.caption, note.url)}>Edit</button>
                 </div>
             </Draggable>
         );

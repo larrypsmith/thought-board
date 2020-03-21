@@ -4,9 +4,9 @@ import { updateNote, fetchNote, eraseNote } from '../../actions/note_actions';
 import NoteEditForm from './note_edit_form';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
+    
     return {
-        note: state.entities.notes[ownProps.match.params.noteId]
+        note: state.entities.notes[state.ui.modal.action.id]
     }
 };
 
@@ -16,7 +16,6 @@ const mapDispatchToProps = dispatch => ({
     eraseNote: noteId => dispatch(eraseNote(noteId)),
     closeModal: () => dispatch(closeModal()),
     openModal: () => dispatch(openModal())
-
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NoteEditForm);

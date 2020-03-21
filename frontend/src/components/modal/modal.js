@@ -9,7 +9,7 @@ function Modal({modal, closeModal}) {
     if (!modal) {
         return null;
     }
-    debugger
+    
     let showComp = <div>
         <div>{modal.action.title}</div>
         <div>{modal.action.caption}</div>

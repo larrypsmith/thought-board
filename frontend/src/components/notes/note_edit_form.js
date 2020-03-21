@@ -48,6 +48,7 @@ class NoteEditForm extends React.Component {
                         />
                     </label>
                     <br/>
+                    <input type='submit' value="Submit Edit"/>
                     <button onClick={this.props.eraseNote(this.props.note.id)}>
                         Delete Note
                     </button>
