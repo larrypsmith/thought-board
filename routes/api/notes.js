@@ -4,8 +4,6 @@ const passport = require("passport")
 const Board = require('../../models/Board');
 const Note = require('../../models/Note');
 const validateNoteInput = require("../../validation/notes")
-const upload = require('./photo_upload_aws');
-const singleUpload = upload.single('image');
 
 router.get("/test", (req, res) => res.json({ msg: "This is the notes route" }));
 
@@ -13,13 +11,6 @@ router.post('/:board_id',
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     const {isValid, errors} = validateNoteInput(req.body)
-    
-    singleUpload(req, res, function (err) {
-      if (err) {
-        return res.status(422).json({ errors: err.message });
-      }
-      return res.json({ 'imageUrl': req.file.location, 'fileName': req.file.originalname });
-    })
 
     if(!isValid) {
       return res.status(400).json(errors)
