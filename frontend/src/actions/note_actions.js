@@ -51,6 +51,6 @@ export const updateNote = data => dispatch => (
 
 export const eraseNote = noteId => dispatch => (
     deleteNote(noteId)
-        .then(note => dispatch (removeNote(note.id)))
+        .then(note => dispatch(removeNote(note.id)))
         .catch(err => console.log(err))
 )
