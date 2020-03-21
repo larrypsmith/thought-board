@@ -2,5 +2,16 @@
     background: url('corkboard.jpg');
     height: 100vh;
     width: 100vw;
+    border: 3px solid green !important;
 }
 
+.notes-parent {
+    border: 3px solid red !important;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.notes-parent > * {
+    border: 3px solid blue !important;
+}
