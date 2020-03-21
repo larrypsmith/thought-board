@@ -7,7 +7,7 @@ const singleUpload = upload.single('image');
 
 router.get("/note/:note_id", (req, res) => {
     Image.find({ noteId: req.params.note_id })
-        .then(images => res.json(images))
+        .then(image => res.json(image))
         .catch(err => res.status(400).json(err))
 });
 
