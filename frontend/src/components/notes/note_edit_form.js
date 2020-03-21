@@ -28,21 +28,21 @@ class NoteEditForm extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <label>Title
                         <input type='text'
-                            value={this.props.note.title}
+                            value={this.state.title}
                             onChange={this.update('title')}
                         />
                     </label>
                     <br/>
                     <label>Caption
                         <input type='text'
-                            value={this.props.note.caption}
+                            value={this.state.caption}
                             onChange={this.update('caption')}
                         />
                     </label>
                     <br/>
                     <label>url
                         <input type="text"
-                            value={this.props.note.url}
+                            value={this.state.url}
                             onChange={this.update('url')}
                         />
                     </label>
