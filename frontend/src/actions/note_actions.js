@@ -43,11 +43,13 @@ export const makeNote = data => dispatch => (
         .catch(err => console.log(err))
 );
 
-export const updateNote = data => dispatch => (
+export const updateNote = data => dispatch => {
+    return (
     editNote(data)
         .then(note => dispatch(receiveNote(note)))
         .catch(err => console.log(err))
-)  
+    )
+}
 
 export const eraseNote = noteId => dispatch => (
     deleteNote(noteId)

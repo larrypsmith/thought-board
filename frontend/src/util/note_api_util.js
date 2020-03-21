@@ -13,10 +13,9 @@ export const writeNote = data => {
 };
 
 export const editNote = data => {
-    return axios.patch(`/api/notes/${data.id}`, data)
+    return axios.patch(`/api/notes/${data._id}`, data)
 }
 
 export const deleteNote = noteId => {
-    debugger
     return axios.delete(`/api/notes/${noteId}`)
 }

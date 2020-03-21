@@ -25,7 +25,6 @@ class NoteCompose extends React.Component {
             text: this.state.text,
             boardId: this.props.boardId
         };
-        debugger
         this.props.makeNote(note);
         this.setState({text: ''});
     }
