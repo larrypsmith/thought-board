@@ -7,9 +7,10 @@ class NoteCompose extends React.Component {
         super(props);
 
         this.state = {
-            text: '',
+            title: '',
+            caption: '',
             newNote: '',
-            boardId: ''
+            boardId: '',
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,17 +24,19 @@ class NoteCompose extends React.Component {
         e.preventDefault();
 
         let note = {
-            text: this.state.text,
-            boardId: this.props.boardId
+            title: this.state.title,
+            caption: this.state.caption,
+            boardId: this.props.boardId,
+            // xcoord: 100,
+            // ycoord: 100
         };
-        debugger
-        // this.setState({text: '', boardId);
+
         this.props.makeNote(note)
         .then( () => this.props.closeModal())
     }
 
-    update() {
-        return e => this.setState({ text: e.currentTarget.value });
+    update(field) {
+        return e => this.setState({ [field]: e.currentTarget.value });
     }
 
     render() {
@@ -43,11 +46,20 @@ class NoteCompose extends React.Component {
             <form onSubmit={this.handleSubmit}>
               <div>
                 <input
+                  type="text"
+                  value={this.state.title}
+                  onChange={this.update('title')}
+                  placeholder="Title of note"
+
+                />
+                <br />
+                <input
                   type="textarea"
-                  value={this.state.text}
-                  onChange={this.update()}
+                  value={this.state.caption}
+                  onChange={this.update('caption')}
                   placeholder="Write a note..."
                 />
+                <br />
                 <input type="submit" value="Submit" />
               </div>
             </form>

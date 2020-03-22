@@ -4,7 +4,6 @@ import NoteCompose from './note_compose';
 import { closeModal, openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state) => {
-    debugger
     return {
         currentUser: state.session.user,
         newNote: state.entities.notes.new,
