@@ -9,7 +9,7 @@ const BoardsReducer = (state = {}, action) => {
         case RECEIVE_NEW_BOARD:
             return Object.assign({}, state, { [action.board.data._id]: action.board.data });
         case RECEIVE_BOARD:
-            return Object.assign({}, state, { [action.board.data._id]: action.board.data })
+            return  action.board.data._id
         default:
             return state;
     }

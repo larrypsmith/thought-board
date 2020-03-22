@@ -9,6 +9,7 @@ class NoteCompose extends React.Component {
         this.state = {
             text: '',
             newNote: '',
+            boardId: ''
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,8 +27,9 @@ class NoteCompose extends React.Component {
             boardId: this.props.boardId
         };
         debugger
-        this.props.makeNote(note);
-        this.setState({text: ''});
+        // this.setState({text: '', boardId);
+        this.props.makeNote(note)
+        .then( () => this.props.closeModal())
     }
 
     update() {
@@ -35,7 +37,6 @@ class NoteCompose extends React.Component {
     }
 
     render() {
-      debugger
         return (
           <div>
             <button onClick={this.props.closeModal}>Close</button>
