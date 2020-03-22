@@ -44,8 +44,8 @@ class ImageUpload extends React.Component {
             if (this.fileInput.current.files[0].type === 'image/jpg' ||
                 this.fileInput.current.files[0].type === 'image/png') {
                 const image = new FormDate();
-                image.append('noteId', this.props.note._id);
                 image.append('image', this.state.file);
+                this.props.uploadImage(image);
                 this.setState({
                     errors: [],
                     inputReset: Date.now(),
