@@ -26,6 +26,8 @@ router.post('/:board_id',
             title: req.body.title,
             caption: req.body.caption,
             url: req.body.url,
+            xcoord: req.body.xcoord,
+            ycoord: req.body.ycoord
         })
           newNote
             .save()
