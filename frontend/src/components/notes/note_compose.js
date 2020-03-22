@@ -27,8 +27,8 @@ class NoteCompose extends React.Component {
             title: this.state.title,
             caption: this.state.caption,
             boardId: this.props.boardId,
-            // xcoord: 100,
-            // ycoord: 100
+            xcoord: 100,
+            ycoord: 100
         };
 
         this.props.makeNote(note)
