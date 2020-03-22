@@ -33,6 +33,7 @@ class NoteCompose extends React.Component {
 
         this.props.makeNote(note)
         .then( () => this.props.closeModal())
+
     }
 
     update(field) {

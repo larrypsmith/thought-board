@@ -11,6 +11,7 @@ router.post('/:board_id',
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     const {isValid, errors} = validateNoteInput(req.body)
+
     if(!isValid) {
       return res.status(400).json(errors)
     }
@@ -49,6 +50,7 @@ router.patch("/:note_id",
       title: req.body.title,
       caption: req.body.caption,
       url: req.body.url,
+      fileName: req.body.fileName,
       xcoord: req.body.xcoord,
       ycoord: req.body.ycoord
     })
