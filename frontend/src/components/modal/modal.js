@@ -11,8 +11,8 @@ function Modal({modal, closeModal}) {
     }
     
     let showComp = <div>
-        <div>{modal.action.title}</div>
-        <div>{modal.action.caption}</div>
+        <div className='show-title'>{modal.action.title}</div>
+        <div className='show-caption'>{modal.action.caption}</div>
         <div>{modal.action.url}</div>
     </div>
 

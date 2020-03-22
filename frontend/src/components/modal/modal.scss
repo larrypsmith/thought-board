@@ -9,12 +9,22 @@
  }
 
 .modal-child {
+    display: flex;
     position: relative;
     top: 20%;
-    width: 500px;
+    width: 300px;
+    height: auto;
     margin: 0 auto;
-    transform: translate(-50%, -50%);
-    background: white;
+    // transform: translate(-50%, -50%);
+    background: #F7EC7D;
+}
+
+.show-title {
     display: flex;
-    border-radius: 25px;
+    padding: 4px;
+    justify-content: center;
+}
+
+.show-caption {
+    padding: 4px;
 }
