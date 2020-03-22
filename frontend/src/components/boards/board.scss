@@ -1,3 +1,32 @@
+.board-box-cont {
+}
+
+.new-note-btn-div {
+    display: flex;
+}
+
+.new-note-btn {
+    display: flex;
+    position: absolute;
+    z-index: 5;
+    padding: 7px;
+    cursor: pointer;
+    border-radius: 7px;
+    background-color: #7FC6D0;
+    border: none;
+    color: white;
+    font-size: 14px;
+    margin: 3px;
+}
+
+.new-note-btn:hover {
+    background-color: blue;
+}
+
+.new-note-btn:focus {
+    outline: none;
+}
+
 .board-main {
     background: url('corkboard.jpg');
     height: 100vh;
