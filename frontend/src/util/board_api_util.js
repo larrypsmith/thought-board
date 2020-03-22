@@ -8,3 +8,6 @@ export const createBoard = data => {
     return axios.post('/api/boards', data);
 };
 
+export const getBoard = boardId => {
+    return axios.get(`/api/boards/${boardId}`)
+}

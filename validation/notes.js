@@ -6,8 +6,8 @@ module.exports = function validateNoteInput(data) {
 
     data.caption = validText(data.caption) ? data.caption : '';
 
-    if (!Validator.isLength(data.caption, { min: 15, max: 150 })) {
-        errors.caption = 'caption must be between 15 and 150 characters';
+    if (!Validator.isLength(data.caption, { min: 4 })) {
+        errors.caption = 'caption must be at least 4 characters';
     }
 
     if (Validator.isEmpty(data.caption)) {

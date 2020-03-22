@@ -9,7 +9,7 @@ export const getNote = noteId => {
 }
 
 export const writeNote = data => {
-    return axios.post('/api/notes/', data);
+    return axios.post(`/api/notes/${data.boardId}`, data);
 };
 
 export const editNote = data => {
