@@ -1,6 +1,3 @@
-.board-box-cont {
-}
-
 .new-note-btn-div {
     display: flex;
 }
@@ -27,6 +24,26 @@
     outline: none;
 }
 
+.board-build-header {
+    text-align: center;
+}
+
+.board-build-form {
+    width: 275px;
+    margin: 0 auto;
+}
+
+.build-form input {
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: none;
+    margin: 10px;
+}
+
+.build-form input:focus {
+    outline: none
+}
+
 .board-main {
     background: url('corkboard.jpg');
     height: 100vh;
@@ -38,3 +55,4 @@
     width: 100%;
     position: relative;
 }
+
