@@ -11,7 +11,7 @@ import BoardBuildContainer from '../components/boards/board_build_container';
 import NoteComposeContainer from '../components/notes/note_compose_container';
 import BoardBoxContainer from '../components/boards/board_box_container';
 import ModalContainer from '../components/modal/modal';
-import CanvasTest from '../components/canvas_test';
+import CanvasTest from '../components/canvas_test/canvas_test';
 
 const App = () => (
     <div>
