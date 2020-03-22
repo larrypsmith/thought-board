@@ -1,6 +1,8 @@
 import React from 'react';
 import NoteBox from './note_box';
 import { withRouter } from 'react-router-dom'
+import Image from '../image/image';
+import ImageUploadContainer from '../image_upload/image_upload_container';
 
 class NoteCompose extends React.Component {
     constructor(props) {
@@ -11,6 +13,7 @@ class NoteCompose extends React.Component {
             caption: '',
             newNote: '',
             boardId: '',
+            image: {},
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,28 +25,31 @@ class NoteCompose extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        // e.stopPropagation();
 
         let note = {
             title: this.state.title,
             caption: this.state.caption,
             boardId: this.props.boardId,
-            // xcoord: 100,
-            // ycoord: 100
+            image: this.state.image,
+            xcoord: 100,
+            ycoord: 100
         };
 
         this.props.makeNote(note)
-        .then( () => this.props.closeModal())
+        // .then( () => this.props.closeModal())
 
     }
 
     update(field) {
+
         return e => this.setState({ [field]: e.currentTarget.value });
     }
 
     render() {
         return (
           <div>
-            <button onClick={this.props.closeModal}>Close</button>
+            {/* <button onClick={this.props.closeModal}>Close</button> */}
             <form onSubmit={this.handleSubmit}>
               <div>
                 <input
@@ -53,6 +59,10 @@ class NoteCompose extends React.Component {
                   placeholder="Title of note"
 
                 />
+                <br />
+                <Image />
+                <br />
+                <ImageUploadContainer update={this.update('image')} />
                 <br />
                 <input
                   type="textarea"

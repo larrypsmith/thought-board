@@ -16,6 +16,10 @@ export const editNote = data => {
     return axios.patch(`/api/notes/${data._id}`, data)
 }
 
+export const updateNoteImage = (imageData, note) => {
+    return axios.patch(`api/notes/${note._id}`, imageData)
+}
+
 export const deleteNote = noteId => {
     return axios.delete(`/api/notes/${noteId}`)
 }

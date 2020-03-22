@@ -49,7 +49,7 @@ router.patch("/:note_id",
     Note.findByIdAndUpdate(req.params.note_id, {
       title: req.body.title,
       caption: req.body.caption,
-      url: req.body.url,
+      image: req.body.image,               
       fileName: req.body.fileName,
       xcoord: req.body.xcoord,
       ycoord: req.body.ycoord
