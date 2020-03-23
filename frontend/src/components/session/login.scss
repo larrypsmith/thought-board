@@ -28,7 +28,14 @@
     margin: 10px;
 }
 
-.login-form input:focus {
+.login-form button {
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: none;
+    margin: 10px;
+}
+
+.login-form button:focus {
     outline: none
 }
 

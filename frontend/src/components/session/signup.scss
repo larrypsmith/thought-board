@@ -28,7 +28,14 @@
     margin: 10px;
 }
 
-.signup-form input:focus {
+.signup-form button {
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: none;
+    margin: 10px;
+}
+
+.signup-form button:focus {
     outline: none
 }
 
