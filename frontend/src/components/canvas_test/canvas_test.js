@@ -26,6 +26,7 @@ export default class CanvasTest extends React.Component {
       endX: this.box2Ref.current.offsetLeft,
       endY: this.box2Ref.current.offsetTop
     })
+    debugger
     const { startX, startY, endX, endY } = this.state;
     const canvas = this.canvasRef.current;
     const ctx = canvas.getContext("2d");
@@ -43,7 +44,7 @@ export default class CanvasTest extends React.Component {
 
   handleDrag(e, ui) {
     const { offsetLeft, offsetHeight } = e.target
-    this.setState
+    // this.setState
   }
 
   handleStop(e, ui) {
