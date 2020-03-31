@@ -8,9 +8,9 @@ export const getImagesByNote = id => {
     return axios.get(`/api/images/notes/${id}`);
 }
 
+
 export const uploadImage = data => {
-    
-    return axios.post("/api/images/uploadImage", data)
+    return axios.post("/api/image/uploadImage", data)
         .catch(err => console.log(err));
 }
 

@@ -7,7 +7,6 @@ const NoteSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'boards'
     },
-    image: ImageSchema,
     title: {
         type: String
     },

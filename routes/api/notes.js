@@ -10,6 +10,7 @@ router.get("/test", (req, res) => res.json({ msg: "This is the notes route" }));
 router.post('/:board_id',
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
+    debugger
     const {isValid, errors} = validateNoteInput(req.body)
 
     if(!isValid) {
@@ -25,7 +26,6 @@ router.post('/:board_id',
             boardId: req.params.board_id,
             title: req.body.title,
             caption: req.body.caption,
-            url: req.body.url,
         })
           newNote
             .save()
@@ -48,8 +48,7 @@ router.patch("/:note_id",
   (req, res) => {
     Note.findByIdAndUpdate(req.params.note_id, {
       title: req.body.title,
-      caption: req.body.caption,
-      image: req.body.image,               
+      caption: req.body.caption,             
       fileName: req.body.fileName,
       xcoord: req.body.xcoord,
       ycoord: req.body.ycoord

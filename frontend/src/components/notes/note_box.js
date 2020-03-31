@@ -1,7 +1,7 @@
 import React from 'react';
 import Draggable from 'react-draggable';
 import './notes.scss'
-import Image from '../image/image';
+
 
 class NoteBox extends React.Component {
     constructor(props) {
@@ -33,7 +33,7 @@ class NoteBox extends React.Component {
                 <div className="note">
                     {note.title}
                     <br/>
-                    <Image />
+                    <img src={note.imageUrl}></img>
                     <button onClick={() => this.props.openModal('show', note._id, note.title, note.caption, note.url)}>Show</button>
                     <button onClick={() => this.props.openModal('edit', note._id, note.title, note.caption, note.url)}>Edit</button>
                 </div>
