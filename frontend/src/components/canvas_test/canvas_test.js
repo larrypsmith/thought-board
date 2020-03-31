@@ -1,80 +1,80 @@
 import React from 'react';
-import Draggable from 'react-draggable';
-
 import './canvas_test.scss'
 
 export default class CanvasTest extends React.Component {
   constructor(props) {
     super(props);
     this.canvasRef = React.createRef();
-    this.box1Ref = React.createRef();
-    this.box2Ref = React.createRef();
-    this.handleDrag = this.handleDrag.bind(this);
-    this.handleStop = this.handleStop.bind(this);
+    this.board = {
+      width: 500,
+      height: 500
+    };
     this.state = {
-      startX: null,
-      startY: null,
-      endX: null,
-      endY: null
+      box1Pos: this.randomPosition(),
+      box2Pos: this.randomPosition()
     }
+    this.draw = this.draw.bind(this);
+    this.getContext = this.getContext.bind(this);
+    this.randomPosition = this.randomPosition.bind(this);
   }
 
   componentDidMount() {
-    this.setState({
-      startX: this.box1Ref.current.offsetLeft,
-      startY: this.box1Ref.current.offsetTop,
-      endX: this.box2Ref.current.offsetLeft,
-      endY: this.box2Ref.current.offsetTop
-    })
-    debugger
-    const { startX, startY, endX, endY } = this.state;
-    const canvas = this.canvasRef.current;
-    const ctx = canvas.getContext("2d");
-    ctx.beginPath();
-    ctx.moveTo(startX, startY);
-    ctx.lineTo(endX, endY);
-    ctx.closePath();
-    ctx.lineWidth = 1;
-    ctx.strokeStyle = 'red';
-    ctx.stroke();
+    const { width, height } = this.board;
+    this.c = this.getContext();
+    this.draw();
+    this.c.strokeStyle = "blue";
+    this.c.lineWidth = 1;
+    this.c.strokeRect(0, 0, width, height);
   }
 
   componentDidUpdate() {
   }
 
-  handleDrag(e, ui) {
-    const { offsetLeft, offsetHeight } = e.target
-    // this.setState
+  getContext() {
+    const canvas = this.canvasRef.current
+    return canvas.getContext("2d");
   }
 
-  handleStop(e, ui) {
+  draw() {
+    const { box1Pos: { x: x1, y: y1 },
+            box2Pos: { x: x2, y: y2 }
+          } = this.state;
+    this.c.lineWidth = 1;
+    this.c.strokeStyle = "red";
+    this.c.beginPath();
+    this.c.moveTo(x1, y1);
+    this.c.lineTo(x2, y2);
+    this.c.closePath();
+    this.c.stroke();
+  }
+
+  randomPosition() {
+    const { width, height } = this.board;
+    return {
+      x: Math.random() * width,
+      y: Math.random() * height
+    }
+  }
+
+  getPosition() {
     
   }
 
   render() {
     return (
       <div className="canvas-test-parent">
-        <canvas ref={this.canvasRef}/>
+        <canvas
+          ref={this.canvasRef}
+          width="500"
+          height="500"
+        ></canvas>
 
-        <Draggable
-          bounds="parent"
-          onDrag={this.handleDrag}
-          // onStop={this.handleStop}
-          // defaultPosition={{x: 50, y: 200}}
-        >
-          <div ref={this.box1Ref}>
-            DRAG ME
-          </div>
-        </Draggable>
-        <Draggable
-          bounds="parent"
-          onDrag={this.handleDrag}
-          // defaultPosition={{x: 200, y:200}}
-        >
-          <div ref={this.box2Ref}>
-            DRAG ME
-          </div>
-        </Draggable>
+        <div className="hello">
+          HELLO
+        </div>
+        <div className="hello">
+          HELLO
+        </div>
       </div>
     )
   }

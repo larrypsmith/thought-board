@@ -1,20 +1,18 @@
 .canvas-test-parent {
-  width: 500px;
-  height: 500px;
   position: relative;
-  border: 1px solid red !important;
+}
+
+.canvas-test-parent > canvas {
+  position: absolute;
 }
 
 .canvas-test-parent > div {
   width: 100px;
   height: 100px;
+  position: absolute;
+  left: 300px;
+  top: 100px;
   z-index: 10;
   background-color: gray;
   color: white;
-}
-
-.canvas-test-parent > canvas {
-  width: 100%;
-  height: 100%;
-  position: absolute;
 }

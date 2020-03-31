@@ -53,7 +53,7 @@ router.patch("/:note_id",
       fileName: req.body.fileName,
       xcoord: req.body.xcoord,
       ycoord: req.body.ycoord
-    })
+    }, { new: true })
     .then(note => res.json(note))
     .catch(err => res.json(err))
 })
