@@ -17,7 +17,6 @@ export const editNote = data => {
 }
 
 export const updateNoteImage = (imageData, note) => {
-    debugger
     return axios.patch(`api/notes/${note._id}`, imageData)
 }
 

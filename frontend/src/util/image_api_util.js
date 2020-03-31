@@ -9,13 +9,12 @@ export const getImagesByNote = id => {
 }
 
 export const uploadImage = data => {
-    debugger
+    
     return axios.post("/api/images/uploadImage", data)
         .catch(err => console.log(err));
 }
 
 export const uploadImageToDB = imageData => {
-    debugger
     return axios.post("/api/images/uploadImageDB", imageData)
         .catch(err => console.log(err));
 }

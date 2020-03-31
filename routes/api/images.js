@@ -22,7 +22,8 @@ router.post('/uploadImage', passport.authenticate('jwt', { session: false }), (r
         if (err) {
             return res.status(422).json({ errors: err.message });
         }
-        return res.json({'imageUrl': req.file.location, 'noteId': req.body.noteId, 'fileName': req.file.originalname});
+        return res.json({'imageUrl': req.file.location, 'noteId': req.body.noteId, 'fileName': req.file.originalname})
+            .then(res => console.log(res));
     })
 });
 

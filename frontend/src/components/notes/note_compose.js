@@ -44,7 +44,6 @@ class NoteCompose extends React.Component {
 
         this.props.makeNote(note)
         .then((note) => {
-          debugger
           if (this.fileInput.current.files.length <= [0]) {
             const errors = [];
             errors.push("Unable to upload image. image must be a JPEG or PNG and cannot be empty");
@@ -57,7 +56,7 @@ class NoteCompose extends React.Component {
               this.fileInput.current.files[0].type === 'image/jpeg') {
               const image = new FormData();
               image.append('image', this.state.file);
-              this.props.uploadImage(image, note.note.data).then(res => console.log(res))
+              this.props.uploadImage(image, note.note.data)
               // this.setState({
               //   errors: [],
               //   inputReset: Date.now(),
