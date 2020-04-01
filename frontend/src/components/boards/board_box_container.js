@@ -9,7 +9,8 @@ const mSTP = (state, ownProps) => {
   const notes = notesByBoardId(state.entities.notes, ownProps.match.params.id);
   return {
     notes,
-    boardId: ownProps.match.params.id
+    boardId: ownProps.match.params.id,
+    images: state.entities.images
   }
 }
 
@@ -17,7 +18,7 @@ const mDTP = dispatch => ({
   fetchBoard: boardId => dispatch(fetchBoard(boardId)),
   fetchBoardNotes: id => dispatch(fetchBoardNotes(id)),
   updateNote: note => dispatch(updateNote(note)),
-  openModal: (modal, id, title, caption, url) => dispatch(openModal(modal, id, title, caption, url))
+  openModal: (modal, id, title, caption, url) => dispatch(openModal(modal, id, title, caption, url)),
 })
 
 export default connect(mSTP, mDTP)(BoardBox)

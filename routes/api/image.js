@@ -13,6 +13,7 @@ router.get("/note/:note_id", (req, res) => {
 
 router.post('/uploadImage', passport.authenticate('jwt', { session: false }), (req, res) => {
     singleUpload(req, res, function(err) {
+        console.log(req)
         if (err) {
             return res.status(422).json({ errors: err.message });
         }
@@ -29,3 +30,5 @@ router.post('/uploadImageDB', (req, res) => {
     newImage.save()
         .then(image => res.json(image))
 })
+
+module.exports = router;

@@ -37,11 +37,13 @@ export const fetchNote = noteId => dispatch => (
         .catch(err => console.log(err))
 )
 
-export const makeNote = data => dispatch => (
-    writeNote(data)
+export const makeNote = data => dispatch => {
+    return (
+        writeNote(data)
         .then(note => dispatch(receiveNewNote(note)))
         .catch(err => console.log(err))
-);
+    )
+};
 
 export const updateNote = data => dispatch => {
     
