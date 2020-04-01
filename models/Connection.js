@@ -12,6 +12,6 @@ const ConnectionSchema = new Schema({
     }
 })
 
-const Board = mongoose.model('board', ConnectionSchema);
+const Connection = mongoose.model('connections', ConnectionSchema);
 
-module.exports = Board;
+module.exports = Connection;
