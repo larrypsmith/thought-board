@@ -9,7 +9,6 @@ export const getNote = noteId => {
 }
 
 export const writeNote = data => {
-    debugger
     return axios.post(`/api/notes/${data.boardId}`, data);
 };
 
