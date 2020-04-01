@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { makeNote } from '../../actions/note_actions';
 import NoteCompose from './note_compose';
 import { closeModal, openModal } from '../../actions/modal_actions';
+import { uploadImage } from '../../actions/image_actions';
 
 const mapStateToProps = (state) => {
     return {
@@ -15,7 +16,8 @@ const mapDispatchToProps = dispatch => {
     return {
         makeNote: data => dispatch(makeNote(data)),
         closeModal: () => dispatch(closeModal()),
-        openModal: () => dispatch(openModal())
+        openModal: () => dispatch(openModal()),
+        uploadImage: (data, note) => dispatch(uploadImage(data, note))
     };
 };
 

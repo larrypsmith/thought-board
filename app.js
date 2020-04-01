@@ -6,7 +6,8 @@ const users = require('./routes/api/users');
 const notes = require('./routes/api/notes');
 const bodyParser = require('body-parser');
 const passport = require('passport');
-const boards = require('./routes/api/boards')
+const boards = require('./routes/api/boards');
+const image = require("./routes/api/image");
 const path = require('path'); // comment out for development
 
 if (process.env.NODE_ENV === 'production') {
@@ -23,9 +24,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => res.send("Hello World"));
+
 app.use("/api/users", users);
 app.use("/api/notes", notes);
 app.use("/api/boards", boards);
+// app.use("/api/images", images);
+app.use("/api/image", image);
 
 const db = require('./config/keys').mongoURI;
 mongoose

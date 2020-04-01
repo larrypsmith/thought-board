@@ -9,11 +9,16 @@ export const getNote = noteId => {
 }
 
 export const writeNote = data => {
+    debugger
     return axios.post(`/api/notes/${data.boardId}`, data);
 };
 
 export const editNote = data => {
     return axios.patch(`/api/notes/${data._id}`, data)
+}
+
+export const updateNoteImage = (imageData, note) => {
+    return axios.patch(`api/notes/${note._id}`, imageData)
 }
 
 export const deleteNote = noteId => {

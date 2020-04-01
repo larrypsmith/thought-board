@@ -11,8 +11,11 @@ function Modal({modal, closeModal}) {
     }
     
     let showComp = <div>
-        <div className='show-title'>{modal.action.title}</div>
-        <div className='show-caption'>{modal.action.caption}</div>
+
+        <button onClick={closeModal}>Close</button>
+        <div>{modal.action.title}</div>
+        <div>{modal.action.caption}</div>
+
         <div>{modal.action.url}</div>
     </div>
 
@@ -30,10 +33,11 @@ function Modal({modal, closeModal}) {
         default:
             return null;
     }
-
+// onClick={closeModal}
+// onClick={e => e.stopPropagation()}
     return (
-        <div className='modal-background' onClick={closeModal}>
-            <div className='modal-child' onClick={e => e.stopPropagation()}>
+        <div className='modal-background'>
+            <div className='modal-child'>
                 {component}
             </div>
         </div>

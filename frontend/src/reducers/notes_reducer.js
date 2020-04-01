@@ -4,6 +4,7 @@ import {
     RECEIVE_NOTE,
     REMOVE_NOTE
 } from '../actions/note_actions';
+import { RECEIVE_IMAGE } from '../actions/image_actions'
 
 import { arrayToObject } from './selectors'
 
@@ -14,6 +15,7 @@ const NotesReducer = (state = {}, action) => {
         case RECEIVE_BOARD_NOTES:
             return Object.assign(newState, arrayToObject(action.notes.data));
         case RECEIVE_NEW_NOTE:
+            debugger
             return Object.assign(newState, { [action.note.data._id]: action.note.data })
         case RECEIVE_NOTE:
             
