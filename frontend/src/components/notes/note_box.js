@@ -6,6 +6,7 @@ class NoteBox extends React.Component {
     constructor(props) {
         super(props);
         this.updatePosition = this.updatePosition.bind(this);
+        this.handleDrag = this.handleDrag.bind(this);
     }
 
     updatePosition(note, e, { x, y }) {
@@ -27,7 +28,6 @@ class NoteBox extends React.Component {
                 bounds="parent"
                 defaultPosition={{ x: note.xcoord, y: note.ycoord }}
                 onStop={(e, ui) => this.updatePosition(note, e, ui)}
-                onDrag={e => e.stopPropagation()}
             >
                 <div className="note">
                     {note.title}

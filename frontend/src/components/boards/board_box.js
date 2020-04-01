@@ -1,13 +1,14 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom'
 import NoteBox from '../notes/note_box'
+import Canvas from '../canvas/canvas';
 import './board.scss'
 
 class BoardBox extends React.Component {
     constructor(props) {
         super(props);
-        this.renderNotes = this.renderNotes.bind(this);
         this.canvasRef = React.createRef();
+        this.renderNotes = this.renderNotes.bind(this);
         this.renderCanvas = this.renderCanvas.bind(this);
         this.drawStrings = this.drawStrings.bind(this);
         this.drawStringBetween = this.drawStringBetween.bind(this);
