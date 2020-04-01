@@ -56,7 +56,7 @@ class LoginForm extends React.Component {
     return (
       <div className='login-main-div'>
         <div className='login-form-container'>
-          <form onSubmit={this.handleSubmit}>
+          <form>
             <div className='login-form'>
               <input
                 type="text"
@@ -72,7 +72,13 @@ class LoginForm extends React.Component {
                 placeholder="Password"
               />
               <br />
-              <input className='session-submit-btn' type="submit" value="Submit" />
+              <button onClick={this.handleSubmit} className='session-submit-btn'>
+                Submit
+              </button>
+              <br />
+              <button onClick={() => this.props.demo()} className='session-submit-btn'>
+                Guest Login
+              </button>
             </div>
           </form>
         </div>

@@ -11,9 +11,11 @@ function Modal({modal, closeModal}) {
     }
     
     let showComp = <div>
+
         <button onClick={closeModal}>Close</button>
         <div>{modal.action.title}</div>
         <div>{modal.action.caption}</div>
+
         <div>{modal.action.url}</div>
     </div>
 

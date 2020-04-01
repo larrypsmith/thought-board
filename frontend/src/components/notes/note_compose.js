@@ -7,13 +7,16 @@ import ImageUploadContainer from '../image_upload/image_upload_container';
 class NoteCompose extends React.Component {
     constructor(props) {
         super(props);
+
         this.fileInput = React.createRef();
+
 
         this.state = {
             title: '',
             caption: '',
             newNote: '',
             boardId: '',
+
             url: '',
             file: null,
             imageUrl: null,
@@ -21,6 +24,7 @@ class NoteCompose extends React.Component {
             inputReset: Date.now()
         };
 
+        };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFiles = this.handleFiles.bind(this);
     }
@@ -67,6 +71,7 @@ class NoteCompose extends React.Component {
           
           })
             .then(() => this.props.closeModal())
+
 
           }
 

@@ -15,6 +15,7 @@ class BoardBox extends React.Component {
         this.props.fetchBoard(this.props.boardId)
     }
 
+
     renderNotes() {
         const { notes } = this.props;
         if (!notes || !notes.length) return null;
@@ -38,9 +39,9 @@ class BoardBox extends React.Component {
 
     render() {
         return (
-            <div>
-                <div>
-                    <button onClick={() => this.props.openModal('create')}>
+            <div className='board-box-cont'>
+                <div className='new-note-btn-div'>
+                    <button className='new-note-btn' onClick={() => this.props.openModal('create')}>
                         New Note
                     </button>
                 </div>

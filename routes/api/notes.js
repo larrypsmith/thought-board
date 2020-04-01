@@ -25,7 +25,9 @@ router.post('/:board_id',
             boardId: req.params.board_id,
             title: req.body.title,
             caption: req.body.caption,
-            url: req.body.url
+            url: req.body.url,
+            xcoord: req.body.xcoord,
+            ycoord: req.body.ycoord
         })
           newNote
             .save()
@@ -46,15 +48,15 @@ router.get("/:note_id",
 router.patch("/:note_id",
   passport.authenticate("jwt", {session: false }),
   (req, res) => {
-    Note.findByIdAndUpdate(req.params.note_id, {
+      Note.findByIdAndUpdate(req.params.note_id, {
       title: req.body.title,
       caption: req.body.caption,             
       fileName: req.body.fileName,
       xcoord: req.body.xcoord,
       ycoord: req.body.ycoord
-    })
+    }, { new: true })
     .then(note => res.json(note))
-    .catch(err => res.json(err))
+    .catch(err => res.status(404).json(err))
 })
 
 router.get("/board/:board_id",
@@ -66,7 +68,7 @@ router.get("/board/:board_id",
 })
 
 router.delete("/:note_id", (req, res) => {
-    Note.findOneAndDelete({ _id: req.params.note_id })
+  Note.findByIdAndDelete(req.params.note_id)
       .then((note) => res.json(note))
       .catch(err => res.json(err))
 })

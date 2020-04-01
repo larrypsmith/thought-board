@@ -18,9 +18,10 @@ const NotesReducer = (state = {}, action) => {
             debugger
             return Object.assign(newState, { [action.note.data._id]: action.note.data })
         case RECEIVE_NOTE:
+            
             return Object.assign(newState, { [action.note.data._id]: action.note.data })
         case REMOVE_NOTE:
-            delete newState[action.noteId];
+            delete newState[action.noteId.data._id];
             return newState;
         default:
             return state;

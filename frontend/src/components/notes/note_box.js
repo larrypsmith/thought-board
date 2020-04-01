@@ -11,7 +11,7 @@ class NoteBox extends React.Component {
 
     updatePosition(note, e, { x, y }) {
         this.props.updateNote({
-            id: note._id,
+            _id: note._id,
             title: note.title,
             caption: note.caption,
             url: note.url,

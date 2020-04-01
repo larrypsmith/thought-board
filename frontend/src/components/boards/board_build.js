@@ -1,4 +1,5 @@
 import React from 'react';
+import './board.scss'
 
 class BoardBuild extends React.Component {
     constructor(props) {
@@ -27,7 +28,6 @@ class BoardBuild extends React.Component {
             .then( res => 
                 this.props.history.push(`/boards/${res.board.data._id}`)
             )
-
     }
 
     update() {
@@ -36,17 +36,18 @@ class BoardBuild extends React.Component {
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <div>
+            <div className="board-build-div">
+                <h1 className="prof-head board-build-header">Create a new Board</h1>
+                <div className="build-form board-build-form">
+                    <form onSubmit={this.handleSubmit}>
                         <input type='text'
                             value={this.state.title}
                             onChange={this.update()}
-                            placeholder="Title of New Board"
+                            placeholder="New board title"
                         />
-                        <input type='submit' value="Submit" />
-                    </div>
-                </form>
+                        <input className='session-submit-btn' type='submit' value="Create" />
+                    </form>
+                </div>
             </div>
         )
     }
