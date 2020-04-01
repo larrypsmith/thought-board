@@ -24,7 +24,6 @@ class NoteCompose extends React.Component {
             inputReset: Date.now()
         };
 
-        };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFiles = this.handleFiles.bind(this);
     }
@@ -53,7 +52,6 @@ class NoteCompose extends React.Component {
             file: null,
             imageUrl: null
           })
-          debugger
             let note = {
               title: this.state.title,
               caption: this.state.caption,
@@ -62,11 +60,9 @@ class NoteCompose extends React.Component {
               xcoord: 100,
               ycoord: 100
             }
-            debugger
             return note
 
           }).then(note => {
-            debugger
             this.props.makeNote(note)
           
           })
@@ -80,7 +76,6 @@ class NoteCompose extends React.Component {
         errors.push('Invalid Image');
         this.setState({ errors });
       }
-      debugger
     }
 
     handleFiles(e) {

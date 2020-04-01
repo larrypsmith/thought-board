@@ -38,7 +38,6 @@ export const fetchNote = noteId => dispatch => (
 )
 
 export const makeNote = data => dispatch => {
-    debugger
     return (
         writeNote(data)
         .then(note => dispatch(receiveNewNote(note)))
