@@ -39,9 +39,9 @@ export const fetchNotesImages = boardId => dispatch => {
         .catch(err => dispatch(receiveImageErrors(err)));
 };
 
-export const uploadImage = (data, note) => dispatch => {
+export const uploadImage = (data) => dispatch => {
     return ImageAPIUtil.uploadImage(data)
-        .then(imageData => NoteAPIUtil.updateNoteImage(imageData, note))
-        .then(note => dispatch(receiveNote(note)))
+        // .then(imageData => NoteAPIUtil.updateNoteImage(imageData, note))
+        // .then(note => dispatch(receiveNote(note)))
         .catch(err => dispatch(receiveImageErrors(err)));
 };

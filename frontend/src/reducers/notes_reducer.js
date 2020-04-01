@@ -15,12 +15,9 @@ const NotesReducer = (state = {}, action) => {
         case RECEIVE_BOARD_NOTES:
             return Object.assign(newState, arrayToObject(action.notes.data));
         case RECEIVE_NEW_NOTE:
+            debugger
             return Object.assign(newState, { [action.note.data._id]: action.note.data })
         case RECEIVE_NOTE:
-            debugger
-            // action.note.data['imageUrl'] = JSON.parse(action.note.config.data).data.imageUrl 
-            Object.assign(action.note.data, { 'imageUrl': JSON.parse(action.note.config.data).data.imageUrl })
-            debugger
             return Object.assign(newState, { [action.note.data._id]: action.note.data })
         case REMOVE_NOTE:
             delete newState[action.noteId];

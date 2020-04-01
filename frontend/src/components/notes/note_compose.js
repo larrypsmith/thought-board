@@ -14,7 +14,7 @@ class NoteCompose extends React.Component {
             caption: '',
             newNote: '',
             boardId: '',
-            image: {},
+            url: '',
             file: null,
             imageUrl: null,
             errors: [],
@@ -30,49 +30,52 @@ class NoteCompose extends React.Component {
     }
 
     handleSubmit(e) {
-        e.preventDefault();
-        e.stopPropagation();
+      e.preventDefault();
+      e.stopPropagation();
+      if (this.fileInput.current.files.length <= [0]) {
+        const errors = [];
+        errors.push("Unable to upload image. image must be a JPEG or PNG and cannot be empty");
+        this.setState({ errors });
+      } else if (this.fileInput.current.files.length > 0) {
 
-        let note = {
-            title: this.state.title,
-            caption: this.state.caption,
-            boardId: this.props.boardId,
-            image: this.state.image, 
-            xcoord: 100,
-            ycoord: 100
-        };
-
-        this.props.makeNote(note)
-        .then((note) => {
-          if (this.fileInput.current.files.length <= [0]) {
-            const errors = [];
-            errors.push("Unable to upload image. image must be a JPEG or PNG and cannot be empty");
-            this.setState({ errors });
-
-          } else if (this.fileInput.current.files.length > 0) {
-
-            if (this.fileInput.current.files[0].type === 'image/jpg' ||
-              this.fileInput.current.files[0].type === 'image/png' ||
-              this.fileInput.current.files[0].type === 'image/jpeg') {
-              let image = new FormData();
-              image.append('image', this.state.file);
-              this.props.uploadImage(image, note.note.data).then(res => console.log(res))
-              debugger
-              this.setState({
-                errors: [],
-                inputReset: Date.now(),
-                file: null,
-                imageUrl: null
-              })
-            } else {
-              const errors = []
-              errors.push('Invalid Image');
-              this.setState({ errors });
+        if (this.fileInput.current.files[0].type === 'image/jpg' ||
+          this.fileInput.current.files[0].type === 'image/png' ||
+          this.fileInput.current.files[0].type === 'image/jpeg') {
+          let image = new FormData();
+          image.append('image', this.state.file);
+          this.props.uploadImage(image).then(url => {this.setState({
+            errors: [],
+            inputReset: Date.now(),
+            file: null,
+            imageUrl: null
+          })
+          debugger
+            let note = {
+              title: this.state.title,
+              caption: this.state.caption,
+              boardId: this.props.boardId,
+              url: url.data.imageUrl,
+              xcoord: 100,
+              ycoord: 100
             }
-          }
-        })
-        .then( () => this.props.closeModal())
+            debugger
+            return note
 
+          }).then(note => {
+            debugger
+            this.props.makeNote(note)
+          
+          })
+            .then(() => this.props.closeModal())
+
+          }
+
+      } else {
+        const errors = []
+        errors.push('Invalid Image');
+        this.setState({ errors });
+      }
+      debugger
     }
 
     handleFiles(e) {
