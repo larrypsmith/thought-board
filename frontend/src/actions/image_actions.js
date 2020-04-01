@@ -29,8 +29,8 @@ export const receiveBoardImages = images => {
 };
 
 
-// export const fetchImage = (image) => {
-//     return ImageAPIUtil.getImagesByNote()
+// export const fetchImage = (image.note.id) => {
+//     return ImageAPIUtil.getImagesByNote(image)
 // }
 
 export const fetchNotesImages = boardId => dispatch => {

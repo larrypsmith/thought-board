@@ -14,6 +14,7 @@ class NoteCompose extends React.Component {
             caption: '',
             newNote: '',
             boardId: '',
+            image: {},
             file: null,
             imageUrl: null,
             errors: [],
@@ -30,19 +31,19 @@ class NoteCompose extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // e.stopPropagation();
+        e.stopPropagation();
 
         let note = {
             title: this.state.title,
             caption: this.state.caption,
             boardId: this.props.boardId,
+            image: this.state.image, 
             xcoord: 100,
             ycoord: 100
         };
 
         this.props.makeNote(note)
         .then((note) => {
-          debugger
           if (this.fileInput.current.files.length <= [0]) {
             const errors = [];
             errors.push("Unable to upload image. image must be a JPEG or PNG and cannot be empty");
@@ -55,27 +56,14 @@ class NoteCompose extends React.Component {
               this.fileInput.current.files[0].type === 'image/jpeg') {
               let image = new FormData();
               image.append('image', this.state.file);
-              // debugger
-              // const imageFile = image.getAll('image') 
-              // debugger
-              // let pojo = {}
-              // pojo = {
-              //   name: imageFile[0].name,
-              //   lastModified: imageFile[0].lastModified,
-              //   lastModifiedDate: imageFile[0].lastModifiedDate,
-              //   webkitRelativePath: imageFile[0].webkitRelativePath,
-              //   size: imageFile[0].size,
-              //   type: imageFile[0].type
-              // }
-              
               this.props.uploadImage(image, note.note.data).then(res => console.log(res))
+              debugger
               this.setState({
                 errors: [],
                 inputReset: Date.now(),
                 file: null,
                 imageUrl: null
               })
-              // this.setState({ file: e.target.files[0]})
             } else {
               const errors = []
               errors.push('Invalid Image');
@@ -83,7 +71,7 @@ class NoteCompose extends React.Component {
             }
           }
         })
-        // .then( () => this.props.closeModal())
+        .then( () => this.props.closeModal())
 
     }
 
@@ -100,9 +88,9 @@ class NoteCompose extends React.Component {
     render() {
         return (
           <div>
-            {/* <button onClick={this.props.closeModal}>Close</button> */}
+            <button onClick={this.props.closeModal}>Close</button>
             <form onSubmit={this.handleSubmit}>
-              <div>
+
                 <input
                   type="text"
                   value={this.state.title}
@@ -129,10 +117,10 @@ class NoteCompose extends React.Component {
                 />
                 <br />
                 <input type="submit" value="Submit" />
-              </div>
+                
             </form>
             <br />
-            <NoteBox text={this.state.newNote} />
+            {/* <NoteBox text={this.state.newNote} /> */}
           </div>
         );
     }

@@ -10,7 +10,6 @@ router.get("/test", (req, res) => res.json({ msg: "This is the notes route" }));
 router.post('/:board_id',
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    debugger
     const {isValid, errors} = validateNoteInput(req.body)
 
     if(!isValid) {
