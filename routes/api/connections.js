@@ -18,4 +18,12 @@ router.post('/',
     }
 )
 
+router.delete('/',
+    passport.authenticate("jwt", { session: false }),
+    (req, res) => {
+        Connection.findByIdAndDelete(req.body._id)
+            .then(connection => res.json(connection))
+            .catch(err => res.json(err))
+    })
+
 module.exports = router;
