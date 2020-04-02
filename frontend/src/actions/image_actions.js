@@ -1,6 +1,4 @@
 import * as ImageAPIUtil from '../util/image_api_util';
-import * as NoteAPIUtil from '../util/note_api_util';
-import { receiveNote } from '../actions/note_actions'
 
 export const RECEIVE_IMAGE = 'RECEIVE_IMAGE';
 export const RECEIVE_NOTE_IMAGE = 'RECEIVE_NOTE_IMAGE';
@@ -28,11 +26,6 @@ export const receiveBoardImages = images => {
     };
 };
 
-
-// export const fetchImage = (image.note.id) => {
-//     return ImageAPIUtil.getImagesByNote(image)
-// }
-
 export const fetchNotesImages = boardId => dispatch => {
     return ImageAPIUtil.getImagesByBoard(boardId)
         .then(images => dispatch(receiveBoardImages(images)))
@@ -41,7 +34,5 @@ export const fetchNotesImages = boardId => dispatch => {
 
 export const uploadImage = (data) => dispatch => {
     return ImageAPIUtil.uploadImage(data)
-        // .then(imageData => NoteAPIUtil.updateNoteImage(imageData, note))
-        // .then(note => dispatch(receiveNote(note)))
         .catch(err => dispatch(receiveImageErrors(err)));
 };

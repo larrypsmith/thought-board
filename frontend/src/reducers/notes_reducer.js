@@ -6,7 +6,6 @@ import {
 } from '../actions/note_actions';
 import { RECEIVE_IMAGE } from '../actions/image_actions'
 import { RECEIVE_BOARD } from '../actions/board_actions';
-
 import { arrayToObject } from './selectors'
 import { bindActionCreators } from 'redux';
 

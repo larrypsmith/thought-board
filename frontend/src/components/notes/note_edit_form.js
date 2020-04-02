@@ -6,6 +6,7 @@ class NoteEditForm extends React.Component {
         super(props);
         this.state = this.props.note;
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.deleteClose = this.deleteClose.bind(this);
     }
 
     componentDidMount() {
@@ -22,10 +23,16 @@ class NoteEditForm extends React.Component {
             .then(() => this.props.closeModal())
     }
 
+    deleteClose(e) {
+        e.preventDefault();
+        this.props.eraseNote(this.props.note._id)
+            .then(() => this.props.closeModal())
+    }
+
     render() {
         return (
             <div>
-                <button onClick={this.closeModal}>Close</button>
+                <button onClick={this.props.closeModal}>Close</button>
                 <form onSubmit={this.handleSubmit}>
                     <label>Title
                         <input type='text'
@@ -50,7 +57,7 @@ class NoteEditForm extends React.Component {
                     <br/>
                     <input type='submit' value="Submit Edit"/>
                 </form>
-                <button onClick={() => this.props.eraseNote(this.props.note._id)}>
+                <button onClick={this.deleteClose}>
                     Delete Note
                 </button>
             </div>
