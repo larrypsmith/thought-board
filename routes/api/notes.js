@@ -71,11 +71,8 @@ router.get("/board/:board_id",
 router.delete("/:note_id", 
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    Connection.find({ note1: req.params.note_id })
-      .then(res => {
-        debugger
-        console.log(res)
-      })
+    Connection.deleteMany({ note1: req.params.note_id }).exec()
+    Connection.deleteMany({ note2: req.params.note_id }).exec()
     
     Note.findByIdAndDelete(req.params.note_id)
         .then((note) => res.json(note))
