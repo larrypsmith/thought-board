@@ -1,8 +1,6 @@
 import React from 'react';
-import NoteBox from './note_box';
 import { withRouter } from 'react-router-dom'
 import Image from '../image/image';
-import ImageUploadContainer from '../image_upload/image_upload_container';
 
 class NoteCompose extends React.Component {
     constructor(props) {
@@ -106,7 +104,6 @@ class NoteCompose extends React.Component {
                 <input type='file'
                   ref={this.fileInput}
                   key={this.state.inputReset}
-                  type='file'
                   name='image'
                   onChange={this.handleFiles}
                 />
