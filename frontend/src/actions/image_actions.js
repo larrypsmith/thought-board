@@ -1,6 +1,4 @@
 import * as ImageAPIUtil from '../util/image_api_util';
-import * as NoteAPIUtil from '../util/note_api_util';
-import { receiveNote } from '../actions/note_actions'
 
 export const RECEIVE_IMAGE = 'RECEIVE_IMAGE';
 export const RECEIVE_NOTE_IMAGE = 'RECEIVE_NOTE_IMAGE';
