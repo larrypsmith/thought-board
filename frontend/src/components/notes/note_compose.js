@@ -110,7 +110,6 @@ class NoteCompose extends React.Component {
                   name='image'
                   onChange={this.handleFiles}
                 />
-                {/* <ImageUploadContainer update={this.update('image')} /> */}
                 <br />
                 <input
                   type="textarea"
@@ -122,8 +121,6 @@ class NoteCompose extends React.Component {
                 <input type="submit" value="Submit" />
                 
             </form>
-            <br />
-            {/* <NoteBox text={this.state.newNote} /> */}
           </div>
         );
     }
