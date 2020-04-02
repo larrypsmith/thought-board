@@ -33,7 +33,7 @@ class NoteBox extends React.Component {
         if (!note) return null;
         let imgDiv;
         if (note.url !== null) {
-            imgDiv = <div class='img-div' style={{ backgroundImage: `url(${note.url})` }}></div>
+            imgDiv = <div className='img-div' style={{ backgroundImage: `url(${note.url})` }}></div>
         } else {
             imgDiv = <div></div>
         }
