@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 const passport = require("passport")
 const Board = require('../../models/Board');
-const User = require('../../models/User')
 const Note = require('../../models/Note')
+const Connection = require('../../models/Connection')
 const validateBoardInput = require("../../validation/boards")
 
 router.get("/test", (req, res) => res.json({ msg: "This is the boards route" }));
@@ -55,10 +55,15 @@ router.get("/:id",
         Note.find({ boardId: board._id })
           .then(notesArr => {
             let notes = {};
+            let connections = {};
 
             notesArr.forEach(note => {
               notes[note._id] = note
+              Connection.find({ $or: [{ note1: note._id }, { note2: note._id }] })
+                .then(connections => {debugger})
             })
+
+            
 
             res.json({ boards, notes });
           })
