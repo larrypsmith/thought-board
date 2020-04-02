@@ -100,7 +100,7 @@ class NoteCompose extends React.Component {
     render() {
         return (
           <div>
-            <button onClick={this.props.closeModal}>Close</button>
+            <button className='close-x' onClick={this.props.closeModal}><i className="fas fa-times"></i></button>
             <form onSubmit={this.handleSubmit}>
 
                 <input
