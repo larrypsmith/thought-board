@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const boards = require('./routes/api/boards');
 const image = require("./routes/api/image");
-const path = require('path'); // comment out for development
+const path = require('path');
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('frontend/build'));
