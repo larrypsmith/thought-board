@@ -10,8 +10,6 @@ class BoardBox extends React.Component {
     }
 
     componentDidMount() {
-        const { fetchBoardNotes, match: { params: { id } } } = this.props
-        // fetchBoardNotes(id)
         this.props.fetchBoard(this.props.boardId)
     }
 
