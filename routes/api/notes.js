@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const passport = require("passport")
 const Board = require('../../models/Board');
+const Connection = require('../../models/Connection');
 const Note = require('../../models/Note');
 const validateNoteInput = require("../../validation/notes")
 
@@ -67,10 +68,18 @@ router.get("/board/:board_id",
       .catch(err => res.json(err))
 })
 
-router.delete("/:note_id", (req, res) => {
-  Note.findByIdAndDelete(req.params.note_id)
-      .then((note) => res.json(note))
-      .catch(err => res.json(err))
+router.delete("/:note_id", 
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Connection.find({ note1: req.params.note_id })
+      .then(res => {
+        debugger
+        console.log(res)
+      })
+    
+    Note.findByIdAndDelete(req.params.note_id)
+        .then((note) => res.json(note))
+        .catch(err => res.json(err))
 })
 
 module.exports = router;
