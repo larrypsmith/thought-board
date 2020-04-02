@@ -28,11 +28,6 @@ export const receiveBoardImages = images => {
     };
 };
 
-
-// export const fetchImage = (image.note.id) => {
-//     return ImageAPIUtil.getImagesByNote(image)
-// }
-
 export const fetchNotesImages = boardId => dispatch => {
     return ImageAPIUtil.getImagesByBoard(boardId)
         .then(images => dispatch(receiveBoardImages(images)))
@@ -41,7 +36,5 @@ export const fetchNotesImages = boardId => dispatch => {
 
 export const uploadImage = (data) => dispatch => {
     return ImageAPIUtil.uploadImage(data)
-        // .then(imageData => NoteAPIUtil.updateNoteImage(imageData, note))
-        // .then(note => dispatch(receiveNote(note)))
         .catch(err => dispatch(receiveImageErrors(err)));
 };
