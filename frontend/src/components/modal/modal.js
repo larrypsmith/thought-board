@@ -9,14 +9,14 @@ function Modal({modal, closeModal}) {
     if (!modal) {
         return null;
     }
-    
-    let showComp = <div>
+   
+    let showComp = <div className='show-cont'>
 
-        <button onClick={closeModal}>Close</button>
-        <div>{modal.action.title}</div>
-        <div>{modal.action.caption}</div>
-
-        <div>{modal.action.url}</div>
+        <button className='close-x' onClick={closeModal}><i className="fas fa-times"></i></button>
+        <div className='show-title'>{modal.action.title}</div>
+        <div className='show-caption'>{modal.action.caption}</div>
+        <div className='note-show-image-div' style={{ backgroundImage: `url(${modal.action.url})` }}></div>
+        
     </div>
 
     let component;
