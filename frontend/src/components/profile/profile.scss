@@ -54,7 +54,22 @@
 .prof-board-links {
     display: flex;
     flex-direction: column;
+    height: 700px;
     padding-left: 20px;
+    overflow-y: auto;
+}
+
+.prof-board-links::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.prof-board-links::-webkit-scrollbar:vertical {
+    width: 10px;
+}
+
+.prof-board-links::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, .5);
 }
 
 .prof-board-link {
@@ -64,11 +79,12 @@
     text-decoration: none;
     padding: 5px;
     border-radius: 5px;
-    width: 100%;
-    margin: 5px;
+    width: 94%;
+    margin: 0px 5px 10px 5px;
 }
 
 .prof-board-link:hover {
     color: blue;
     text-decoration: underline;
 }
+
