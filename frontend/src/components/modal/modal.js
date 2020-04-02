@@ -1,5 +1,5 @@
 import React from 'react';
-import {closeModal, openModal} from '../../actions/modal_actions';
+import {closeModal} from '../../actions/modal_actions';
 import {connect} from 'react-redux';
 import NoteComposeContainer from '../notes/note_compose_container';
 import NoteEditFormContainer from '../notes/note_edit_form_container';
