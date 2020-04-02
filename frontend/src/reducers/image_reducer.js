@@ -1,4 +1,4 @@
-import { RECEIVE_IMAGE, RECEIVE_NOTE_IMAGE, RECEIVE_BOARD_IMAGES } from '../actions/image_actions';
+import { RECEIVE_IMAGE, RECEIVE_BOARD_IMAGES } from '../actions/image_actions';
 
 const ImageReducer = (state = {}, action) => {
     Object.freeze(state);
