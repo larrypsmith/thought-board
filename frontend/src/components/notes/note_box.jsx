@@ -35,7 +35,7 @@ class NoteBox extends React.Component {
         if (note.url !== null) {
             imgDiv = <div className='img-div' style={{ backgroundImage: `url(${note.url})` }}></div>
         } else {
-            imgDiv = <div></div>
+            imgDiv = <div className='no-img-div'>{note.caption}</div>
         }
         return (
             <Draggable

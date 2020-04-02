@@ -33,10 +33,21 @@ class NoteCompose extends React.Component {
     handleSubmit(e) {
       e.preventDefault();
       e.stopPropagation();
-      if (this.fileInput.current.files.length <= [0]) {
-        const errors = [];
-        errors.push("Unable to upload image. image must be a JPEG or PNG and cannot be empty");
-        this.setState({ errors });
+      if (this.fileInput.current.files.length <= 0) {
+        let note = {
+          title: this.state.title,
+          caption: this.state.caption,
+          boardId: this.props.boardId,
+          url: null,
+          xcoord: 100,
+          ycoord: 100
+        }
+
+        this.props.makeNote(note)
+          .then(() => this.props.closeModal())
+        // const errors = [];
+        // errors.push("Unable to upload image. image must be a JPEG or PNG and cannot be empty");
+        // this.setState({ errors });
       } else if (this.fileInput.current.files.length > 0) {
 
         if (this.fileInput.current.files[0].type === 'image/jpg' ||
@@ -71,7 +82,7 @@ class NoteCompose extends React.Component {
 
       } else {
         const errors = []
-        errors.push('Invalid Image');
+        errors.push('Unable to upload image. image must be a JPEG or PNG');
         this.setState({ errors });
       }
     }
