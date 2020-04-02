@@ -9,7 +9,7 @@ const passport = require('passport');
 const boards = require('./routes/api/boards')
 const connections = require('./routes/api/connections')
 const image = require("./routes/api/image");
-const path = require('path'); // comment out for development
+const path = require('path');
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('frontend/build'));
@@ -29,8 +29,9 @@ app.get("/", (req, res) => res.send("Hello World"));
 app.use("/api/users", users);
 app.use("/api/notes", notes);
 app.use("/api/boards", boards);
+
 app.use("/api/connections", connections);
-// app.use("/api/images", images);
+
 app.use("/api/image", image);
 
 const db = require('./config/keys').mongoURI;

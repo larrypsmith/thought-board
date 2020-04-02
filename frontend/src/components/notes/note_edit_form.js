@@ -25,7 +25,7 @@ class NoteEditForm extends React.Component {
     render() {
         return (
             <div>
-                <button onClick={this.closeModal}>Close</button>
+                <button onClick={this.props.closeModal}>Close</button>
                 <form onSubmit={this.handleSubmit}>
                     <label>Title
                         <input type='text'

@@ -1,5 +1,5 @@
 import React from 'react';
-import {closeModal, openModal} from '../../actions/modal_actions';
+import {closeModal} from '../../actions/modal_actions';
 import {connect} from 'react-redux';
 import NoteComposeContainer from '../notes/note_compose_container';
 import NoteEditFormContainer from '../notes/note_edit_form_container';
@@ -33,8 +33,7 @@ function Modal({modal, closeModal}) {
         default:
             return null;
     }
-// onClick={closeModal}
-// onClick={e => e.stopPropagation()}
+
     return (
         <div className='modal-background'>
             <div className='modal-child'>

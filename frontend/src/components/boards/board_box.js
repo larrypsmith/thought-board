@@ -27,7 +27,6 @@ class BoardBox extends React.Component {
                         <NoteBox
                             note={note}
                             key={idx}
-                            image={note.image}
                             updateNote={this.props.updateNote}
                             openModal={this.props.openModal}
                         />

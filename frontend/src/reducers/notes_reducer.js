@@ -4,8 +4,6 @@ import {
     RECEIVE_NOTE,
     REMOVE_NOTE
 } from '../actions/note_actions';
-import { RECEIVE_IMAGE } from '../actions/image_actions'
-
 import { arrayToObject } from './selectors'
 
 const NotesReducer = (state = {}, action) => {
