@@ -25,7 +25,7 @@ class NoteEditForm extends React.Component {
     render() {
         return (
             <div>
-                <button onClick={this.props.closeModal}>Close</button>
+                <button className='close-x' onClick={this.props.closeModal}><i className="fas fa-times"></i></button>
                 <form onSubmit={this.handleSubmit}>
                     <label>Title
                         <input type='text'
@@ -41,12 +41,12 @@ class NoteEditForm extends React.Component {
                         />
                     </label>
                     <br/>
-                    <label>url
+                    {/* <label>url
                         <input type="text"
                             value={this.state.url}
                             onChange={this.update('url')}
                         />
-                    </label>
+                    </label> */}
                     <br/>
                     <input type='submit' value="Submit Edit"/>
                 </form>

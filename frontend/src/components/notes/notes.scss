@@ -36,3 +36,24 @@
     background-size: cover;
     border-radius: 5px;
 }
+
+.close-x {
+    background-color: transparent;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    font-size: 18px;
+    position: absolute;
+    font-weight: lighter;
+    cursor: pointer;
+    right: 5px;
+    top: 5px;
+    border: none;
+}
+.close-x:hover {
+    color: red;
+}
+
+.close-x:focus {
+    outline: none
+}
