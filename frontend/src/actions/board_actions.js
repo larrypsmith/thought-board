@@ -36,6 +36,6 @@ export const buildBoard = data => dispatch => (
 
 export const fetchBoard = boardId => dispatch => (
     getBoard(boardId)
-        .then(board => dispatch(receiveBoardShow(board)))
+        .then(board => {debugger; dispatch(receiveBoardShow(board))})
         .catch(err => console.log(err))
 );
