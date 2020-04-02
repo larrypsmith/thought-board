@@ -45,15 +45,16 @@ class NoteBox extends React.Component {
                 onDrag={e => e.stopPropagation()}
             >
                 <div className="note">
-                    {note.title}
-                    <br/>
+                    <p>{note.title}</p>
                     {imgDiv}
 
                     {/* <div id={note._id}></div> */}
                     {/* {this.giveImage(note._id, note.url)} */}
                     {/* <img src={note.url}></img> */}
-                    <button onClick={() => this.props.openModal('show', note._id, note.title, note.caption, note.url)}>Show</button>
-                    <button onClick={() => this.props.openModal('edit', note._id, note.title, note.caption, note.url)}>Edit</button>
+                    <div className='note-btns'>
+                        <button onClick={() => this.props.openModal('show', note._id, note.title, note.caption, note.url)}>Show</button>
+                        <button onClick={() => this.props.openModal('edit', note._id, note.title, note.caption, note.url)}>Edit</button>
+                    </div>
                 </div>
             </Draggable>
         );
