@@ -33,8 +33,7 @@ function Modal({modal, closeModal}) {
         default:
             return null;
     }
-// onClick={closeModal}
-// onClick={e => e.stopPropagation()}
+
     return (
         <div className='modal-background'>
             <div className='modal-child'>
