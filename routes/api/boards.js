@@ -3,6 +3,7 @@ const router = express.Router();
 const passport = require("passport")
 const Board = require('../../models/Board');
 const User = require('../../models/User')
+const Note = require('../../models/Note')
 const validateBoardInput = require("../../validation/boards")
 
 router.get("/test", (req, res) => res.json({ msg: "This is the boards route" }));
@@ -48,7 +49,21 @@ router.get("/:id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     Board.findById(req.params.id)
-      .then(board => res.json(board))
+      .then(board => {
+        const boards = { [board._id]: board };
+
+        Note.find({ boardId: board._id })
+          .then(notesArr => {
+            let notes = {};
+
+            notesArr.forEach(note => {
+              notes[note._id] = note
+            })
+
+            res.json({ boards, notes });
+          })
+        
+      })
       .catch(err => res.json(err))
 })
 

@@ -15,9 +15,9 @@ export const receiveNewBoard = board => ({
     board
 });
 
-export const receiveBoardShow = board => ({
+export const receiveBoard = payload => ({
     type: RECEIVE_BOARD,
-    board
+    payload
 })
 
 export const fetchUserBoards = (id) => dispatch => {
@@ -36,6 +36,6 @@ export const buildBoard = data => dispatch => (
 
 export const fetchBoard = boardId => dispatch => (
     getBoard(boardId)
-        .then(board => dispatch(receiveBoardShow(board)))
+        .then(payload => dispatch(receiveBoard(payload)))
         .catch(err => console.log(err))
 );
