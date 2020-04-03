@@ -91,7 +91,10 @@ class SignupForm extends React.Component {
               <button onclick={this.handleSubmit} className='session-submit-btn'>
                 Submit
               </button>
-              <button onClick={() => this.props.demo()} className='session-submit-btn'>
+              <button onClick={(e) => {
+                e.preventDefault();
+                this.props.demo()
+              }} className='session-submit-btn'>
                 Guest Login
               </button>
             </div>

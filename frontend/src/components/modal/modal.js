@@ -20,9 +20,11 @@ function Modal({modal, closeModal}) {
     </div>
 
     let component;
+    
     switch (modal.action.modal) {
         case 'create':
-            component = <NoteComposeContainer />;
+            debugger
+            component = <NoteComposeContainer boardId={modal.action.boardId} />;
             break;
         case 'show':
             component = showComp;

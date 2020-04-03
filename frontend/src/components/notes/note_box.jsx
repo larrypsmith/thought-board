@@ -22,7 +22,6 @@ class NoteBox extends React.Component {
     }
 
     // giveImage(idTag, url) {
-    //     // debugger
     //     let imageDiv = document.getElementById(`${idTag}`);
     //     // imageDiv.setAttribute('style', `backgroundImage: url(`${url}`)`)
     //     imageDiv.style.backgroundImage = url;
