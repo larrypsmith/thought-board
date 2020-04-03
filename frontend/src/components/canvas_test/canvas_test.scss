@@ -1,0 +1,18 @@
+.canvas-test-parent {
+  position: relative;
+}
+
+.canvas-test-parent > canvas {
+  position: absolute;
+}
+
+.canvas-test-parent > div {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 300px;
+  top: 100px;
+  z-index: 10;
+  background-color: gray;
+  color: white;
+}
