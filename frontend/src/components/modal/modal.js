@@ -9,7 +9,7 @@ function Modal({modal, closeModal}) {
     if (!modal) {
         return null;
     }
-   debugger
+    
     let showComp = <div className='show-cont'>
         
         <button className='close-x' onClick={closeModal}><i className="fas fa-times"></i></button>
