@@ -45,9 +45,7 @@ class NoteCompose extends React.Component {
 
         this.props.makeNote(note)
           .then(() => this.props.closeModal())
-        // const errors = [];
-        // errors.push("Unable to upload image. image must be a JPEG or PNG and cannot be empty");
-        // this.setState({ errors });
+          
       } else if (this.fileInput.current.files.length > 0) {
 
         if (this.fileInput.current.files[0].type === 'image/jpg' ||
