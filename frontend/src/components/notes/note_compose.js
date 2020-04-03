@@ -31,7 +31,6 @@ class NoteCompose extends React.Component {
     }
 
     handleSubmit(e) {
-      debugger
       e.preventDefault();
       e.stopPropagation();
       if (this.fileInput.current.files.length <= 0) {

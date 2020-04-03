@@ -23,7 +23,6 @@ function Modal({modal, closeModal}) {
     
     switch (modal.action.modal) {
         case 'create':
-            debugger
             component = <NoteComposeContainer boardId={modal.action.boardId} />;
             break;
         case 'show':
