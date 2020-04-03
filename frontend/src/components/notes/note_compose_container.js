@@ -8,7 +8,6 @@ const mapStateToProps = (state) => {
     return {
         currentUser: state.session.user,
         newNote: state.entities.notes.new,
-        // boardId: Object.values(state.entities.boards)[0]._id
     };
 };
 
