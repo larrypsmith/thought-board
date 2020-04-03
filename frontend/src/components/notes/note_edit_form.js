@@ -31,22 +31,24 @@ class NoteEditForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='form-div'>
                 <button className='close-x' onClick={this.props.closeModal}><i className="fas fa-times"></i></button>
-                <form onSubmit={this.handleSubmit}>
-                    <label>Title
+                <form className='form-cont' onSubmit={this.handleSubmit}>
+                    {/* <label>Title */}
                         <input type='text'
                             value={this.state.title}
                             onChange={this.update('title')}
+                            className='title'
                         />
-                    </label>
+                    {/* </label> */}
                     <br/>
-                    <label>Caption
-                        <input type='text'
+                    {/* <label>Note's Text */}
+                        <textarea type='text'
                             value={this.state.caption}
                             onChange={this.update('caption')}
+                            className='caption'
                         />
-                    </label>
+                    {/* </label> */}
                     <br/>
                     {/* <label>url
                         <input type="text"
@@ -55,9 +57,9 @@ class NoteEditForm extends React.Component {
                         />
                     </label> */}
                     <br/>
-                    <input type='submit' value="Submit Edit"/>
+                    <input className='form-submit-btn' type='submit' value="Submit Edit"/>
                 </form>
-                <button onClick={this.deleteClose}>
+                <button className='delete-btn'onClick={this.deleteClose}>
                     Delete Note
                 </button>
             </div>
