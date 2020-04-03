@@ -11,13 +11,11 @@
 .modal-child {
     display: flex;
     position: relative;
-    // align-content: center;
     top: 20%;
     width: 900px;
     height: 500px;
     margin: 0 auto;
-    // transform: translate(-50%, -50%);
-    background: #F7EC7D;
+    background: #7FC6D0;
     border: 5px solid white;
     border-radius: 7px;
 }
@@ -26,7 +24,6 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    // margin: 0 auto;
 }
 
 .show-title {
