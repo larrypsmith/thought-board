@@ -15,19 +15,19 @@ class BoardBox extends React.Component {
 
 
     renderNotes() {
-        const { notes } = this.props;
+        const { notes, connections } = this.props;
         if (!notes || !notes.length) return null;
-
         return (
             <div className="notes-parent">
+                <CanvasContainer connections={connections} />
+
                 {
                     notes.map((note, idx) => (
                         <NoteBox
                             note={note}
                             key={idx}
                             updateNote={this.props.updateNote}
-                            openModal={this.props.openModal}
-                        />
+                            openModal={this.props.openModal} />
                     ))
                 }
             </div>

@@ -14,7 +14,7 @@ import ModalContainer from '../components/modal/modal';
 
 const App = () => (
     <div>
-        <Modal />
+        <ModalContainer />
         <NavBarContainer />
         <Switch>
             <AuthRoute exact path="/" component={MainPage} />
