@@ -1,6 +1,6 @@
 import React from "react";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
-import { Switch } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 import NavBarContainer from './nav/navbar_container';
 import MainPage from "./main/main_page";
@@ -14,7 +14,7 @@ import ModalContainer from '../components/modal/modal';
 
 const App = () => (
     <div>
-        <ModalContainer />
+        <Route path="/" component={ModalContainer} />
         <NavBarContainer />
         <Switch>
             <AuthRoute exact path="/" component={MainPage} />

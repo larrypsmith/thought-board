@@ -58,18 +58,22 @@ router.get("/:id",
             let connections = {};
 
             notesArr.forEach(note => {
-              notes[note._id] = note
-              Connection.find({ $or: [{ note1: note._id }, { note2: note._id }] })
-                .then(connections => {debugger})
+              notes[note.id] = note
+
+              Connection.find({ $or: [{ note1: note.id }, { note2: note.id }] })
+                .then(connects => {
+                  connects.forEach(connection => {
+                    connections[connection.id] = connection
+                  })
+                  res.json({ boards, notes, connections });
+                })
             })
 
-            
-
-            res.json({ boards, notes });
           })
-        
+        })
+        .catch(err => res.json(err))
       })
-      .catch(err => res.json(err))
-})
+      
+      
 
 module.exports = router;
