@@ -3,8 +3,7 @@ import { closeModal, openModal } from '../../actions/modal_actions';
 import { updateNote, fetchNote, eraseNote } from '../../actions/note_actions';
 import NoteEditForm from './note_edit_form';
 
-const mapStateToProps = (state, ownProps) => {
-    debugger
+const mapStateToProps = (state) => {
     return {
         note: state.entities.notes[state.ui.modal.action.boardId]
     }

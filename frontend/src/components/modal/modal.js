@@ -9,9 +9,9 @@ function Modal({modal, closeModal}) {
     if (!modal) {
         return null;
     }
-   
+    
     let showComp = <div className='show-cont'>
-
+        
         <button className='close-x' onClick={closeModal}><i className="fas fa-times"></i></button>
         <div className='show-title'>{modal.action.title}</div>
         <div className='show-caption'>{modal.action.caption}</div>
