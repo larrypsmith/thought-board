@@ -7,10 +7,16 @@ class BoardBox extends React.Component {
     constructor(props) {
         super(props);
         this.renderNotes = this.renderNotes.bind(this);
+        this.delete = this.delete.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchBoard(this.props.boardId)
+    }
+
+    delete(e) {
+        this.props.deleteBoard(this.props.boardId)
+            .then(this.props.history.push('/profile'))
     }
 
 
@@ -42,7 +48,9 @@ class BoardBox extends React.Component {
                         New Note
                     </button>
                 </div>
-
+                <div className='delete-board-div'>
+                    <button onClick={this.delete}>Delete Board</button>
+                </div>
                 <div className="board-main">
                     {this.renderNotes()}
                 </div>

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { updateNote } from '../../actions/note_actions';
 import { notesByBoardId } from '../../reducers/selectors';
 import { openModal } from '../../actions/modal_actions';
-import { fetchBoard } from '../../actions/board_actions';
+import { fetchBoard, deleteBoard } from '../../actions/board_actions';
 
 const mSTP = (state, ownProps) => {
   const notes = notesByBoardId(state.entities.notes, ownProps.match.params.id);
@@ -17,6 +17,7 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => ({
   fetchBoard: boardId => dispatch(fetchBoard(boardId)),
   updateNote: note => dispatch(updateNote(note)),
+  deleteBoard: boardId => dispatch(deleteBoard(boardId)),
   openModal: (modal, boardId, id, title, caption, url) => dispatch(openModal(modal, boardId, id, title, caption, url)),
 })
 

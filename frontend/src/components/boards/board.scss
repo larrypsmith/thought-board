@@ -1,13 +1,15 @@
 .new-note-btn-div {
     display: flex;
-    // justify-content: right;
-    // z-index: 15;
+}
+
+.delete-board-div {
+    // position: fixed;
 }
 
 .new-note-btn {
     display: flex;
-    position: absolute;
-    z-index: 5;
+    // position: absolute;
+    // z-index: 5;
     padding: 7px;
     cursor: pointer;
     border-radius: 7px;
@@ -15,9 +17,9 @@
     border: none;
     color: white;
     font-size: 14px;
-    margin-top: 15px;
-    margin-left: 50%;
-    position: fixed;
+    // margin-top: 15px;
+    // margin-left: 50%;
+    // position: fixed;
 }
 
 .new-note-btn:hover {
