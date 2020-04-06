@@ -8,7 +8,6 @@ const mapStateToProps = (state) => {
     return {
         currentUser: state.session.user,
         newNote: state.entities.notes.new,
-        boardId: state.entities.boards
     };
 };
 
@@ -16,8 +15,8 @@ const mapDispatchToProps = dispatch => {
     return {
         makeNote: data => dispatch(makeNote(data)),
         closeModal: () => dispatch(closeModal()),
-        openModal: () => dispatch(openModal()),
-        uploadImage: (data, note) => dispatch(uploadImage(data, note))
+        openModal: (modal, boardId) => dispatch(openModal(modal, boardId)),
+        uploadImage: (data) => dispatch(uploadImage(data))
     };
 };
 

@@ -9,9 +9,9 @@ function Modal({modal, closeModal}) {
     if (!modal) {
         return null;
     }
-   
+    
     let showComp = <div className='show-cont'>
-
+        
         <button className='close-x' onClick={closeModal}><i className="fas fa-times"></i></button>
         <div className='show-title'>{modal.action.title}</div>
         <div className='show-caption'>{modal.action.caption}</div>
@@ -20,9 +20,10 @@ function Modal({modal, closeModal}) {
     </div>
 
     let component;
+    
     switch (modal.action.modal) {
         case 'create':
-            component = <NoteComposeContainer />;
+            component = <NoteComposeContainer boardId={modal.action.boardId} />;
             break;
         case 'show':
             component = showComp;

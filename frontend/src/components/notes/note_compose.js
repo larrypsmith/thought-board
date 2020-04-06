@@ -45,9 +45,7 @@ class NoteCompose extends React.Component {
 
         this.props.makeNote(note)
           .then(() => this.props.closeModal())
-        // const errors = [];
-        // errors.push("Unable to upload image. image must be a JPEG or PNG and cannot be empty");
-        // this.setState({ errors });
+          
       } else if (this.fileInput.current.files.length > 0) {
 
         if (this.fileInput.current.files[0].type === 'image/jpg' ||
@@ -99,15 +97,16 @@ class NoteCompose extends React.Component {
 
     render() {
         return (
-          <div>
+          <div className='form-div'>
             <button className='close-x' onClick={this.props.closeModal}><i className="fas fa-times"></i></button>
-            <form onSubmit={this.handleSubmit}>
+            <form className='form-cont' onSubmit={this.handleSubmit}>
 
                 <input
                   type="text"
                   value={this.state.title}
                   onChange={this.update('title')}
-                  placeholder="Title of note"
+                  placeholder="Enter a Title..."
+                  className='title'
                 />
                 <br />
                 <Image />
@@ -117,16 +116,17 @@ class NoteCompose extends React.Component {
                   key={this.state.inputReset}
                   name='image'
                   onChange={this.handleFiles}
+                  className='upload-button'
                 />
                 <br />
-                <input
-                  type="textarea"
+                <textarea
                   value={this.state.caption}
                   onChange={this.update('caption')}
-                  placeholder="Write a note..."
+                  placeholder="You may add text to your note here..."
+                  className='caption'
                 />
                 <br />
-                <input type="submit" value="Submit" />
+                <input className='form-submit-btn' type="submit" value="Create" />
                 
             </form>
           </div>

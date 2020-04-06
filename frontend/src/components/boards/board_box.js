@@ -42,7 +42,7 @@ class BoardBox extends React.Component {
         return (
             <div className='board-box-cont'>
                 <div className='new-note-btn-div'>
-                    <button className='new-note-btn' onClick={() => this.props.openModal('create')}>
+                    <button className='new-note-btn' onClick={() => this.props.openModal('create', this.props.boardId)}>
                         New Note
                     </button>
                 </div>

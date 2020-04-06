@@ -3,7 +3,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-color: white;
+    background-color: #7FC6D0;
     width: 150px;
     height: 150px;
     z-index: 50;
@@ -64,5 +64,89 @@
     height: 100px;
     width: 136px;
     margin-top: 7px;
-    overflow: scroll;
+    overflow-y: auto;
+}
+
+.no-img-div::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+.no-img-div::-webkit-scrollbar-thumb {
+    background-color: rgb(111, 113, 118);
+    border-radius: 40%;
+}
+.no-img-div::-webkit-scrollbar-track {
+    background-color: rgb(114, 182, 191);
+}
+
+
+//create form
+
+.form-div {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.form-cont {
+    display: flex;
+    flex-direction: column;
+}
+ 
+.title {
+    border: 5px solid white; 
+    -webkit-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    -moz-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    padding: 10px;
+    background: rgba(255,255,255,0.5);
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    border-radius: 7px;
+}
+.title:focus {
+    outline: none;
+}
+
+.caption {
+    border: 5px solid white; 
+    -webkit-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    -moz-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    padding: 10px;
+    background: rgba(255,255,255,0.5);
+    margin: 0 0 10px 0;
+    font-size: 12px;
+    outline: none;
+    resize: none;
+    height: 200px;
+    width: 350px;
+    border-radius: 7px;
+}
+
+.upload-button:hover {
+    cursor: pointer;
+}
+
+.form-submit-btn {
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.delete-btn {
+    position: absolute;
+    align-self: flex-end;
+    cursor: pointer;
 }

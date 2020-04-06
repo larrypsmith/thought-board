@@ -76,7 +76,10 @@ class LoginForm extends React.Component {
                 Submit
               </button>
               <br />
-              <button onClick={(e) => {e.preventDefault(); this.props.demo()}} className='session-submit-btn'>
+              <button onClick={(e) => {
+                e.preventDefault();
+                this.props.demo()
+              }} className='session-submit-btn'>
                 Guest Login
               </button>
             </div>

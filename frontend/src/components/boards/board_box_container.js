@@ -19,7 +19,7 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => ({
   fetchBoard: boardId => dispatch(fetchBoard(boardId)),
   updateNote: note => dispatch(updateNote(note)),
-  openModal: (modal, id, title, caption, url) => dispatch(openModal(modal, id, title, caption, url)),
+  openModal: (modal, boardId, id, title, caption, url) => dispatch(openModal(modal, boardId, id, title, caption, url)),
 })
 
 export default connect(mSTP, mDTP)(BoardBox)
