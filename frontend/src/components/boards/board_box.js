@@ -43,13 +43,18 @@ class BoardBox extends React.Component {
     render() {
         return (
             <div className='board-box-cont'>
-                <div className='new-note-btn-div'>
+                <div className='board-buttons-div'>
                     <button className='new-note-btn' onClick={() => this.props.openModal('create', this.props.boardId)}>
                         New Note
                     </button>
-                </div>
-                <div className='delete-board-div'>
-                    <button onClick={this.delete}>Delete Board</button>
+                    <div>
+                        <button className='delete-board-btn' onClick={this.delete}>
+                            Delete Board
+                        </button>
+                    </div>
+                    <div className='delete-warning'>
+                        <p>Are you sure you want to do this? This is final and will result in the loss of all notes!</p>
+                    </div>
                 </div>
                 <div className="board-main">
                     {this.renderNotes()}

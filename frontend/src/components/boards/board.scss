@@ -1,15 +1,19 @@
-.new-note-btn-div {
+.board-buttons-div{
     display: flex;
+    justify-content: space-between;
+    width: 180px;
+    z-index: 5;
+    margin-left: 260px;
+    margin-top: 15px;
+    position: absolute;
 }
 
 .delete-board-div {
-    // position: fixed;
+
 }
 
-.new-note-btn {
-    display: flex;
-    // position: absolute;
-    // z-index: 5;
+.delete-board-btn {
+    z-index: 5;
     padding: 7px;
     cursor: pointer;
     border-radius: 7px;
@@ -17,13 +21,36 @@
     border: none;
     color: white;
     font-size: 14px;
-    // margin-top: 15px;
-    // margin-left: 50%;
-    // position: fixed;
+    position: relative;
+}
+
+.new-note-btn {
+    z-index: 5;
+    padding: 7px;
+    cursor: pointer;
+    border-radius: 7px;
+    background-color: #7FC6D0;
+    border: none;
+    color: white;
+    font-size: 14px;
+}
+
+.delete-warning {
+    display: none;
+    position: absolute;
+    z-index: 5;
 }
 
 .new-note-btn:hover {
     background-color: blue;
+}
+
+.delete-board-btn:hover {
+    background-color: red;
+}
+
+.delete-board-btn:hover .delete-warning {
+    display: block;
 }
 
 .new-note-btn:focus {
