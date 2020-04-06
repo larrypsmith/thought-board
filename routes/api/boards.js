@@ -45,6 +45,14 @@ router.get("/user/:user_id",
       .catch(err => res.json(err))
 })
 
+router.delete("/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Board.findByIdAndDelete(req.params.id)
+      .then(board => res.json(board))
+      .catch(err => res.json(err))
+})
+
 router.get("/:id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
