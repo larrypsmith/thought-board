@@ -1,0 +1,51 @@
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  background-color: #6f7176;
+  color: white;
+  box-sizing: border-box;
+  padding: 10px 250px;
+}
+
+.footer > h2 {
+  box-sizing: border-box;
+  padding-bottom: 2px;
+  border-bottom: 2px solid rgb(153, 153, 153);
+  text-transform: uppercase;
+  color: rgb(219, 219, 219);
+  font-size: 18px;
+}
+
+.contributors-list {
+  padding-left: 0;
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.contributor {
+  display: flex;
+  flex-direction: column;
+}
+
+.contributor > h3 {
+  font-size: 14px;
+  margin-top: 2px;
+  text-transform: uppercase;
+}
+
+.contributor > a {
+  font-size: 12px;
+}
+
+.contributor * {
+  color: white;
+}
+
+// * {
+//   border: 1px solid red !important;
+// }
+
