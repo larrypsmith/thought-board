@@ -39,6 +39,7 @@ class LoginForm extends React.Component {
     };
 
     this.props.login(user)
+      .then(res => console.log(res))
       .then(this.props.history.push("/profile"));
   }
 

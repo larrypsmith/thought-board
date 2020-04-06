@@ -40,7 +40,8 @@ class SignupForm extends React.Component {
       password2: this.state.password2
     };
 
-    this.props.signup(user, this.props.history);
+    this.props.signup(user)
+    
   }
 
   renderErrors() {
@@ -88,7 +89,7 @@ class SignupForm extends React.Component {
                 placeholder="Confirm Password"
               />
               <br />
-              <button onclick={this.handleSubmit} className='session-submit-btn'>
+              <button onClick={this.handleSubmit} className='session-submit-btn'>
                 Submit
               </button>
               <button onClick={(e) => {
