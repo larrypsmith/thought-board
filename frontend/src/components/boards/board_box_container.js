@@ -1,16 +1,18 @@
 import BoardBox from './board_box';
 import { connect } from 'react-redux';
 import { updateNote } from '../../actions/note_actions';
-import { notesByBoardId } from '../../reducers/selectors';
+import { notesByBoardId, connectionsByNotes } from '../../reducers/selectors';
 import { openModal } from '../../actions/modal_actions';
 import { fetchBoard } from '../../actions/board_actions';
 
 const mSTP = (state, ownProps) => {
   const notes = notesByBoardId(state.entities.notes, ownProps.match.params.id);
+  const connections = connectionsByNotes(state.entities.connections, notes)
   return {
     notes,
     boardId: ownProps.match.params.id,
-    images: state.entities.images
+    images: state.entities.images,
+    connections
   }
 }
 
