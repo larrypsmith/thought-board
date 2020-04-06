@@ -1,8 +1,12 @@
-.canvas-test-parent {
-  position: relative;
-}
+// .canvas-test-parent {
+//   position: relative;
+// }
 
-.canvas-test-parent > canvas {
+// .canvas-test-parent > canvas {
+//   position: absolute;
+// }
+
+canvas {
   position: absolute;
 }
 

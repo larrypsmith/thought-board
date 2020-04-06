@@ -2,13 +2,21 @@ import React from 'react';
 
 export default class Canvas extends React.Component {
   constructor(props) {
-    // props = endpoints, width, height
+    // props = lines, width, height
     super(props);
     this.canvasRef = React.createRef();
     this.draw = this.draw.bind(this);
   }
 
   componentDidMount() {
+    debugger
+    const canvas = this.canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    this.draw(this.props.lines, ctx);
+  }
+
+  componentDidUpdate() {
+    debugger
     const canvas = this.canvasRef.current;
     const ctx = canvas.getContext("2d");
     this.draw(this.props.lines, ctx);
