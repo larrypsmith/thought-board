@@ -44,7 +44,7 @@ class BoardBox extends React.Component {
                 </div>
 
                 <div className="board-main">
-                    {this.renderNotes()};
+                    {this.renderNotes()}
                 </div>
             </div>
         );
