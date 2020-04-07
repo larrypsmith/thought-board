@@ -18,17 +18,16 @@ class CanvasContainer extends React.Component {
 
   componentDidUpdate() {
     this.lines = this.getLines();
+    debugger
   }
 
   getLines() {
     let { notes, connections } = this.props;
     notes = arrayToObject(notes);
-    debugger
     const lines = [];
     connections.forEach(connection => {
       const note1 = notes[connection.note1];
       const note2 = notes[connection.note2];
-      debugger
       const { xcoord: x1, ycoord: y1 } = note1;
       const { xcoord: x2, ycoord: y2 } = note2;
       lines.push({x1, y1, x2, y2});
@@ -38,6 +37,7 @@ class CanvasContainer extends React.Component {
 
   render() {
     if (!this.lines || !this.lines.length) return null;
+    debugger
     return (
       <Canvas
         width={window.innerWidth}
