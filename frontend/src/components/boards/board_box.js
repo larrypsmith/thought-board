@@ -17,6 +17,9 @@ class BoardBox extends React.Component {
         this.props.fetchBoardConnections(this.props.boardId);
     }
 
+    componentDidUpdate() {
+    }
+
     delete(e) {
         this.props.deleteBoard(this.props.boardId)
             .then(this.props.history.push('/profile'))
@@ -41,8 +44,18 @@ class BoardBox extends React.Component {
         )
     }
 
+    renderCanvasContainer() {
+        const { notes, connections } = this.props;
+        if (!notes || !notes.length ) return null;
+        return (
+            <CanvasContainer
+                connections={connections}
+                notes={notes} />
+        )
+    }
+
     render() {
-        const { connections } = this.props;
+        const { connections, notes } = this.props;
         return (
             <div className='board-box-cont'>
                 <div className='board-buttons-div'>
@@ -59,7 +72,7 @@ class BoardBox extends React.Component {
                     </div>
                 </div>
                 <div className="board-main">
-                    <CanvasContainer connections={connections} />
+                    {this.renderCanvasContainer()}
                     {this.renderNotes()};
                 </div>
             </div>

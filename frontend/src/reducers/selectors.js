@@ -16,10 +16,9 @@ export const notesByBoardId = (notes, boardId) => {
     .filter(note => note.boardId === boardId)
 }
 
-export const connectionsByNotes = (connections, notes) => {
-  const noteIds = notes.map(note => note._id);
+export const connectionsByBoardId = (connections, boardId) => {
   return Object
     .values(connections)
-    .filter(connection => noteIds.includes(connection.note1) || noteIds.includes(connection.note2))
+    .filter(connection => connection.board === boardId)
 }
 

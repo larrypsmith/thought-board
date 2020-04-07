@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { arrayToObject } from '../../reducers/selectors'
 
 import Canvas from './canvas';
 
@@ -11,20 +12,23 @@ class CanvasContainer extends React.Component {
     this.getLines = this.getLines.bind(this);
   }
 
-  componentDidMount() {
-    this.lines = this.getLines();
-  }
+  // componentDidMount() {
+  //   this.lines = this.getLines();
+  // }
 
   componentDidUpdate() {
     this.lines = this.getLines();
   }
 
   getLines() {
-    const { notes, connections } = this.props;
+    let { notes, connections } = this.props;
+    notes = arrayToObject(notes);
+    debugger
     const lines = [];
     connections.forEach(connection => {
       const note1 = notes[connection.note1];
       const note2 = notes[connection.note2];
+      debugger
       const { xcoord: x1, ycoord: y1 } = note1;
       const { xcoord: x2, ycoord: y2 } = note2;
       lines.push({x1, y1, x2, y2});
@@ -46,7 +50,7 @@ class CanvasContainer extends React.Component {
 
 const mSTP = (state, ownProps) => ({
   connections: ownProps.connections,
-  notes: state.entities.notes
+  notes: ownProps.notes
 })
 
 export default connect(mSTP)(CanvasContainer);
