@@ -11,6 +11,7 @@ import NoteComposeContainer from '../components/notes/note_compose_container';
 import BoardBoxContainer from '../components/boards/board_box_container';
 import ModalContainer from '../components/modal/modal';
 
+
 const App = () => (
     <div>
         <Route path='/' component={ModalContainer} />

@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import './login.scss'
+import Footer from '../../components/footer/footer';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -87,6 +88,7 @@ class LoginForm extends React.Component {
           </form>
         </div>
         <div className='session-errors'>{this.renderErrors()}</div>
+        <Footer />
       </div>
     );
   }
