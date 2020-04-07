@@ -23,7 +23,7 @@ class BoardBox extends React.Component {
     renderNotes() {
         const { notes } = this.props;
         if (!notes || !notes.length) return null;
-
+        
         return (
             <div className="notes-parent">
                 {
@@ -33,6 +33,7 @@ class BoardBox extends React.Component {
                             key={idx}
                             updateNote={this.props.updateNote}
                             openModal={this.props.openModal}
+                            notesList={notes}
                         />
                     ))
                 }

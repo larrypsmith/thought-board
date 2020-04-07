@@ -3,6 +3,7 @@ import {closeModal} from '../../actions/modal_actions';
 import {connect} from 'react-redux';
 import NoteComposeContainer from '../notes/note_compose_container';
 import NoteEditFormContainer from '../notes/note_edit_form_container';
+import NoteConnectorContainer from '../notes/note_connect_container';
 import './modal.scss';
 
 function Modal({modal, closeModal}) {
@@ -21,12 +22,16 @@ function Modal({modal, closeModal}) {
 
     let component;
     
+
     switch (modal.action.modal) {
         case 'create':
             component = <NoteComposeContainer boardId={modal.action.boardId} />;
             break;
         case 'show':
             component = showComp;
+            break;
+        case 'connect':
+            component = <NoteConnectorContainer noteList={modal.action.noteList} />;
             break;
         case 'edit':
             component = <NoteEditFormContainer />;
