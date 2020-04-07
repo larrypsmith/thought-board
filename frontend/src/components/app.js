@@ -10,7 +10,7 @@ import BoardBuildContainer from '../components/boards/board_build_container';
 import NoteComposeContainer from '../components/notes/note_compose_container';
 import BoardBoxContainer from '../components/boards/board_box_container';
 import ModalContainer from '../components/modal/modal';
-import Footer from '../components/footer/footer';
+
 
 const App = () => (
     <div>
@@ -26,7 +26,6 @@ const App = () => (
             <ProtectedRoute exact path="/new_board" component={BoardBuildContainer} />
             <ProtectedRoute exact path="/new_note" component={NoteComposeContainer} />
         </Switch>
-        <Footer />
     </div>
 );
 

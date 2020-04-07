@@ -1,13 +1,14 @@
 .footer {
   width: 100%;
-  display: flex;
+  display: block;
   flex-direction: column;
+  align-items: flex-end;
   position: absolute;
   bottom: 0;
   background-color: #6f7176;
   color: white;
   box-sizing: border-box;
-  padding: 10px 250px;
+  padding: 20px 250px;
 }
 
 .footer > h2 {

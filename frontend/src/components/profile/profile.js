@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './profile.scss'
+import Footer from '../../components/footer/footer';
 
 class Profile extends React.Component {
     constructor(props) {
@@ -21,28 +22,34 @@ class Profile extends React.Component {
         } else if (this.props.boards.length === 0) {
             return (
                 <div className='prof-div'>
-                    <div className='prof-head'>No boards yet</div>
-                    <div>
-                        <Link className='new-board' to={"/new_board"}>Build a Board</Link>
-                    </div >
+                    <div className='prof-conts'>
+                        <div className='prof-head'>No boards yet</div>
+                        <div>
+                            <Link className='new-board' to={"/new_board"}>Build a Board</Link>
+                        </div >
+                    </div>
+                    <Footer />
                 </div>
             )
         } else {
             return (
                 <div className='prof-div'>
-                    <div>
-                        <div className='prof-head'>Your boards</div>
-                        <div className='prof-board-links'>
-                            {this.props.boards.map(board => (
-                            <Link className='prof-board-link' to={`/boards/${board._id}`} key={board._id}>
-                                {board.title}
-                            </Link>
-                            ))}
+                    <div className='prof-conts'>
+                        <div>
+                            <div className='prof-head'>Your boards</div>
+                            <div className='prof-board-links'>
+                                {this.props.boards.map(board => (
+                                <Link className='prof-board-link' to={`/boards/${board._id}`} key={board._id}>
+                                    {board.title}
+                                </Link>
+                                ))}
+                            </div>
+                        </div>
+                        <div>
+                            <Link className='new-board' to={"/new_board"}>Build a Board</Link>
                         </div>
                     </div>
-                    <div>
-                        <Link className='new-board' to={"/new_board"}>Build a Board</Link>
-                    </div>
+                    <Footer />
                 </div>
             );
         }

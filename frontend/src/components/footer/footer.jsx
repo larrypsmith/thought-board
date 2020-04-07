@@ -7,14 +7,9 @@ export default class Footer extends React.Component {
     super();
     this.contributors = [
       {
-        name: 'Spencer Iascone',
-        linkedInUrl: 'https://www.linkedin.com/in/spencer-iascone-56b28b62/',
-        githubUrl: 'https://github.com/siascone'
-      }, 
-      {
-        name: 'Brennan Romance',
-        linkedInUrl: 'https://www.linkedin.com/in/brennanromance/',
-        githubUrl: 'https://github.com/romance939913'
+        name: 'Larry Smith',
+        linkedInUrl: 'https://www.linkedin.com/in/larrypaulsmith/',
+        githubUrl: 'https://github.com/larrypsmith'
       },
       {
         name: 'Alec Keeler',
@@ -22,10 +17,15 @@ export default class Footer extends React.Component {
         githubUrl: 'https://github.com/Alec-Keeler'
       },
       {
-        name: 'Larry Smith',
-        linkedInUrl: 'https://www.linkedin.com/in/larrypaulsmith/',
-        githubUrl: 'https://github.com/larrypsmith'
-      }
+        name: 'Brennan Romance',
+        linkedInUrl: 'https://www.linkedin.com/in/brennanromance/',
+        githubUrl: 'https://github.com/romance939913'
+      },
+      {
+        name: 'Spencer Iascone',
+        linkedInUrl: 'https://www.linkedin.com/in/spencer-iascone-56b28b62/',
+        githubUrl: 'https://github.com/siascone'
+      } 
     ]
   }
   

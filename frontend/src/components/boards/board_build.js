@@ -1,6 +1,6 @@
 import React from 'react';
 import './board.scss'
-
+import Footer from '../../components/footer/footer'
 class BoardBuild extends React.Component {
     constructor(props) {
         super(props);
@@ -37,17 +37,21 @@ class BoardBuild extends React.Component {
     render() {
         return (
             <div className="board-build-div">
-                <h1 className="prof-head board-build-header">Create a new Board</h1>
-                <div className="build-form board-build-form">
-                    <form onSubmit={this.handleSubmit}>
-                        <input type='text'
-                            value={this.state.title}
-                            onChange={this.update()}
-                            placeholder="New board title"
-                        />
-                        <input className='session-submit-btn' type='submit' value="Create" />
-                    </form>
+                <div className='board-build-conts'>
+                    <h1 className="prof-head board-build-header">Create a new Board</h1>
+                    <div className="build-form board-build-form">
+                        <form onSubmit={this.handleSubmit}>
+                            <input type='text'
+                                value={this.state.title}
+                                onChange={this.update()}
+                                placeholder="New board title"
+                            />
+                            <input className='session-submit-btn' type='submit' value="Create" />
+                        </form>
+                    </div>
+
                 </div>
+                <Footer />
             </div>
         )
     }
