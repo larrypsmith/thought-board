@@ -2,14 +2,14 @@
     display: flex;
     justify-content: space-between;
     width: 280px;
-    z-index: 5;
+    z-index: 110;
     margin-left: 260px;
     margin-top: 15px;
     position: absolute;
 }
 
 .delete-board-btn {
-    z-index: 5;
+    z-index: 110;
     padding: 7px;
     cursor: pointer;
     border-radius: 7px;
@@ -17,6 +17,8 @@
     border: none;
     color: white;
     font-size: 14px;
+    position: fixed;
+    left: 440px;
 }
 
 .new-note-btn {
@@ -39,10 +41,10 @@
     background-color: red;
 }
 
-.delete-board-btn {
-    position: fixed;
-    left: 440px;
-}
+// .delete-board-btn {
+//     position: fixed;
+//     left: 440px;
+// }
 
 .delete-warning {
     display: none;
@@ -88,12 +90,14 @@
     background: url('cork-board.jpg');
     height: 1020px;
     width: 1920px;
+    // position: relative;
 }
 
 .notes-parent {
     height: 100%;
     width: 100%;
     position: relative;
+    // margin-top: 75px;
 }
 
 #canvas {
