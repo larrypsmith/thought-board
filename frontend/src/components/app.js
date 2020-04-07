@@ -10,7 +10,6 @@ import BoardBuildContainer from '../components/boards/board_build_container';
 import NoteComposeContainer from '../components/notes/note_compose_container';
 import BoardBoxContainer from '../components/boards/board_box_container';
 import ModalContainer from '../components/modal/modal';
-import CanvasTest from '../components/canvas_test/canvas_test';
 
 const App = () => (
     <div>
@@ -25,7 +24,6 @@ const App = () => (
             <ProtectedRoute exact path="/profile" component={ProfileContainer} />
             <ProtectedRoute exact path="/new_board" component={BoardBuildContainer} />
             <ProtectedRoute exact path="/new_note" component={NoteComposeContainer} />
-            <Route exact path="/canvas_test" component={CanvasTest} />
 
         </Switch>
     </div>

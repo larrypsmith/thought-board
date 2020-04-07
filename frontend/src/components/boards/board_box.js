@@ -14,6 +14,7 @@ class BoardBox extends React.Component {
     componentDidMount() {
         this.props.fetchBoard(this.props.boardId);
         this.props.fetchBoardNotes(this.props.boardId);
+        this.props.fetchBoardConnections(this.props.boardId);
     }
 
     delete(e) {

@@ -18,7 +18,6 @@ export default class Canvas extends React.Component {
     const canvas = this.canvasRef.current;
     const ctx = canvas.getContext("2d");
     this.draw(this.props.lines, ctx);
-    // debugger
   }
 
   draw(lines, c) {

@@ -24,6 +24,15 @@ router.delete('/',
         Connection.findByIdAndDelete(req.body._id)
             .then(connection => res.json(connection))
             .catch(err => res.json(err))
-    })
+    }
+)
+
+router.get('/board/:boardId',
+    (req, res) => {
+        Connection.find({ board: req.params.boardId })
+            .then(connections => res.json(connections))
+            .catch(err => res.json(err))
+    }
+)
 
 module.exports = router;
