@@ -11,3 +11,7 @@ export const createBoard = data => {
 export const getBoard = boardId => {
     return axios.get(`/api/boards/${boardId}`)
 }
+
+export const deleteBoard = boardId => {
+    return axios.delete(`/api/boards/${boardId}`)
+}
