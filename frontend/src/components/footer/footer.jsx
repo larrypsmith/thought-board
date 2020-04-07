@@ -33,20 +33,23 @@ export default class Footer extends React.Component {
   render() {
     return (
       <div className="footer">
-        <h2>Contributors</h2>
-        <ul className="contributors-list">
-          {
-            this.contributors.map((contributor, i) => (
-              <Contributor
-              name={contributor.name}
-              linkedInUrl={contributor.linkedInUrl}
-              githubUrl={contributor.githubUrl}
-              key={i} />
-            ))
-          }
-        </ul>
+        {/* <div className='lab-coat'></div> */}
+        <div className='footer-conts'>
+          <h2>Contributors</h2>
+          <ul className="contributors-list">
+            {
+              this.contributors.map((contributor, i) => (
+                <Contributor
+                name={contributor.name}
+                linkedInUrl={contributor.linkedInUrl}
+                githubUrl={contributor.githubUrl}
+                key={i} />
+              ))
+            }
+          </ul>
+
+        </div>
       </div>
     )
   }
-
 }
