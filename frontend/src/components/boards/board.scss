@@ -1,15 +1,11 @@
 .board-buttons-div{
     display: flex;
     justify-content: space-between;
-    width: 180px;
+    width: 280px;
     z-index: 5;
     margin-left: 260px;
     margin-top: 15px;
     position: absolute;
-}
-
-.delete-board-div {
-
 }
 
 .delete-board-btn {
@@ -21,7 +17,6 @@
     border: none;
     color: white;
     font-size: 14px;
-    position: relative;
 }
 
 .new-note-btn {
@@ -35,12 +30,6 @@
     font-size: 14px;
 }
 
-.delete-warning {
-    display: none;
-    position: absolute;
-    z-index: 5;
-}
-
 .new-note-btn:hover {
     background-color: blue;
 }
@@ -49,8 +38,25 @@
     background-color: red;
 }
 
-.delete-board-btn:hover .delete-warning {
-    display: block;
+.delete-board-btn {
+    position: relative;
+}
+
+.delete-warning {
+    display: none;
+    position: absolute;
+    border-radius: 0px 10px 10px 10px;
+    background: orange;
+    border: 2px solid white;
+    width: 250px;
+    // height: 60px;
+    left: 200px;
+    top: 35px;
+    padding: 6px;
+    color: white;
+}
+.delete-board-btn-div:hover .delete-warning {
+    display: flex;
 }
 
 .new-note-btn:focus {
