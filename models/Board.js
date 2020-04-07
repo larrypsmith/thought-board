@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const BoardSchema = new Schema({
   owner: {
     type: Schema.Types.ObjectId,
-    ref: 'users'
+    ref: 'User'
   },
   title: {
     type: String,
@@ -16,6 +16,6 @@ const BoardSchema = new Schema({
   }
 })
 
-const Board = mongoose.model('board', BoardSchema);
+const Board = mongoose.model('Board', BoardSchema);
 
 module.exports = Board;

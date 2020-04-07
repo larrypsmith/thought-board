@@ -17,7 +17,6 @@ class CanvasContainer extends React.Component {
 
   componentDidUpdate() {
     this.lines = this.getLines();
-    debugger
   }
 
   getLines() {
@@ -30,13 +29,11 @@ class CanvasContainer extends React.Component {
       const { xcoord: x2, ycoord: y2 } = note2;
       lines.push({x1, y1, x2, y2});
     })
-    debugger
     return lines;
   }
 
   render() {
     if (!this.lines || !this.lines.length) return null;
-    debugger
     return (
       <Canvas
         width={window.innerWidth}
