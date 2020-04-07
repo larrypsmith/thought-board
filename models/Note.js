@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const ImageSchema = require('./Image');
 
 const NoteSchema = new Schema({
     boardId: {
         type: Schema.Types.ObjectId,
-        ref: 'boards'
+        ref: 'Board'
     },
     title: {
         type: String
@@ -29,6 +28,6 @@ const NoteSchema = new Schema({
     }   
 })
 
-const Note = mongoose.model('note', NoteSchema);
+const Note = mongoose.model('Note', NoteSchema);
 
 module.exports = Note;

@@ -15,3 +15,10 @@ export const notesByBoardId = (notes, boardId) => {
     .values(notes)
     .filter(note => note.boardId === boardId)
 }
+
+export const connectionsByBoardId = (connections, boardId) => {
+  return Object
+    .values(connections)
+    .filter(connection => connection.board === boardId)
+}
+

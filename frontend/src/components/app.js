@@ -24,6 +24,7 @@ const App = () => (
             <ProtectedRoute exact path="/profile" component={ProfileContainer} />
             <ProtectedRoute exact path="/new_board" component={BoardBuildContainer} />
             <ProtectedRoute exact path="/new_note" component={NoteComposeContainer} />
+
         </Switch>
     </div>
 );

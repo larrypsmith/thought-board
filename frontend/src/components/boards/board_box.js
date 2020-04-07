@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom'
 import NoteBox from '../notes/note_box'
+import Canvas from '../canvas/canvas';
 import './board.scss'
 
 class BoardBox extends React.Component {
@@ -11,7 +12,12 @@ class BoardBox extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchBoard(this.props.boardId)
+        this.props.fetchBoard(this.props.boardId);
+        this.props.fetchBoardNotes(this.props.boardId);
+        this.props.fetchBoardConnections(this.props.boardId);
+    }
+
+    componentDidUpdate() {
     }
 
     delete(e) {
@@ -23,7 +29,7 @@ class BoardBox extends React.Component {
     renderNotes() {
         const { notes } = this.props;
         if (!notes || !notes.length) return null;
-        
+
         return (
             <div className="notes-parent">
                 {
@@ -41,7 +47,18 @@ class BoardBox extends React.Component {
         )
     }
 
+    renderCanvasContainer() {
+        const { notes, connections } = this.props;
+        if (!notes || !notes.length ) return null;
+        return (
+            <Canvas
+                connections={connections}
+                notes={notes} />
+        )
+    }
+
     render() {
+        const { connections, notes } = this.props;
         return (
             <div className='board-box-cont'>
                 <div className='board-buttons-div'>
@@ -58,7 +75,8 @@ class BoardBox extends React.Component {
                     </div>
                 </div>
                 <div className="board-main">
-                    {this.renderNotes()}
+                    {this.renderCanvasContainer()}
+                    {this.renderNotes()};
                 </div>
             </div>
         );

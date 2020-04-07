@@ -1,4 +1,3 @@
-// import { getUserBoards, createBoard, getBoard, deleteBoard} from '../util/board_api_util';
 import * as BoardAPIUtil from '../util/board_api_util';
 
 export const RECEIVE_USER_BOARDS = "RECEIVE_USER_BOARDS";

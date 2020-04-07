@@ -39,7 +39,7 @@ router.post('/:board_id',
 })
 
 router.get("/:note_id",
-  passport.authenticate("jwt", {session: false }),
+  // passport.authenticate("jwt", {session: false }),
   (req, res) => {
     Note.findById(req.params.note_id)
       .then(note => res.json(note))
