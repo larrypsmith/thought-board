@@ -1,21 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { arrayToObject } from '../../reducers/selectors'
 
-import Canvas from './canvas';
-
-class CanvasContainer extends React.Component {
+export default class Canvas extends React.Component {
   constructor(props) {
-    //props: notes, connections
     super(props);
     this.canvasRef = React.createRef();
     this.getLines = this.getLines.bind(this);
     this.draw = this.draw.bind(this);
   }
 
-  // componentDidMount() {
-  //   this.lines = this.getLines();
-  // }
+  componentDidMount() {
+    this.lines = this.getLines();
+    const canvas = this.canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    this.draw(this.lines, ctx);
+  }
 
   componentDidUpdate() {
     this.lines = this.getLines();
@@ -45,8 +44,8 @@ class CanvasContainer extends React.Component {
     lines.forEach(line => {
       const { x1, y1, x2, y2 } = line;
       c.beginPath();
-      c.moveTo(x1, y1);
-      c.lineTo(x2, y2);
+      c.moveTo(x1 + 75, y1 + 75);
+      c.lineTo(x2 + 75, y2 + 75);
       c.closePath();
       c.stroke();
     })
@@ -64,10 +63,3 @@ class CanvasContainer extends React.Component {
   }
 
 }
-
-const mSTP = (state, ownProps) => ({
-  connections: ownProps.connections,
-  notes: ownProps.notes
-})
-
-export default connect(mSTP)(CanvasContainer);
