@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom'
 import NoteBox from '../notes/note_box'
-import CanvasContainer from '../canvas/canvas_container';
+import Canvas from '../canvas/canvas';
 import './board.scss'
 
 class BoardBox extends React.Component {
@@ -48,7 +48,7 @@ class BoardBox extends React.Component {
         const { notes, connections } = this.props;
         if (!notes || !notes.length ) return null;
         return (
-            <CanvasContainer
+            <Canvas
                 connections={connections}
                 notes={notes} />
         )
