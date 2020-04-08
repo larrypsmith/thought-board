@@ -23,15 +23,16 @@
 
 .signup-form input {
     padding: 12px 15px;
-    border-radius: 10px;
+    border-radius: 5px;
     border: none;
     margin: 10px;
+    outline: none;
 }
 
 .signup-form button {
-    padding: 12px 15px;
-    border-radius: 10px;
-    border: none;
+    padding: 10px 13px;
+    border-radius: 5px;
+    border: 2px solid white;
     margin: 10px;
 }
 
@@ -39,12 +40,20 @@
     outline: none
 }
 
+.session-submit-btn:hover {
+    background: #7FC6D0;
+}
+
 .session-submit-btn {
     cursor: pointer;
 }
 
 .session-submit-btn:focus {
-    opacity: 0.5;    
+    opacity: 0.5;   
+}
+
+.guest-btn:hover {
+    background-color: rgb(236, 156, 17); 
 }
 
 .session-errors {

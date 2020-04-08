@@ -46,7 +46,7 @@ class BoardBuild extends React.Component {
                                 onChange={this.update()}
                                 placeholder="New board title"
                             />
-                            <input className='session-submit-btn' type='submit' value="Create" />
+                            <input className='new-board-btn' type='submit' value="Create" />
                         </form>
                     </div>
 
