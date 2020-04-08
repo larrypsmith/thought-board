@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class NoteConnector extends React.Component {
 
     constructor(props) {
@@ -7,8 +8,20 @@ class NoteConnector extends React.Component {
     }
 
     buildButtons(notes) {
+        let arr = this.props.boardId.split("/")
+        console.log(arr)
         return notes.map(note => {
-            return (<button className='notes-to-connect'key={note[0]}>{note[1]}</button>)
+            let notePojo = {
+                note1: this.props._id,
+                note2: note[0],
+                boardId: arr[2]
+            };
+            return (<button 
+                        className='notes-to-connect'
+                        key={note[0]}
+                        onClick={() => this.props.postConnection(notePojo)}
+                    >{note[1]}</button>)
+
         })
     }
 
