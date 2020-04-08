@@ -22,15 +22,12 @@ export const fetchBoardConnections = boardId => dispatch => (
 )
 
 export const postConnection = notes => dispatch => {
-  debugger
   return(
   ConnectionAPIUtil.postBoardConnection(notes)
     .then(notes => {
-      debugger
       dispatch(postTheConnections(notes))
     })
     .catch(err => {
-      debugger
       console.log(err)
     })
 )}

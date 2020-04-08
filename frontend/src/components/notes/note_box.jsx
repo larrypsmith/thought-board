@@ -29,7 +29,6 @@ class NoteBox extends React.Component {
                 noteArr.push([note._id, note.title]);
             }
         })
-        // debugger
         return noteArr;
     }
 

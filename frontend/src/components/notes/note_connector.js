@@ -10,7 +10,6 @@ class NoteConnector extends React.Component {
     buildButtons(notes) {
         let arr = this.props.boardId.split("/")
         console.log(arr)
-        debugger
         return notes.map(note => {
             let notePojo = {
                 note1: this.props._id,
