@@ -5,20 +5,22 @@
     flex-direction: column;
     align-items: center;
     background-color: #7FC6D0;
-    width: 150px;
+    width: 170px;
     height: 150px;
     z-index: 50;
     border-radius: 5px;
+    border: 2px solid white;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .note > p {
     margin-top: 7px;
+    text-align: center;
 }
 
 .note-btns {
     display: flex;
-    width: 136px;
+    width: 156px;
     justify-content: space-between;
     margin-top: 7px;
     margin-bottom: 7px;
@@ -27,12 +29,17 @@
 .note-btns > button {
     border-radius: 3px;
     background-color: lightgray;
+    outline: none;
+    height: 25px;
+    cursor: pointer;
+    border-radius: 5px;
+    // color: white;
     
 }
 
 .img-div {
     height: 100px;
-    width: 136px;
+    width: 146px;
     margin-top: 7px;
     background-size: cover;
     border-radius: 5px;
@@ -62,6 +69,10 @@
 
 .no-img-div {
     display: block;
+    // border: 1px solid white;
+    padding: 5px;
+    border-radius: 5px;
+    background: rgb(223, 221, 221);
     height: 100px;
     width: 136px;
     margin-top: 7px;
@@ -70,13 +81,16 @@
 
 .no-img-div::-webkit-scrollbar {
     -webkit-appearance: none;
+    width: 15px;
+    height: 25px;
 }
 .no-img-div::-webkit-scrollbar-thumb {
-    background-color: rgb(111, 113, 118);
-    border-radius: 40%;
+    background-color: gray;
+    border-radius: 35%;
 }
 .no-img-div::-webkit-scrollbar-track {
-    background-color: rgb(114, 182, 191);
+    background-color: lightgray;
+    border-radius: 0 5px 5px 0;
 }
 
 
@@ -151,3 +165,92 @@
     align-self: flex-end;
     cursor: pointer;
 }
+
+//connections modal css
+
+.connections-main {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.connections {
+    display: flex;
+}
+
+.connect-div {
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    width: 50%;
+    margin: 5%;
+    // border: 1px solid white
+    
+}
+
+.connect-btns-div {
+    align-self: center;
+    width: 90%;
+    overflow-y: scroll;
+}
+
+.connect-btns-div::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.connect-btns-div::-webkit-scrollbar:vertical {
+    width: 10px;
+}
+
+.connect-btns-div::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.connect-heading {
+    margin: 5px;
+    align-self: center;
+}
+
+.connect {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 97%;
+}
+
+.connect button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 30px;
+    overflow: hidden;
+    padding: 3px;
+    border: 2px white solid;
+    border-radius: 5px;
+    margin: 0 0 10px 0;
+    cursor: pointer;
+    outline: none;
+}
+
+.connect button:hover {
+    background: rgb(8, 169, 190);
+}
+
+.disconnect-div {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 50%;
+    height: 80%;
+    margin: 5%;
+    // border: 1px solid white;
+    padding: 5px
+}
+
+.disconnect-heading {
+    margin: 5px;
+    align-self: center;
+}
+

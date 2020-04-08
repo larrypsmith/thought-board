@@ -81,7 +81,7 @@ class LoginForm extends React.Component {
               <button onClick={(e) => {
                 e.preventDefault();
                 this.props.demo()
-              }} className='session-submit-btn'>
+              }} className='guest-btn'>
                 Guest Login
               </button>
             </div>

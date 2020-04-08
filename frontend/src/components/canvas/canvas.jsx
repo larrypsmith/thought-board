@@ -38,8 +38,8 @@ export default class Canvas extends React.Component {
   }
 
   draw(lines, c) {
-    c.clearRect(0, 0, window.innerWidth, window.innerHeight);
-    c.lineWidth = 1;
+    c.clearRect(0, 0, 1920, 1080);
+    c.lineWidth = 3;
     c.strokeStyle = "red";
     lines.forEach(line => {
       const { x1, y1, x2, y2 } = line;
@@ -56,8 +56,8 @@ export default class Canvas extends React.Component {
       <canvas
         id="canvas"
         ref={this.canvasRef}
-        width={window.innerWidth}
-        height={window.innerHeight}
+        width={1920}
+        height={1080}
       />
     )
   }
