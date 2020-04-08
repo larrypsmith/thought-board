@@ -165,3 +165,71 @@
     align-self: flex-end;
     cursor: pointer;
 }
+
+//connections modal css
+
+.connections-main {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.connections {
+    display: flex;
+}
+
+.connect-div {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 50%;
+    margin: 5%;
+    // border: 1px solid white
+}
+
+.connect-heading {
+    margin: 5px;
+    align-self: center;
+}
+
+.connect {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    overflow-y: auto;
+}
+
+.connect button {
+    display: flex;
+    justify-content: center;
+    width:150px;
+    height: 30px;
+    overflow: hidden;
+    padding: 3px;
+    border: 2px white solid;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.connect button:hover {
+    background: rgb(8, 169, 190);
+}
+
+.disconnect-div {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 50%;
+    height: 80%;
+    margin: 5%;
+    // border: 1px solid white;
+    padding: 5px
+}
+
+.disconnect-heading {
+    margin: 5px;
+    align-self: center;
+}
+
