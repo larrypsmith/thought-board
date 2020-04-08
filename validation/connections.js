@@ -11,7 +11,7 @@ module.exports = function validateConnectionInput(data) {
     errors.note2 = 'Note2 cannot be empty';
   }
 
-  if (Validator.isEmpty(data.board)) {
+  if (Validator.isEmpty(data.boardId)) {
     errors.board = 'Board cannot be empty';
   }
 

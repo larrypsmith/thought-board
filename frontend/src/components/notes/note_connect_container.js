@@ -5,9 +5,10 @@ import { postConnection } from '../../actions/connection_actions';
 import { withRouter } from 'react-router'
 
 const mapStateToProps = (state, ownProps) => {
+    debugger
     return {
         title: state.ui.modal.action.title,
-        _id: state.ui.modal.action._id,
+        _id: state.ui.modal.action.boardId,
         boardId: ownProps.location.pathname
     }
 }
