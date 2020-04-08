@@ -2,10 +2,17 @@ const express = require("express");
 const router = express.Router();
 const passport = require("passport")
 const Connection = require('../../models/Connection');
+const validateConnectionInput = require('../../validation/connections')
 
 router.post('/',
     passport.authenticate("jwt", { session: false }),
     (req, res) => {
+        const { isValid, errors } = validateConnectionInput(req.body);
+
+        if (!isValid) {
+            return res.status(400).json(errors)
+        }        
+
         const newConnection = new Connection({
             note1: req.body.noteid1,
             note2: req.body.noteid2,

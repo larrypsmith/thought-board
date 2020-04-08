@@ -1,22 +1,22 @@
 const Validator = require('validator');
 
-// module.exports = function validateLoginInput(data) {
-//     let errors = {};
+module.exports = function validateConnectionInput(data) {
+  let errors = {};
 
-//     if (!Validator.isEmail(data.email)) {
-//         errors.email = 'Email is invalid';
-//     }
+  if (Validator.isEmpty(data.note1)) {
+    errors.note1 = 'Note1 cannot be empty';
+  }
 
-//     if (Validator.isEmpty(data.email)) {
-//         errors.email = 'Email field is required';
-//     }
+  if (Validator.isEmpty(data.note2)) {
+    errors.note2 = 'Note2 cannot be empty';
+  }
 
-//     if (Validator.isEmpty(data.password)) {
-//         errors.password = 'Password field is required';
-//     }
+  if (Validator.isEmpty(data.board)) {
+    errors.board = 'Board cannot be empty';
+  }
 
-//     return {
-//         errors,
-//         isValid: Object.keys(errors).length === 0
-//     };
-// };
+  return {
+    errors,
+    isValid: Object.keys(errors).length === 0
+  }
+}
