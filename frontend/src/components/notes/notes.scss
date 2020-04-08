@@ -182,10 +182,30 @@
 .connect-div {
     display: flex;
     flex-direction: column;
-    height: 80%;
+    height: 350px;
     width: 50%;
     margin: 5%;
     // border: 1px solid white
+    
+}
+
+.connect-btns-div {
+    align-self: center;
+    width: 90%;
+    overflow-y: scroll;
+}
+
+.connect-btns-div::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.connect-btns-div::-webkit-scrollbar:vertical {
+    width: 10px;
+}
+
+.connect-btns-div::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, .5);
 }
 
 .connect-heading {
@@ -197,20 +217,21 @@
     display: flex;
     flex-direction: column;
     align-self: center;
-    overflow-y: auto;
+    width: 97%;
 }
 
 .connect button {
     display: flex;
     justify-content: center;
-    width:150px;
+    width: 100%;
     height: 30px;
     overflow: hidden;
     padding: 3px;
     border: 2px white solid;
     border-radius: 5px;
-    margin: 5px;
+    margin: 0 0 10px 0;
     cursor: pointer;
+    outline: none;
 }
 
 .connect button:hover {
