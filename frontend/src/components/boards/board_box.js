@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom'
-import NoteBox from '../notes/note_box'
+import NoteBox from '../notes/note_box.jsx'
 import Canvas from '../canvas/canvas';
 import './board.scss'
 
@@ -76,7 +76,7 @@ class BoardBox extends React.Component {
                 </div>
                 <div className="board-main">
                     {this.renderCanvasContainer()}
-                    {this.renderNotes()};
+                    {this.renderNotes()}
                 </div>
             </div>
         );
