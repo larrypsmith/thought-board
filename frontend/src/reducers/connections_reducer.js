@@ -8,7 +8,6 @@ const ConnectionsReducer = (state = {}, action) => {
       const connections = arrayToObject(action.payload.data);
       return Object.assign({}, state, connections)
     case RECEIVE_CONNECTION:
-      debugger
       return Object.assign({}, state, action)
     default: {
       return state;
