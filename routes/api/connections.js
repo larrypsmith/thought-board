@@ -7,13 +7,16 @@ router.post('/',
     passport.authenticate("jwt", { session: false }),
     (req, res) => {
         const newConnection = new Connection({
-            note1: req.body.noteid1,
-            note2: req.body.noteid2,
+            note1: req.body.note1,
+            note2: req.body.note2,
+            board: req.body.boardId 
         })
 
         newConnection
             .save()
-            .then(connection => res.json(connection))
+            .then(connection => {
+                res.json(connection)
+            })
             .catch(err => res.json(err))
     }
 )
