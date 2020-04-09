@@ -1,9 +1,11 @@
 import * as ConnectionAPIUtil from '../util/connection_api_util';
+import { connect } from 'react-redux';
 
 
 export const RECEIVE_CONNECTIONS = 'RECEIVE_CONNECTIONS';
 export const RECEIVE_CONNECTION = 'RECEIVE_CONNECTION';
 export const CREATE_CONNECTION = 'CREATE_CONNECTION';
+export const REMOVE_CONNECTION = 'REMOVE_CONNECTION';
 
 const receiveConnections = payload => ({
   type: RECEIVE_CONNECTIONS,
@@ -13,6 +15,11 @@ const receiveConnections = payload => ({
 const postTheConnections = payload => ({
   type: RECEIVE_CONNECTION,
   payload
+})
+
+const removeConnection = connectionId => ({
+  type: REMOVE_CONNECTION,
+  connectionId
 })
 
 export const fetchBoardConnections = boardId => dispatch => (
@@ -31,3 +38,12 @@ export const postConnection = notes => dispatch => {
       console.log(err)
     })
 )}
+
+
+export const deleteConnection = connectionId => dispatch => {
+  return (
+    ConnectionAPIUtil.deleteConnection(connectionId)
+      .then((connectionId) => dispatch(removeConnection(connectionId)))
+      .catch(err => console.log(err))
+  )
+}
