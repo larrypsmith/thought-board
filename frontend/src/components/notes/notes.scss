@@ -199,6 +199,7 @@
     align-content: center;
     flex-direction: column;
     margin: 10px;
+    width: 100%
 }
 
 .connections {
@@ -211,7 +212,7 @@
     height: 350px;
     width: 50%;
     margin: 5%;
-    // border: 1px solid white
+
     
 }
 
@@ -271,8 +272,6 @@
     width: 50%;
     height: 80%;
     margin: 5%;
-    // border: 1px solid white;
-    padding: 5px
 }
 
 .disconnect-heading {
