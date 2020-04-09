@@ -5,7 +5,6 @@ import { postConnection, deleteConnection, fetchBoardConnections } from '../../a
 import { withRouter } from 'react-router'
 
 const mapStateToProps = (state, ownProps) => {
-    
     return {
         title: state.ui.modal.action.title,
         _id: state.ui.modal.action.boardId,

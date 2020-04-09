@@ -3,7 +3,8 @@ import { arrayToObject } from './selectors';
 
 const ConnectionsReducer = (state = {}, action) => {
   Object.freeze(state);
-  let newState = Object.assign({}, state)
+
+  let nextState = Object.assign({}, state)
   switch(action.type) {
     case RECEIVE_CONNECTIONS:
       const connections = arrayToObject(action.payload.data);
@@ -11,8 +12,10 @@ const ConnectionsReducer = (state = {}, action) => {
     case RECEIVE_CONNECTION:
       return Object.assign({}, state, action)
     case REMOVE_CONNECTION:
-      delete newState[action.connectionId.data._id];
-      return newState;
+      delete nextState[action.connectionId.data._id];
+      return nextState;
+      nextState[action.payload.data._id] = action.payload.data
+      return nextState
     default: {
       return state;
     }

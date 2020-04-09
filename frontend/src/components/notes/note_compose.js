@@ -112,12 +112,14 @@ class NoteCompose extends React.Component {
                 <Image />
                 <br />
                 <input type='file'
+                  id='file'
                   ref={this.fileInput}
                   key={this.state.inputReset}
                   name='image'
                   onChange={this.handleFiles}
-                  className='upload-button'
+                  className='image-upload'
                 />
+                <label for='file'>Upload a Photo</label>
                 <br />
                 <textarea
                   value={this.state.caption}

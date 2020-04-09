@@ -7,7 +7,6 @@ const validateConnectionInput = require('../../validation/connections')
 router.post('/',
     passport.authenticate("jwt", { session: false }),
     (req, res) => {
-        
         const { isValid, errors } = validateConnectionInput(req.body);
 
         if (!isValid) {
@@ -23,7 +22,6 @@ router.post('/',
         newConnection
             .save()
             .then(connection => {
-                
                 res.json(connection)
             })
             .catch(err => res.json(err))
