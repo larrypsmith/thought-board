@@ -7,3 +7,9 @@ export const getBoardConnections = boardId => (
 export const postBoardConnection = pojo => (
   axios.post(`/api/connections/`, pojo)
 );
+
+export const deleteConnection = connId => {
+  return (
+    axios.delete(`/api/connections/${connId}`)
+  );
+}

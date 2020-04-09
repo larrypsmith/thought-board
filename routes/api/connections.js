@@ -28,10 +28,11 @@ router.post('/',
     }
 )
 
-router.delete('/',
+router.delete('/:id',
     passport.authenticate("jwt", { session: false }),
     (req, res) => {
-        Connection.findByIdAndDelete(req.body._id)
+        
+        Connection.findByIdAndDelete(req.params.id)
             .then(connection => res.json(connection))
             .catch(err => res.json(err))
     }
