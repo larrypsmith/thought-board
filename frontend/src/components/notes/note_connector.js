@@ -59,7 +59,7 @@ class NoteConnector extends React.Component {
                 <div className='show-title'>{this.props.title}</div>
                 <div className='connections'>
                     <div className='connect-div'>
-                        <p className='connect-heading'>Non-connected Notes</p>
+                        <p className='connect-heading'>Connect a Note</p>
                         <div className='connect-btns-div'>
                             <div className='connect'>{this.buildButtons(this.props.noteList)}</div>
                         </div>

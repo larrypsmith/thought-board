@@ -10,12 +10,11 @@ const ConnectionsReducer = (state = {}, action) => {
       const connections = arrayToObject(action.payload.data);
       return Object.assign({}, state, connections)
     case RECEIVE_CONNECTION:
-      return Object.assign({}, state, action)
+      nextState[action.payload.data._id] = action.payload.data
+      return nextState
     case REMOVE_CONNECTION:
       delete nextState[action.connectionId.data._id];
       return nextState;
-      nextState[action.payload.data._id] = action.payload.data
-      return nextState
     default: {
       return state;
     }
