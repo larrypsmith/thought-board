@@ -30,8 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     store = configureStore({});
   }
-  
-  window.deleteConnection = deleteConnection
 
   const root = document.getElementById("root");
 
