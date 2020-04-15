@@ -2,7 +2,7 @@
 
 Here at Thought-Board LABS, we believe in the value of visualizing your thoughts.  This project aims to allow our users to build a virtual board on which they can organize and visualize their notes for all sorts of projects.
 
-Brought to you by Larry Smith, Alec Keeler, Brennan Romance, Spencer Iascone.
+Brought to you by [Larry Smith](https://github.com/larrypsmith), [Alec Keeler](https://github.com/Alec-Keeler), [Brennan Romance](https://github.com/romance939913),[Spencer Iascone](https://github.com/siascone)
 
 [Visit the site here!](https://thought-board-labs.herokuapp.com/#/)
 
