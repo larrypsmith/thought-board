@@ -48,8 +48,8 @@ class Profile extends React.Component {
                         <div>
                             <Link className='new-board' to={"/new_board"}>Build a Board</Link>
                         </div>
+                        <Footer />
                     </div>
-                    <Footer />
                 </div>
             );
         }
