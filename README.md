@@ -14,7 +14,9 @@ Users are able to create a thought-board immediately after signing up or logging
 
 ## Technologies Used
 
-Thought-Board was built using MongoDB, Express.JS, React and Node.JS, along with JavaScript, HTML and CSS.  We used the [react-draggable](https://www.npmjs.com/package/react-draggable) library to implement sliding notes.
+Thought-Board was built using MongoDB, Express.JS, React and Node.JS, along with JavaScript, HTML and CSS.  We used the [react-draggable](https://www.npmjs.com/package/react-draggable) library to implement sliding notes and CanvasJS for drawing connection lines between notes. Check out this gif demonstration for a preview:
+
+![readme-gif](thoughtboarddeck.gif)
 
 ## Specific Features
 
