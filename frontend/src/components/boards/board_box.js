@@ -58,7 +58,7 @@ class BoardBox extends React.Component {
     }
 
     render() {
-        const { connections, notes } = this.props;
+        // const { connections, notes } = this.props;
         return (
             <div className='board-box-cont'>
                 <div className='board-buttons-div'>

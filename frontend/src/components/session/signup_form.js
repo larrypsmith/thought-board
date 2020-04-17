@@ -1,7 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import './signup.scss'
-import Footer from '../../components/footer/footer';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -38,20 +37,21 @@ class SignupForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+
     let user = {
       email: this.state.email,
       username: this.state.username,
       password: this.state.password,
       password2: this.state.password2
     };
-
+    
     this.props.signup(user)
-      .then(() => {
+      .then((res) => {
         if (this.props.errors.length === 0) {
           this.props.closeModal()
         }
       })
-      
+
     
   }
 

@@ -1,5 +1,5 @@
 import * as ConnectionAPIUtil from '../util/connection_api_util';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 
 
 export const RECEIVE_CONNECTIONS = 'RECEIVE_CONNECTIONS';
