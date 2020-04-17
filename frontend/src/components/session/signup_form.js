@@ -42,6 +42,7 @@ class SignupForm extends React.Component {
     };
 
     this.props.signup(user)
+      
     
   }
 
@@ -95,7 +96,8 @@ class SignupForm extends React.Component {
               </button>
               <button onClick={(e) => {
                 e.preventDefault();
-                this.props.demo()
+                this.props.demo();
+                this.props.closeModal();
               }} className='guest-btn'>
                 Guest Login
               </button>
@@ -103,7 +105,6 @@ class SignupForm extends React.Component {
           </form>
         </div>
         <div className='session-errors'>{this.renderErrors()}</div>
-        <Footer />
       </div>
     );
   }

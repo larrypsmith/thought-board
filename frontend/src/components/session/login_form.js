@@ -40,8 +40,9 @@ class LoginForm extends React.Component {
     };
 
     this.props.login(user)
-      .then(res => console.log(res))
-      .then(this.props.history.push("/profile"));
+    .then(res => console.log(res))
+    .then(this.props.history.push('/profile'))
+    // .then(this.props.closeModal())
   }
 
   renderErrors() {
@@ -55,8 +56,8 @@ class LoginForm extends React.Component {
   }
 
   render() {
-    return (
-      <div className='login-main-div'>
+    return (      
+      <div>
         <div className='login-form-container'>
           <form>
             <div className='login-form'>
@@ -80,7 +81,8 @@ class LoginForm extends React.Component {
               <br />
               <button onClick={(e) => {
                 e.preventDefault();
-                this.props.demo()
+                this.props.demo();
+                this.props.closeModal();
               }} className='guest-btn'>
                 Guest Login
               </button>
@@ -88,7 +90,6 @@ class LoginForm extends React.Component {
           </form>
         </div>
         <div className='session-errors'>{this.renderErrors()}</div>
-        <Footer />
       </div>
     );
   }
