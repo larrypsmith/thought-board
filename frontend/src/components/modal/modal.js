@@ -4,6 +4,8 @@ import {connect} from 'react-redux';
 import NoteComposeContainer from '../notes/note_compose_container';
 import NoteEditFormContainer from '../notes/note_edit_form_container';
 import NoteConnectorContainer from '../notes/note_connect_container';
+import LoginFormContainer from '../session/login_form_container';
+import SignupFormContainer from '../session/signup_form_container'
 import './modal.scss';
 
 function Modal({modal, closeModal}) {
@@ -24,6 +26,12 @@ function Modal({modal, closeModal}) {
     
 
     switch (modal.action.modal) {
+        case 'login':
+            component = <LoginFormContainer />;
+            break;
+        case 'signup':
+            component = <SignupFormContainer />;
+            break;
         case 'create':
             component = <NoteComposeContainer boardId={modal.action.boardId} />;
             break;
@@ -40,13 +48,31 @@ function Modal({modal, closeModal}) {
             return null;
     }
 
-    return (
-        <div className='modal-background'>
-            <div className='modal-child'>
-                {component}
+    if (modal.action.modal === 'login') {
+        return (
+            <div className='modal-background'>
+                <div className='modal-login'>
+                    {component}
+                </div>
             </div>
-        </div>
-    )
+        )
+    } else if (modal.action.modal === 'signup') {
+        return (
+            <div className='modal-background'>
+                <div className='modal-signup'>
+                    {component}
+                </div>
+            </div>
+        )
+    } else {
+        return (
+            <div className='modal-background'>
+                <div className='modal-child'>
+                    {component}
+                </div>
+            </div>
+        )
+    }
 }
 
 const mSTP = state => {

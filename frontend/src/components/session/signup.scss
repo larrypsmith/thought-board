@@ -1,25 +1,44 @@
+.signup-form-main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    // border: 1px solid black;
+}
+
+.session-errors {
+    display: flex;
+    flex-direction: column;
+//     border: 1px solid black;
+}
+
+.session-errors > ul > li {
+    margin: 10px;
+}
+
+.session-errors ul {
+    list-style: none;
+    padding: 0;
+}
+
 .signup-form-container {
     display: flex;
-    background: url("splash_page_background.png");
-    background-position: center center; 
-    height: auto;
-    top: 60px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: auto;
-    overflow: hidden;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: absolute;
-    padding: 10px;
-    justify-content: space-around;
+}
+
+.signup-name-email {
+    display: flex;
+}
+
+.signup-passwords {
+    display: flex;
 }
 
 .signup-form {
     padding-top: 30px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    // border: 1px solid black;
 }
 
 .signup-form input {
@@ -58,13 +77,3 @@
     background-color: rgb(236, 156, 17); 
 }
 
-.session-errors {
-    display: flex;
-    position: relative;
-    justify-content: center;
-    top: 180px;
-}
-
-.session-errors ul {
-    list-style: none;
-}

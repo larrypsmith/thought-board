@@ -3,9 +3,9 @@ import React from 'react';
 
 class NoteConnector extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
 
     componentDidMount() {
         let arr = this.props.boardId.split("/");

@@ -36,7 +36,7 @@ class Profile extends React.Component {
                 <div className='prof-div'>
                     <div className='prof-conts'>
                         <div>
-                            <div className='prof-head'>Your boards</div>
+                            <div className='prof-head'>Your Boards</div>
                             <div className='prof-board-links'>
                                 {this.props.boards.map(board => (
                                 <Link className='prof-board-link' to={`/boards/${board._id}`} key={board._id}>
