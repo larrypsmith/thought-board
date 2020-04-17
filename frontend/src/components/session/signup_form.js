@@ -46,6 +46,11 @@ class SignupForm extends React.Component {
     };
 
     this.props.signup(user)
+      .then(() => {
+        if (this.props.errors.length === 0) {
+          this.props.closeModal()
+        }
+      })
       
     
   }

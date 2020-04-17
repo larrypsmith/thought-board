@@ -43,9 +43,12 @@ class LoginForm extends React.Component {
     };
 
     this.props.login(user)
-    .then(res => console.log(res))
-    .then(this.props.history.push('/profile'))
-    // .then(this.props.closeModal())
+      .then( () => {
+        if (this.props.errors.length === 0) {
+          this.props.closeModal()
+          this.props.history.push('/profile')
+        }
+      })
   }
 
   renderErrors() {
