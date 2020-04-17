@@ -1,7 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import './login.scss'
-import Footer from '../../components/footer/footer';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -17,9 +16,9 @@ class LoginForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.currentUser === true) {
-      this.props.history.push("/login");
-    }
+    // if (nextProps.currentUser === true) {
+    //   this.props.history.push("/login");
+    // }
 
     this.setState({ errors: nextProps.errors });
   }
