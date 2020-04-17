@@ -4,6 +4,8 @@ import {connect} from 'react-redux';
 import NoteComposeContainer from '../notes/note_compose_container';
 import NoteEditFormContainer from '../notes/note_edit_form_container';
 import NoteConnectorContainer from '../notes/note_connect_container';
+import LoginFormContainer from '../session/login_form_container';
+import SignupFormContainer from '../session/signup_form_container'
 import './modal.scss';
 
 function Modal({modal, closeModal}) {
@@ -24,6 +26,12 @@ function Modal({modal, closeModal}) {
     
 
     switch (modal.action.modal) {
+        case 'login':
+            component = <LoginFormContainer />;
+            break;
+        case 'signup':
+            component = <SignupFormContainer />;
+            break;
         case 'create':
             component = <NoteComposeContainer boardId={modal.action.boardId} />;
             break;
