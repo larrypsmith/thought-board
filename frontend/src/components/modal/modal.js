@@ -48,13 +48,31 @@ function Modal({modal, closeModal}) {
             return null;
     }
 
-    return (
-        <div className='modal-background'>
-            <div className='modal-child'>
-                {component}
+    if (modal.action.modal === 'login') {
+        return (
+            <div className='modal-background'>
+                <div className='modal-login'>
+                    {component}
+                </div>
             </div>
-        </div>
-    )
+        )
+    } else if (modal.action.modal === 'signup') {
+        return (
+            <div className='modal-background'>
+                <div className='modal-signup'>
+                    {component}
+                </div>
+            </div>
+        )
+    } else {
+        return (
+            <div className='modal-background'>
+                <div className='modal-child'>
+                    {component}
+                </div>
+            </div>
+        )
+    }
 }
 
 const mSTP = state => {

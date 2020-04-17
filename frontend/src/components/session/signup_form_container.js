@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { signup, login } from "../../actions/session_actions";
+import { signup, login, clearErrors} from "../../actions/session_actions";
 import { closeModal } from '../../actions/modal_actions';
 import SignupForm from "./signup_form";
 
@@ -16,7 +16,8 @@ const mapDispatchToProps = dispatch => {
     signup: user => dispatch(signup(user)),
     login: user => dispatch(login(user)),
     demo: () => dispatch(login({ email: 'bobby@gs9.com', password: 'bobby123' })),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    clearErrors: () => dispatch(clearErrors())
   };
 };
 

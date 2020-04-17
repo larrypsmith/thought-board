@@ -19,6 +19,28 @@
     border: 5px solid white;
     border-radius: 7px;
 }
+.modal-login {
+    display: flex;
+    position: relative;
+    top: 20%;
+    width: 600px;
+    height: 250px;
+    margin: 0 auto;
+    background: #7FC6D0;
+    border: 5px solid white;
+    border-radius: 7px;
+}
+.modal-signup {
+    display: flex;
+    position: relative;
+    top: 20%;
+    width: 600px;
+    height: 330px;
+    margin: 0 auto;
+    background: #7FC6D0;
+    border: 5px solid white;
+    border-radius: 7px;
+}
 
 .show-cont {
     display: flex;

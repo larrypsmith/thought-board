@@ -18,7 +18,7 @@
 
 }
 
-.nav-links > button {
+.login-links > button {
     border: none;
     background: transparent;
     color: white;
@@ -28,11 +28,11 @@
 
 }
 
-.nav-links > button:hover {
+.login-links > button:hover {
     color: #7FC6D0;
 }
 
-.nav-links > :first-child {
+.login-links > :first-child {
     border-right: 1px solid white;
 }
 

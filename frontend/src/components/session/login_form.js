@@ -23,6 +23,10 @@ class LoginForm extends React.Component {
     this.setState({ errors: nextProps.errors });
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors()
+  }
+
   update(field) {
     return e =>
       this.setState({
@@ -48,7 +52,7 @@ class LoginForm extends React.Component {
     return (
       <ul>
         {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}><i className="fas fa-thumbtack"></i>{this.state.errors[error]}</li>
+          <li key={`error-${i}`}><i className="fas fa-thumbtack"></i> {this.state.errors[error]}</li>
         ))}
       </ul>
     );
@@ -56,35 +60,39 @@ class LoginForm extends React.Component {
 
   render() {
     return (      
-      <div>
+      <div className='login-form-main'>
         <div className='login-form-container'>
           <form>
             <div className='login-form'>
-              <input
-                type="text"
-                value={this.state.email}
-                onChange={this.update("email")}
-                placeholder="Email"
-              />
-              <br />
-              <input
-                type="password"
-                value={this.state.password}
-                onChange={this.update("password")}
-                placeholder="Password"
-              />
-              <br />
-              <button onClick={this.handleSubmit} className='session-submit-btn'>
-                Submit
-              </button>
-              <br />
-              <button onClick={(e) => {
-                e.preventDefault();
-                this.props.demo();
-                this.props.closeModal();
-              }} className='guest-btn'>
-                Guest Login
-              </button>
+              <div className='credentials'>
+                <input
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.update("email")}
+                  placeholder="Email"
+                />
+                <br />
+                <input
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  placeholder="Password"
+                />
+                <br />
+              </div>
+              <div className='start-session'>
+                <button onClick={this.handleSubmit} className='session-submit-btn'>
+                  Submit
+                </button>
+                <br />
+                <button onClick={(e) => {
+                  e.preventDefault();
+                  this.props.demo();
+                  this.props.closeModal();
+                }} className='guest-btn'>
+                  Guest Login
+                </button>
+              </div>
             </div>
           </form>
         </div>

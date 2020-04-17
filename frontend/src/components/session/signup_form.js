@@ -25,6 +25,10 @@ class SignupForm extends React.Component {
     this.setState({ errors: nextProps.errors });
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors()
+  }
+
   update(field) {
     return e =>
       this.setState({
@@ -50,7 +54,7 @@ class SignupForm extends React.Component {
     return (
       <ul>
         {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}><i className="fas fa-thumbtack"></i>{this.state.errors[error]}</li>
+          <li key={`error-${i}`}><i className="fas fa-thumbtack"></i> {this.state.errors[error]}</li>
         ))}
       </ul>
     );
@@ -58,49 +62,54 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='signup-form-main'>
         <div className="signup-form-container">
           <form>
             <div className="signup-form">
-              <br />
-              <input
-                type="text"
-                value={this.state.email}
-                onChange={this.update("email")}
-                placeholder="Email"
-              />
-              <br />
-              <input
-                type="text"
-                value={this.state.username}
-                onChange={this.update("username")}
-                placeholder="Username"
-              />
-              <br />
-              <input
-                type="password"
-                value={this.state.password}
-                onChange={this.update("password")}
-                placeholder="Password"
-              />
-              <br />
-              <input
-                type="password"
-                value={this.state.password2}
-                onChange={this.update("password2")}
-                placeholder="Confirm Password"
-              />
-              <br />
-              <button onClick={this.handleSubmit} className='session-submit-btn'>
-                Submit
-              </button>
-              <button onClick={(e) => {
-                e.preventDefault();
-                this.props.demo();
-                this.props.closeModal();
-              }} className='guest-btn'>
-                Guest Login
-              </button>
+              <div className='signup-name-email'>
+                <input
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.update("email")}
+                  placeholder="Email"
+                />
+                <br />
+                <input
+                  type="text"
+                  value={this.state.username}
+                  onChange={this.update("username")}
+                  placeholder="Username"
+                />
+                <br />
+              </div>
+              <div className='signup-passwords'>
+                <input
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  placeholder="Password"
+                />
+                <br />
+                <input
+                  type="password"
+                  value={this.state.password2}
+                  onChange={this.update("password2")}
+                  placeholder="Confirm Password"
+                />
+                <br />
+              </div>
+              <div className='start-session'>
+                <button onClick={this.handleSubmit} className='session-submit-btn'>
+                  Submit
+                </button>
+                <button onClick={(e) => {
+                  e.preventDefault();
+                  this.props.demo();
+                  this.props.closeModal();
+                }} className='guest-btn'>
+                  Guest Login
+                </button>
+              </div>
             </div>
           </form>
         </div>
