@@ -5,7 +5,6 @@ import { closeModal, openModal } from '../../actions/modal_actions';
 import { uploadImage } from '../../actions/image_actions';
 
 const mapStateToProps = (state) => {
-    debugger
     return {
         currentUser: state.session.user,
         newNote: state.entities.notes.new,
