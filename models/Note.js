@@ -11,7 +11,6 @@ const NoteSchema = new Schema({
     },
     caption: {
         type: String,
-        required: true
     },
     url: {
         type: String,

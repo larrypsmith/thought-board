@@ -4,6 +4,8 @@ export const RECEIVE_BOARD_NOTES = "RECEIVE_BOARD_NOTES";
 export const RECEIVE_NEW_NOTE = "RECEIVE_NEW_NOTE";
 export const RECEIVE_NOTE = "RECEIVE_NOTE";
 export const REMOVE_NOTE = "REMOVE_NOTE";
+export const RECEIVE_NOTE_ERRORS = "RECEIVE_NOTE_ERRORS";
+export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
 export const receiveBoardNotes = notes => ({
     type: RECEIVE_BOARD_NOTES,
@@ -25,6 +27,15 @@ export const removeNote = noteId => ({
     noteId
 })
 
+export const receiveErrors = errors => ({
+    type: RECEIVE_NOTE_ERRORS,
+    errors
+});
+
+export const clearErrors = () => ({
+    type: CLEAR_ERRORS
+})
+
 export const fetchBoardNotes = id => dispatch => (
     getBoardNotes(id)
         .then(notes => dispatch(receiveBoardNotes(notes)))
@@ -41,7 +52,7 @@ export const makeNote = data => dispatch => {
     return (
         writeNote(data)
         .then(note => dispatch(receiveNewNote(note)))
-        .catch(err => console.log(err))
+        .catch(err => dispatch(receiveErrors(err.response.data)))
     )
 };
 
@@ -50,7 +61,7 @@ export const updateNote = data => dispatch => {
     return (
     editNote(data)
         .then(note => dispatch(receiveNote(note)))
-        .catch(err => console.log(err))
+        .catch(err => dispatch(receiveErrors(err.response.data)))
     )
 }
 

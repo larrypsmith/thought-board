@@ -27,6 +27,7 @@ class NoteCompose extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
+      debugger
         this.setState({newNote: nextProps.newNote.text});
     }
 
