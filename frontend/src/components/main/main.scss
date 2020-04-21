@@ -37,6 +37,16 @@
     text-shadow: 1px 1px 0 #000;
     font-size: 18px;
 }
+.main-notes-list-cont {
+    background-color: rgb(111, 113, 118);
+    opacity: 0.9;
+    padding: 4px;
+    border-radius: 3px;
+}
+
+.main-notes-list-cont > pre {
+    padding: 5px;
+}
 
 .main-notes-list-cont :first-child i {
     color: red;
