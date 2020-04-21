@@ -11,11 +11,7 @@
 
 .nav-links {
     display: flex;
-    // justify-content: space-between;
-    // width: 135px;
     padding: 10px;
-
-
 }
 
 .login-links > button {
@@ -25,7 +21,6 @@
     font-size: 16px;
     cursor: pointer;
     outline: none;
-
 }
 
 .login-links > button:hover {
@@ -45,22 +40,13 @@
     margin: 20px;
     color: white;
     text-decoration: none;
+    cursor: pointer;
 }
 
 
 .nav-link:hover {
     color: #7FC6D0;
     text-decoration: underline;
-}
-
-.nav-btn {
-    background-color: rgb(111, 113, 118);
-    color: white;
-    align-self: center;
-    width: 50px;
-    height: 30px;
-    border-radius: 20px;
-    border: none;
 }
 
 .nav-btn:focus {

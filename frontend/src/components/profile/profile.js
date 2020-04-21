@@ -38,6 +38,7 @@ class Profile extends React.Component {
                         <div>
                             <div className='prof-head'>Your Boards</div>
                             <div className='prof-board-links'>
+                                <Link className='new-board' to={"/new_board"}>Build a Board!</Link>
                                 {this.props.boards.map(board => (
                                 <Link className='prof-board-link' to={`/boards/${board._id}`} key={board._id}>
                                     {board.title}
@@ -45,9 +46,9 @@ class Profile extends React.Component {
                                 ))}
                             </div>
                         </div>
-                        <div>
+                        {/* <div>
                             <Link className='new-board' to={"/new_board"}>Build a Board</Link>
-                        </div>
+                        </div> */}
                         <Footer />
                     </div>
                 </div>
