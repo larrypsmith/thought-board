@@ -148,8 +148,8 @@ class NoteCompose extends React.Component {
                 <br />
                 <input className='form-submit-btn' type="submit" value="Create" />
                 
-            </form>
             <div className='session-errors'>{this.renderErrors()}</div>
+            </form>
           </div>
         );
     }
