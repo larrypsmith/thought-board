@@ -6,6 +6,7 @@ import NoteEditFormContainer from '../notes/note_edit_form_container';
 import NoteConnectorContainer from '../notes/note_connect_container';
 import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container'
+import BoardDeleteContainer from '../boards/board_delete_container'
 import './modal.scss';
 
 function Modal({modal, closeModal}) {
@@ -44,6 +45,9 @@ function Modal({modal, closeModal}) {
         case 'edit':
             component = <NoteEditFormContainer />;
             break;
+        case 'delete':
+            component = <BoardDeleteContainer />
+            break;
         default:
             return null;
     }
@@ -68,6 +72,14 @@ function Modal({modal, closeModal}) {
         return (
             <div className='modal-background'>
                 <div className='modal-create'>
+                    {component}
+                </div>
+            </div>
+        )
+    } else if (modal.action.modal === 'delete') {
+        return (
+            <div className="modal-background">
+                <div className="modal-delete">
                     {component}
                 </div>
             </div>

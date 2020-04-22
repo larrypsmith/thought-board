@@ -59,6 +59,33 @@
     display: flex;
 }
 
+.delete-board-div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    color: white;
+}
+
+.delete-board-div > button {
+    padding: 7px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px solid white;
+    background-color: #7FC6D0;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    margin-top: 35px;
+}
+
+.delete-board-div > button:hover {
+        background-color: red;
+
+}
+
+
+
 .new-note-btn:focus {
     outline: none;
 }
