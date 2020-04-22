@@ -64,6 +64,8 @@ class LoginForm extends React.Component {
   render() {
     return (      
       <div className='login-form-main'>
+        <button className='close-x' onClick={this.props.closeModal}><i className="fas fa-times"></i></button>
+
         <div className='login-form-container'>
           <form>
             <div className='login-form'>
