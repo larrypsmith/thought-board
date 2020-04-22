@@ -17,9 +17,12 @@ class BoardDelete extends React.Component {
     render() {
 
         return (
-            <div className="delete-board-div">
-                <p>Are you really sure?</p>
-                <button onClick={this.delete}>Delete Board</button>
+            <div className='delete-board-main'>
+                <button className='close-x' onClick={this.props.closeModal}><i className="fas fa-times"></i></button>
+                <div className="delete-board-div">
+                    <p>Are you really sure?</p>
+                    <button onClick={this.delete}>Delete Board</button>
+                </div>
             </div>
         )
     }

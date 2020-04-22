@@ -43,21 +43,21 @@
     background-color: red;
 }
 
-.delete-warning {
-    display: none;
-    position: fixed;
-    border-radius: 0px 10px 10px 10px;
-    background: orange;
-    border: 2px solid white;
-    width: 250px;
-    left: 460px;
-    top: 50px;
-    padding: 6px;
-    color: white;
-}
-.delete-board-btn-div:hover .delete-warning {
-    display: flex;
-}
+// .delete-warning {
+//     display: none;
+//     position: fixed;
+//     border-radius: 0px 10px 10px 10px;
+//     background: orange;
+//     border: 2px solid white;
+//     width: 250px;
+//     left: 460px;
+//     top: 50px;
+//     padding: 6px;
+//     color: white;
+// }
+// .delete-board-btn-div:hover .delete-warning {
+//     display: flex;
+// }
 
 .delete-board-div {
     display: flex;
