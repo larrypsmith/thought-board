@@ -91,3 +91,4 @@ This creates the red "string" between the middle of two connected notes
 
 * Disallow users from making changes to another user's board.
 * Update boards for multiple users in real time.
+* Update note connection lines during note movement.
