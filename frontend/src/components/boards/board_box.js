@@ -69,9 +69,9 @@ class BoardBox extends React.Component {
                         <button className='delete-board-btn' onClick={() => this.props.openModal('delete', this.props.boardId)}>
                             Delete Board
                         </button>
-                        <div className='delete-warning'>
+                        {/* <div className='delete-warning'>
                             WARNING! Are you sure you want to do this? This is final and will result in the loss of all notes!
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 <div className="board-main">
