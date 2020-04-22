@@ -51,11 +51,11 @@ class NoteCompose extends React.Component {
         }
 
         this.props.makeNote(note)
-          .then(() => {
-          if (this.props.errors.length === 0) {
-            this.props.closeModal()
-          }
-        })
+          .then((res) => {
+            if (res.type === "RECEIVE_NEW_NOTE") {
+              this.props.closeModal()
+            }
+          })
       
           
       } else if (this.fileInput.current.files.length > 0) {
@@ -83,6 +83,11 @@ class NoteCompose extends React.Component {
 
             }).then(note => {
               this.props.makeNote(note)
+                .then((res) => {
+                  if (res.type === "RECEIVE_NEW_NOTE") {
+                    this.props.closeModal()
+                  }
+                })
             })
             
           }
