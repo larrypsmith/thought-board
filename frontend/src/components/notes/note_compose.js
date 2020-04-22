@@ -120,6 +120,11 @@ class NoteCompose extends React.Component {
     }
 
     render() {
+        let fileMarker = null
+        if (this.state.file != null) {
+          fileMarker = "✅"
+        }
+
         return (
           <div className='form-div-new'>
             <div>
@@ -136,15 +141,17 @@ class NoteCompose extends React.Component {
                   <br />
                   <Image />
                   <br />
-                  <input type='file'
-                    id='file'
-                    ref={this.fileInput}
-                    key={this.state.inputReset}
-                    name='image'
-                    onChange={this.handleFiles}
-                    className='image-upload'
-                  />
-                  <label for='file'>Upload a Photo</label>
+                  <div>
+                    <input type='file'
+                      id='file'
+                      ref={this.fileInput}
+                      key={this.state.inputReset}
+                      name='image'
+                      onChange={this.handleFiles}
+                      className='image-upload'
+                    />
+                    <label for='file'>Upload a Photo</label> {fileMarker}
+                  </div>
                   <br />
                   <textarea
                     value={this.state.caption}
