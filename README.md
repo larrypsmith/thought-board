@@ -2,7 +2,7 @@
 
 Here at Thought-Board LABS, we believe in the value of visualizing your thoughts.  This project aims to allow our users to build a virtual board on which they can organize and visualize their notes for all sorts of projects.
 
-Brought to you by [Larry Smith](https://github.com/larrypsmith), [Alec Keeler](https://github.com/Alec-Keeler), [Brennan Romance](https://github.com/romance939913),[Spencer Iascone](https://github.com/siascone)
+Brought to you by [Larry Smith](https://github.com/larrypsmith), [Alec Keeler](https://github.com/Alec-Keeler), [Brennan Romance](https://github.com/romance939913), [Spencer Iascone](https://github.com/siascone)
 
 [Visit the site here!](https://thought-board-labs.herokuapp.com/#/)
 
@@ -89,6 +89,5 @@ This creates the red "string" between the middle of two connected notes
 
 ## Future Plans for Thought-Board
 
-* Users can upload images that stick to their notes.
 * Disallow users from making changes to another user's board.
-* Users can create visual connections between their notes.
+* Update boards for multiple users in real time.
