@@ -18,7 +18,7 @@ class NoteCompose extends React.Component {
             url: '',
             file: null,
             imageUrl: null,
-            errors: [],
+            errors: {},
             inputReset: Date.now()
         };
 
@@ -27,9 +27,9 @@ class NoteCompose extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        this.setState({newNote: nextProps.newNote.text});
+        // this.setState({newNote: nextProps.newNote.text});
 
-        // this.setState({ errors: nextProps.errors })
+        this.setState({ errors: nextProps.errors })
     }
 
     componentWillUnmount() {
@@ -40,6 +40,7 @@ class NoteCompose extends React.Component {
       e.preventDefault();
       e.stopPropagation();
       if (this.fileInput.current.files.length <= 0) {
+
         let note = {
           title: this.state.title,
           caption: this.state.caption,
@@ -50,16 +51,12 @@ class NoteCompose extends React.Component {
         }
 
         this.props.makeNote(note)
-          this.props.closeModal()
-          // .then(res => console.log(res))
-          // .then((res) => {
-          //   debugger
-          //   if (Object.values(this.props.errors).length === 0) {
-          //     this.props.closeModal()
-          //   } else {
-          //     this.props.clearErrors()
-          //   }
-          // })
+          .then(() => {
+          if (this.props.errors.length === 0) {
+            this.props.closeModal()
+          }
+        })
+      
           
       } else if (this.fileInput.current.files.length > 0) {
 
@@ -86,20 +83,8 @@ class NoteCompose extends React.Component {
 
             }).then(note => {
               this.props.makeNote(note)
-              .then(res => console.log(res))
-              // .then((res) => {
-              //   debugger
-              //   if (Object.values(this.props.errors).length === 0) {
-              //     this.props.closeModal()
-              //   } else {
-              //     this.props.clearErrors()
-              //   }
-              // })
-            
             })
-
-            this.props.closeModal()
-              
+            
           }
 
       } else {
@@ -131,41 +116,43 @@ class NoteCompose extends React.Component {
 
     render() {
         return (
-          <div className='form-div'>
-            <button className='close-x' onClick={this.props.closeModal}><i className="fas fa-times"></i></button>
-            <form className='form-cont' onSubmit={this.handleSubmit}>
+          <div className='form-div-new'>
+            <div>
+              <button className='close-x' onClick={this.props.closeModal}><i className="fas fa-times"></i></button>
+              <form className='form-cont' onSubmit={this.handleSubmit}>
 
-                <input
-                  type="text"
-                  value={this.state.title}
-                  onChange={this.update('title')}
-                  placeholder="Enter a Title..."
-                  className='title'
-                />
-                <br />
-                <Image />
-                <br />
-                <input type='file'
-                  id='file'
-                  ref={this.fileInput}
-                  key={this.state.inputReset}
-                  name='image'
-                  onChange={this.handleFiles}
-                  className='image-upload'
-                />
-                <label for='file'>Upload a Photo</label>
-                <br />
-                <textarea
-                  value={this.state.caption}
-                  onChange={this.update('caption')}
-                  placeholder="You may add text to your note here..."
-                  className='caption'
-                />
-                <br />
-                <input className='form-submit-btn' type="submit" value="Create" />
-                
+                  <input
+                    type="text"
+                    value={this.state.title}
+                    onChange={this.update('title')}
+                    placeholder="Enter a Title..."
+                    className='title'
+                  />
+                  <br />
+                  <Image />
+                  <br />
+                  <input type='file'
+                    id='file'
+                    ref={this.fileInput}
+                    key={this.state.inputReset}
+                    name='image'
+                    onChange={this.handleFiles}
+                    className='image-upload'
+                  />
+                  <label for='file'>Upload a Photo</label>
+                  <br />
+                  <textarea
+                    value={this.state.caption}
+                    onChange={this.update('caption')}
+                    placeholder="You may add text to your note here..."
+                    className='caption'
+                  />
+                  <br />
+                  <input className='form-submit-btn' type="submit" value="Create" />
+              </form>
+            </div>
+            <br />
             <div className='session-errors'>{this.renderErrors()}</div>
-            </form>
           </div>
         );
     }

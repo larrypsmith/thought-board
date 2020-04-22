@@ -64,6 +64,14 @@ function Modal({modal, closeModal}) {
                 </div>
             </div>
         )
+    } else if (modal.action.modal === 'create') {
+        return (
+            <div className='modal-background'>
+                <div className='modal-create'>
+                    {component}
+                </div>
+            </div>
+        )
     } else {
         return (
             <div className='modal-background'>

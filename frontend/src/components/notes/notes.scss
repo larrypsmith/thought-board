@@ -99,10 +99,17 @@
 
 //create form
 
-.form-div {
+.form-div-edit {
     display: flex;
     align-items: center;
     margin: 0 auto;
+}
+
+.form-div-new {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px auto;
 }
 
 .form-cont {

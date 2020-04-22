@@ -31,7 +31,7 @@ class NoteEditForm extends React.Component {
 
     render() {
         return (
-            <div className='form-div'>
+            <div className='form-div-edit'>
                 <button className='close-x' onClick={this.props.closeModal}><i className="fas fa-times"></i></button>
                 <form className='form-cont' onSubmit={this.handleSubmit}>
                     {/* <label>Title */}
