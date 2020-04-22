@@ -18,7 +18,7 @@ class NoteCompose extends React.Component {
             url: '',
             file: null,
             imageUrl: null,
-            errors: [],
+            errors: {},
             inputReset: Date.now()
         };
 
@@ -27,7 +27,9 @@ class NoteCompose extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        this.setState({newNote: nextProps.newNote.text});
+        // this.setState({newNote: nextProps.newNote.text});
+
+        this.setState({ errors: nextProps.errors })
     }
 
     handleSubmit(e) {
@@ -44,38 +46,44 @@ class NoteCompose extends React.Component {
         }
 
         this.props.makeNote(note)
-          .then(() => this.props.closeModal())
+          .then((res) => {
+            if (this.props.errors.length === 0) {
+              this.props.closeModal()
+            }
+          })
           
       } else if (this.fileInput.current.files.length > 0) {
 
         if (this.fileInput.current.files[0].type === 'image/jpg' ||
           this.fileInput.current.files[0].type === 'image/png' ||
           this.fileInput.current.files[0].type === 'image/jpeg') {
-          let image = new FormData();
-          image.append('image', this.state.file);
-          this.props.uploadImage(image).then(url => {this.setState({
-            errors: [],
-            inputReset: Date.now(),
-            file: null,
-            imageUrl: null
-          })
-            let note = {
-              title: this.state.title,
-              caption: this.state.caption,
-              boardId: this.props.boardId,
-              url: url.data.imageUrl,
-              xcoord: 100,
-              ycoord: 100
-            }
-            return note
+            let image = new FormData();
+            image.append('image', this.state.file);
+            this.props.uploadImage(image).then(url => {this.setState({
+              errors: [],
+              inputReset: Date.now(),
+              file: null,
+              imageUrl: null
+            })
+              let note = {
+                title: this.state.title,
+                caption: this.state.caption,
+                boardId: this.props.boardId,
+                url: url.data.imageUrl,
+                xcoord: 100,
+                ycoord: 100
+              }
+              return note
 
-          }).then(note => {
-            this.props.makeNote(note)
-          
-          })
-            .then(() => this.props.closeModal())
-
-
+            }).then(note => {
+              this.props.makeNote(note)
+            
+            })
+              .then((res) => {
+                if (this.props.errors.length === 0) {
+                  this.props.closeModal()
+                }
+              })
           }
 
       } else {
@@ -93,6 +101,16 @@ class NoteCompose extends React.Component {
     update(field) {
 
         return e => this.setState({ [field]: e.currentTarget.value });
+    }
+
+    renderErrors() {
+      return (
+        <ul>
+          {Object.keys(this.state.errors).map((error, i) => (
+            <li key={`error-${i}`}><i className="fas fa-thumbtack"></i> {this.state.errors[error]}</li>
+          ))}
+        </ul>
+      );
     }
 
     render() {
@@ -130,6 +148,7 @@ class NoteCompose extends React.Component {
                 <br />
                 <input className='form-submit-btn' type="submit" value="Create" />
                 
+            <div className='session-errors'>{this.renderErrors()}</div>
             </form>
           </div>
         );
