@@ -18,7 +18,7 @@ class NoteCompose extends React.Component {
             url: '',
             file: null,
             imageUrl: null,
-            errors: {},
+            errors: [],
             inputReset: Date.now()
         };
 
@@ -27,9 +27,13 @@ class NoteCompose extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        // this.setState({newNote: nextProps.newNote.text});
+        this.setState({newNote: nextProps.newNote.text});
 
-        this.setState({ errors: nextProps.errors })
+        // this.setState({ errors: nextProps.errors })
+    }
+
+    componentWillUnmount() {
+      this.props.clearErrors()
     }
 
     handleSubmit(e) {
@@ -46,11 +50,16 @@ class NoteCompose extends React.Component {
         }
 
         this.props.makeNote(note)
-          .then((res) => {
-            if (this.props.errors.length === 0) {
-              this.props.closeModal()
-            }
-          })
+          this.props.closeModal()
+          // .then(res => console.log(res))
+          // .then((res) => {
+          //   debugger
+          //   if (Object.values(this.props.errors).length === 0) {
+          //     this.props.closeModal()
+          //   } else {
+          //     this.props.clearErrors()
+          //   }
+          // })
           
       } else if (this.fileInput.current.files.length > 0) {
 
@@ -77,13 +86,20 @@ class NoteCompose extends React.Component {
 
             }).then(note => {
               this.props.makeNote(note)
+              .then(res => console.log(res))
+              // .then((res) => {
+              //   debugger
+              //   if (Object.values(this.props.errors).length === 0) {
+              //     this.props.closeModal()
+              //   } else {
+              //     this.props.clearErrors()
+              //   }
+              // })
             
             })
-              .then((res) => {
-                if (this.props.errors.length === 0) {
-                  this.props.closeModal()
-                }
-              })
+
+            this.props.closeModal()
+              
           }
 
       } else {
