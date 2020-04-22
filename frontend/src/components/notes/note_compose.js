@@ -32,10 +32,15 @@ class NoteCompose extends React.Component {
         this.setState({ errors: nextProps.errors })
     }
 
+    componentWillUnmount() {
+      this.props.clearErrors()
+    }
+
     handleSubmit(e) {
       e.preventDefault();
       e.stopPropagation();
       if (this.fileInput.current.files.length <= 0) {
+
         let note = {
           title: this.state.title,
           caption: this.state.caption,
@@ -47,10 +52,11 @@ class NoteCompose extends React.Component {
 
         this.props.makeNote(note)
           .then((res) => {
-            if (this.props.errors.length === 0) {
+            if (res.type === "RECEIVE_NEW_NOTE") {
               this.props.closeModal()
             }
           })
+      
           
       } else if (this.fileInput.current.files.length > 0) {
 
@@ -77,13 +83,13 @@ class NoteCompose extends React.Component {
 
             }).then(note => {
               this.props.makeNote(note)
-            
+                .then((res) => {
+                  if (res.type === "RECEIVE_NEW_NOTE") {
+                    this.props.closeModal()
+                  }
+                })
             })
-              .then((res) => {
-                if (this.props.errors.length === 0) {
-                  this.props.closeModal()
-                }
-              })
+            
           }
 
       } else {
@@ -115,41 +121,43 @@ class NoteCompose extends React.Component {
 
     render() {
         return (
-          <div className='form-div'>
-            <button className='close-x' onClick={this.props.closeModal}><i className="fas fa-times"></i></button>
-            <form className='form-cont' onSubmit={this.handleSubmit}>
+          <div className='form-div-new'>
+            <div>
+              <button className='close-x' onClick={this.props.closeModal}><i className="fas fa-times"></i></button>
+              <form className='form-cont' onSubmit={this.handleSubmit}>
 
-                <input
-                  type="text"
-                  value={this.state.title}
-                  onChange={this.update('title')}
-                  placeholder="Enter a Title..."
-                  className='title'
-                />
-                <br />
-                <Image />
-                <br />
-                <input type='file'
-                  id='file'
-                  ref={this.fileInput}
-                  key={this.state.inputReset}
-                  name='image'
-                  onChange={this.handleFiles}
-                  className='image-upload'
-                />
-                <label for='file'>Upload a Photo</label>
-                <br />
-                <textarea
-                  value={this.state.caption}
-                  onChange={this.update('caption')}
-                  placeholder="You may add text to your note here..."
-                  className='caption'
-                />
-                <br />
-                <input className='form-submit-btn' type="submit" value="Create" />
-                
+                  <input
+                    type="text"
+                    value={this.state.title}
+                    onChange={this.update('title')}
+                    placeholder="Enter a Title..."
+                    className='title'
+                  />
+                  <br />
+                  <Image />
+                  <br />
+                  <input type='file'
+                    id='file'
+                    ref={this.fileInput}
+                    key={this.state.inputReset}
+                    name='image'
+                    onChange={this.handleFiles}
+                    className='image-upload'
+                  />
+                  <label for='file'>Upload a Photo</label>
+                  <br />
+                  <textarea
+                    value={this.state.caption}
+                    onChange={this.update('caption')}
+                    placeholder="You may add text to your note here..."
+                    className='caption'
+                  />
+                  <br />
+                  <input className='form-submit-btn' type="submit" value="Create" />
+              </form>
+            </div>
+            <br />
             <div className='session-errors'>{this.renderErrors()}</div>
-            </form>
           </div>
         );
     }
