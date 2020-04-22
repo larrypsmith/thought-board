@@ -68,6 +68,8 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div className='signup-form-main'>
+        <button className='close-x' onClick={this.props.closeModal}><i className="fas fa-times"></i></button>
+
         <div className="signup-form-container">
           <form>
             <div className="signup-form">
