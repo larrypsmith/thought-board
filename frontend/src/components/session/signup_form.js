@@ -106,6 +106,7 @@ class SignupForm extends React.Component {
                 />
                 <br />
               </div>
+              <div className='session-errors'>{this.renderErrors()}</div>
               <div className='start-session'>
                 <button onClick={this.handleSubmit} className='session-submit-btn'>
                   Submit
@@ -121,7 +122,6 @@ class SignupForm extends React.Component {
             </div>
           </form>
         </div>
-        <div className='session-errors'>{this.renderErrors()}</div>
       </div>
     );
   }
