@@ -111,11 +111,20 @@
     outline: none
 }
 
+.board-box-cont {
+    // display: flex;
+    // justify-content: center;
+    // align-content: center;;
+    // background: #7FC6D0;
+    height: 100%;
+    width: 100%;
+}
+
 .board-main {
     background: url('cork-board.jpg');
-    height: 1020px;
+    height: 1080px;
     width: 1920px;
-    border: 2px solid black;
+    border: 3px solid black;
     // position: relative;
 }
 
