@@ -14,11 +14,11 @@ module.exports = function validateRegisterInput(data) {
   }
 
   if (Validator.isEmpty(data.username)) {
-    errors.username = 'Username field is required';
+    errors.username = 'Username is required';
   }
 
   if (Validator.isEmpty(data.email)) {
-    errors.email = 'Email field is required';
+    errors.email = 'Email is required';
   }
 
   if (!Validator.isEmail(data.email)) {
@@ -30,11 +30,11 @@ module.exports = function validateRegisterInput(data) {
   }
 
   if (!Validator.isLength(data.password, { min: 6, max: 30 })) {
-    errors.password = 'Password must be at least 6 characters';
+    errors.password = 'Password must be 6+ characters';
   }
 
   if (Validator.isEmpty(data.password2)) {
-    errors.password2 = 'Confirm Password field is required';
+    errors.password2 = 'Confirm Password is required';
   }
 
   if (!Validator.equals(data.password, data.password2)) {
