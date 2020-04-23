@@ -71,7 +71,8 @@ class SignupForm extends React.Component {
         <button className='close-x' onClick={this.props.closeModal}><i className="fas fa-times"></i></button>
 
         <div className="signup-form-container">
-          <form>
+          <div className='modal-header'>SIGNUP</div>
+          <form className='login-form-form'>
             <div className="signup-form">
               <div className='signup-name-email'>
                 <input
@@ -105,6 +106,7 @@ class SignupForm extends React.Component {
                 />
                 <br />
               </div>
+              <div className='session-errors'>{this.renderErrors()}</div>
               <div className='start-session'>
                 <button onClick={this.handleSubmit} className='session-submit-btn'>
                   Submit
@@ -120,7 +122,6 @@ class SignupForm extends React.Component {
             </div>
           </form>
         </div>
-        <div className='session-errors'>{this.renderErrors()}</div>
       </div>
     );
   }

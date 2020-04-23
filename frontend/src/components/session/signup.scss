@@ -10,6 +10,8 @@
 .session-errors {
     display: flex;
     flex-direction: column;
+    align-self: center;
+    padding-bottom: 15px;
 //     border: 1px solid black;
 }
 
@@ -24,18 +26,21 @@
 
 .signup-form-container {
     display: flex;
+    flex-direction: column;
 }
 
 .signup-name-email {
     display: flex;
+    padding-top: 15px;
 }
 
 .signup-passwords {
     display: flex;
+    padding-top: 2px;
+    padding-bottom: 15px;
 }
 
 .signup-form {
-    padding-top: 30px;
     display: flex;
     flex-direction: column;
     // border: 1px solid black;
@@ -50,7 +55,7 @@
 }
 
 .signup-form button {
-    padding: 10px 13px;
+    padding: 7px 13px;
     border-radius: 5px;
     border: 2px solid white;
     margin: 10px;

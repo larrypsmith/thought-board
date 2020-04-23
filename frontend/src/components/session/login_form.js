@@ -65,9 +65,9 @@ class LoginForm extends React.Component {
     return (      
       <div className='login-form-main'>
         <button className='close-x' onClick={this.props.closeModal}><i className="fas fa-times"></i></button>
-
         <div className='login-form-container'>
-          <form>
+          <div className='modal-header'>LOGIN</div>
+          <form className='login-form-form'>
             <div className='login-form'>
               <div className='credentials'>
                 <input
@@ -85,6 +85,7 @@ class LoginForm extends React.Component {
                 />
                 <br />
               </div>
+                <div className='session-errors'>{this.renderErrors()}</div>
               <div className='start-session'>
                 <button onClick={this.handleSubmit} className='session-submit-btn'>
                   Submit
@@ -101,7 +102,6 @@ class LoginForm extends React.Component {
             </div>
           </form>
         </div>
-        <div className='session-errors'>{this.renderErrors()}</div>
       </div>
     );
   }
