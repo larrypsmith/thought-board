@@ -71,7 +71,8 @@ class SignupForm extends React.Component {
         <button className='close-x' onClick={this.props.closeModal}><i className="fas fa-times"></i></button>
 
         <div className="signup-form-container">
-          <form>
+          <div className='modal-header'>SIGNUP</div>
+          <form className='login-form-form'>
             <div className="signup-form">
               <div className='signup-name-email'>
                 <input
