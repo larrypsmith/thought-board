@@ -66,5 +66,20 @@
     color: white;
     background: #6f7176;
     border-radius: 3px 3px 0 0;
+}
 
+.login-errors {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    padding-bottom: 15px;
+}
+
+.login-errors ul {
+    list-style: none;
+    padding: 0;
+}
+
+.login-errors > ul > li {
+    margin: 10px;
 }
