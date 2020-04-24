@@ -23,10 +23,12 @@ class Profile extends React.Component {
             return (
                 <div className='prof-div'>
                     <div className='prof-conts'>
-                        <div className='prof-head'>No boards yet</div>
                         <div>
-                            <Link className='new-board' to={"/new_board"}>Build a Board</Link>
-                        </div >
+                            <div className='prof-head'>No boards yet</div>
+                            <div className='prof-board-links'>
+                                <Link className='new-board' to={"/new_board"}>Build a Board</Link>
+                            </div >
+                        </div>
                     </div>
                     <Footer />
                 </div>

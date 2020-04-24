@@ -15,7 +15,7 @@ const mapDispatchToProps = dispatch => {
   return {
     signup: user => dispatch(signup(user)),
     login: user => dispatch(login(user)),
-    demo: () => dispatch(login({ email: 'bobby@gs9.com', password: 'bobby123' })),
+    demo: () => dispatch(login({ email: 'bobby@gmail.com', password: 'bobby123' })),
     closeModal: () => dispatch(closeModal()),
     clearErrors: () => dispatch(clearErrors())
   };

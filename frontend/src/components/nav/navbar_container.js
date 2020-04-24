@@ -5,10 +5,20 @@ import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
   // debugger
-  return {
-    history: ownProps.history,
-    loggedIn: state.session.isAuthenticated
+  if (state.session.user === undefined) {
+    return {
+      history: ownProps.history,
+      loggedIn: state.session.isAuthenticated,
+    }
+  } else {
+    return {
+      history: ownProps.history,
+      loggedIn: state.session.isAuthenticated,
+      username: state.session.user.username
+    }
+
   }
+
 };
 
 const mapDispatchToProps = dispatch => ({
