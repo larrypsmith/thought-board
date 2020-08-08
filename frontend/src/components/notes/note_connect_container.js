@@ -10,7 +10,8 @@ const mapStateToProps = (state, ownProps) => {
         _id: state.ui.modal.action.boardId,
         boardId: ownProps.location.pathname,
         notes: state.entities.notes,
-        connections: state.entities.connections
+        connections: state.entities.connections,
+        noteTitle: state.ui.modal.action.title
     }
 }
 

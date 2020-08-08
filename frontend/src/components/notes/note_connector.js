@@ -18,8 +18,8 @@ class NoteConnector extends React.Component {
         connList = Object.values(connList);
         let buttons = []
         for (let [key, value] of Object.entries(connList)) {
-            let name = this.findNoteName(value.note2)
             if (value.note1 === this.props._id || value.note2 === this.props._id) {
+                let name = this.findNoteName(value.note2) === this.props.noteTitle ? this.findNoteName(value.note1) : this.findNoteName(value.note2);
                 buttons.push(<button onClick={() => this.props.deleteConnection(value._id)}>{name}</button>)
             }
         }
