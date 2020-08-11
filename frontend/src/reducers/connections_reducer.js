@@ -1,4 +1,5 @@
 import { RECEIVE_CONNECTIONS, RECEIVE_CONNECTION, REMOVE_CONNECTION } from '../actions/connection_actions';
+import { REMOVE_NOTE } from '../actions/note_actions';
 import { arrayToObject } from './selectors';
 
 const ConnectionsReducer = (state = {}, action) => {
@@ -14,6 +15,12 @@ const ConnectionsReducer = (state = {}, action) => {
       return nextState
     case REMOVE_CONNECTION:
       delete nextState[action.connectionId.data._id];
+      return nextState;
+    case REMOVE_NOTE:
+      console.log(action.pojo);
+      action.pojo.data.connectionIds.forEach(connId => {
+        delete nextState[connId];
+      })
       return nextState;
     default: {
       return state;

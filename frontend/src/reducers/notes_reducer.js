@@ -18,7 +18,7 @@ const NotesReducer = (state = {}, action) => {
         case RECEIVE_NOTE:
             return Object.assign(newState, { [action.note.data._id]: action.note.data })
         case REMOVE_NOTE:
-            delete newState[action.noteId.data._id];
+            delete newState[action.pojo.data.noteId];
             return newState;
         case RECEIVE_BOARD: 
             return Object.assign(newState, action.payload.data.notes)

@@ -22,9 +22,9 @@ export const receiveNote = note => ({
     note
 })
 
-export const removeNote = noteId => ({
+export const removeNote = pojo => ({
     type: REMOVE_NOTE,
-    noteId
+    pojo
 })
 
 export const receiveErrors = errors => ({
@@ -67,6 +67,6 @@ export const updateNote = data => dispatch => {
 
 export const eraseNote = noteId => dispatch => (
     deleteNote(noteId)
-        .then(note => dispatch(removeNote(note)))
+        .then(pojo => dispatch(removeNote(pojo)))
         .catch(err => console.log(err))
 )
