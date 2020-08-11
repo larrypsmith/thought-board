@@ -68,15 +68,35 @@ router.get("/board/:board_id",
       .catch(err => res.json(err))
 })
 
-router.delete("/:note_id", 
+router.delete("/:note_id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
+    let response = {};
+    response['connectionIds'] = [];
+
+    Connection.find({ note1: req.params.note_id })
+      .then(connections => {
+        connections.forEach(conn => {
+          response['connectionIds'].push(conn.id);
+        })
+      })
+    Connection.find({ note2: req.params.note_id })
+      .then(connections => {
+        connections.forEach(conn => {
+          response['connectionIds'].push(conn.id);
+        })
+      })
+
     Connection.deleteMany({ note1: req.params.note_id }).exec()
     Connection.deleteMany({ note2: req.params.note_id }).exec()
-    
+
     Note.findByIdAndDelete(req.params.note_id)
-        .then((note) => res.json(note))
-        .catch(err => res.json(err))
+      .then((note) => {
+        response['noteId'] = note.id
+        console.log(response);
+        res.json(response);
+      })
+      .catch(err => res.json(err))
 })
 
 module.exports = router;
