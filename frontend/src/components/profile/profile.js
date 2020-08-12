@@ -6,7 +6,6 @@ import Footer from '../../components/footer/footer';
 class Profile extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = {
             boards: []
         };
