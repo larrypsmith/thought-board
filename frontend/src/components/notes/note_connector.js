@@ -3,10 +3,6 @@ import React from 'react';
 
 class NoteConnector extends React.Component {
 
-    // constructor(props) {
-    //     super(props);
-    // }
-
     componentDidMount() {
         let arr = this.props.boardId.split("/");
         let theBoardId = arr[2];
@@ -36,6 +32,16 @@ class NoteConnector extends React.Component {
     }
 
     buildButtons(notes) {
+        let conns = Object.values(this.props.connections);
+        notes = notes.filter(note => {
+            for (let i = 0; i < conns.length; i++) {
+                if (conns[i].note1 === note[0] && conns[i].note2 === this.props._id
+                    || conns[i].note2 === note[0] && conns[i].note1 === this.props._id) {
+                    return false;
+                }
+            }
+            return true;
+        })
         let arr = this.props.boardId.split("/")
         return notes.map(note => {
             let notePojo = {
@@ -43,12 +49,11 @@ class NoteConnector extends React.Component {
                 note2: note[0],
                 boardId: arr[2]
             };
-            return (<button 
-                        className='notes-to-connect'
-                        key={note[0]}
-                        onClick={() => this.props.postConnection(notePojo)}
-                    >{note[1]}</button>)
-
+        return (<button 
+                    className='notes-to-connect'
+                    key={note[0]}
+                    onClick={() => this.props.postConnection(notePojo)}
+                >{note[1]}</button>)
         })
     }
 
