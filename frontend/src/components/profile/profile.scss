@@ -1,7 +1,7 @@
 .prof-div {
     display: flex;
     flex-direction: column;
-    background: url("splash_page_background.png");
+    background: url("satanic_cork_board_pic.jpg");
     background-position: center center; 
     object-fit: cover;
     height: auto;
@@ -27,7 +27,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: url("splash_page_background.png");
+    background: url("satanic_cork_board_pic.jpg");
     background-position: center center; 
     height: auto;
     top: 60px;
@@ -48,26 +48,25 @@
     flex-direction: column;
 }
 .new-board {
-    background-color: rgb(111, 113, 118);
+    background-color: #7FC6D0;
     // opacity: 0.8;
     color: white;
     text-decoration: none;
     padding: 5px;
     border-radius: 5px;
+    border: 1px solid white;
     width: 94%;
     min-width: 250px;
-    margin: 0px 5px 20px 5px;
+    margin-bottom: 20px;
     font-size: 19px;
     text-align: center;
 }
 
 .new-board-btn:hover {
     background: #7FC6D0;
-
 }
 
 .new-board:hover {
-    color: #7FC6D0;
     text-decoration: underline;
 }
 
@@ -100,18 +99,17 @@
 }
 
 .prof-board-link {
-    background-color: rgb(111, 113, 118);
-    opacity: 0.8;
+    background-color: #7FC6D0;
     color: white;
     text-decoration: none;
     padding: 5px;
     border-radius: 5px;
+    border: 1px solid white;
     width: 94%;
     min-width: 250px;
-    margin: 0px 5px 10px 5px;
+    margin-bottom: 10px;
 }
 
 .prof-board-link:hover {
-    color: #7FC6D0;
     text-decoration: underline;
 }
