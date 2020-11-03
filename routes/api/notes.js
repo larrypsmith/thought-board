@@ -93,7 +93,6 @@ router.delete("/:note_id",
     Note.findByIdAndDelete(req.params.note_id)
       .then((note) => {
         response['noteId'] = note.id
-        console.log(response);
         res.json(response);
       })
       .catch(err => res.json(err))
