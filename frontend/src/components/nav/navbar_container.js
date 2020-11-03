@@ -4,7 +4,6 @@ import NavBar from "./navbar";
 import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger
   if (state.session.user === undefined) {
     return {
       history: ownProps.history,

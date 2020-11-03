@@ -17,7 +17,6 @@ const ConnectionsReducer = (state = {}, action) => {
       delete nextState[action.connectionId.data._id];
       return nextState;
     case REMOVE_NOTE:
-      console.log(action.pojo);
       action.pojo.data.connectionIds.forEach(connId => {
         delete nextState[connId];
       })
